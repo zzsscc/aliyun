@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:p="http://www.springframework.org/schema/p"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+       "
+	   >
+
+	<bean
+			class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="classpath:datasource.properties" />
+	</bean>
+
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		  init-method="init" destroy-method="close"
+		  p:driverClassName="${jdbc.driverClassName}"
+		  p:url="${jdbc.url}"
+		  p:username="${jdbc.username}"
+		  p:password="${jdbc.password}"
+		  p:filters="stat"
+		  p:maxActive="${jdbc.ds.maxActive}"
+		  p:initialSize="${jdbc.ds.initialSize}"
+		  p:maxWait="60000"
+		  p:timeBetweenEvictionRunsMillis="60000"
+		  p:minEvictableIdleTimeMillis="30000"
+		  p:validationQuery="SELECT 'x'"
+		  p:testWhileIdle="true"/>
+
+
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"
+		  p:basePackage="com.eshutech.biz.**.mapper"/>
+
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"
+		  p:dataSource-ref="dataSource"
+		  p:configLocation="classpath:MybatisConfig.xml"/>
+</beans>

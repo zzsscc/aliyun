@@ -1,0 +1,386 @@
+/*通用样式*/
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family:'Microsoft Yahei';
+    color:#fff;
+    background: #02020d;
+}
+.clearfix:after{
+    content:'';
+    display:block;
+    clear:both;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+a:link{
+    text-decoration: none;
+}
+/*主体*/
+#main{
+    box-sizing: border-box;
+    width: 1920px;
+    height: 1080px;
+    background: url('../../img/focusNews-img/background.png');
+    padding-left: 38px;
+    padding-right: 38px;
+    margin: auto;
+}
+#main .public-title{
+    font-size: 26px;
+    color: #6ad0c5;
+    margin-top: 14px;
+    margin-left: 40px;
+    width: 230px;
+    height: 37px;
+    line-height: 37px;
+}
+/*top*/
+#main .top{
+    box-sizing: border-box;
+    height: 118px;
+    line-height: 118px;
+    text-align: center;
+    width: 100%;
+    font-size: 40px;
+    color: #6ad0c5;
+    background: url('../../img/focusNews-img/logo.png') 100% 50% no-repeat;
+}
+/*left*/
+#main .left{
+    box-sizing: border-box;
+    width: 1314px;
+    height: 924px;
+    float: left;
+}
+/*left-left-top*/
+#main .left .left-left-top{
+    width: 524px;
+    height: 504px;
+    float: left;
+    background: url('../../img/focusNews-img/left-left-top.png') no-repeat;
+    margin-bottom: 16px;
+    position: relative;
+}
+#main .left-left-top-head{
+    margin-top: 25px;
+    margin-left: 70px;
+    height: 90px;
+}
+#main .left-left-top-head .headpic{
+    display: block;
+    float: left;
+    width: 90px;
+    height: 90px;
+    margin-right: 32px;
+}
+#main .top-head-l{
+    float: left;
+}
+#main .one-level{
+    color:#6ad0c5;
+    font-size: 16px;
+
+    margin-bottom: 10px;
+    margin-top: 13px;
+}
+#main .sec-level{
+    color:#6ad0c5;
+    font-size: 12px;
+}
+#main .left-left-top-words{
+    height: 65px;
+    overflow: hidden;
+    margin-top: 16px;
+    margin-right: 75px;
+    margin-left: 70px;
+    color:#6ad0c5;
+    font-size: 16px;
+}
+#main .left-left-top-bottom{
+    margin-left: 70px;
+    font-size: 16px;
+    color:#6ad0c5;
+}
+#main .left-left-top-bottom .bottom-word{
+    width: 180px;
+    position: absolute;
+    left: 80px;
+    top:300px;
+}
+#main .left-left-top-bottom .round-word{
+    float: left;
+    text-align: right;
+    margin-right: 20px;
+}
+#main .left-left-top-bottom .round-num{
+    float: left;
+}
+#main .round-word div{
+    margin-bottom: 5px;
+}
+#main .round-num div{
+    margin-bottom: 5px;
+}
+/*情感值*/
+#main .emotion-index{
+    width: 208px;
+    height: 180px;
+    position: absolute;
+    top:270px;
+    left:288px;
+}
+/*left-right-top*/
+#main .left .left-right-top{
+    width: 774px;
+    height: 504px;
+    float: right;
+    background: url('../../img/focusNews-img/left-right-top.png') no-repeat;
+    margin-bottom: 16px;
+}
+#main .dianlutu{
+    position: relative;
+    width: 710px;
+    height: 410px;
+    margin: auto;
+    margin-top: 10px;
+    overflow: hidden;
+}
+/*left-left-bottom*/
+#main .left .left-left-bottom{
+    width: 524px;
+    height: 404px;
+    float: left;
+    background: url('../../img/focusNews-img/left-left-bottom.png') no-repeat;
+}
+.machine-table table{
+    border-collapse: collapse;
+    margin: 30px 30px;
+    color: #6ad0c5;
+}
+.machine-table thead{
+    font-size: 12px;
+    background: transparent;
+}
+.machine-table thead tr{
+    height: 50px;
+    width: 500px;
+}
+.machine-table tbody{
+    font-size: 12px;
+}
+.machine-table tbody tr:nth-child(2n){
+    background: transparent;
+}
+.machine-table tr{
+    height: 24px;
+    text-align: left;
+}
+.machine-table td{
+    text-align: left;
+    word-break:keep-all;
+    white-space:nowrap;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+/*left-right-bottom*/
+#main .left .left-right-bottom{
+    width: 774px;
+    height: 404px;
+    float: right;
+    background: url('../../img/focusNews-img/left-right-bottom.png') no-repeat;
+}
+#main .chart72h{
+    width: 715px;
+    height: 325px;
+    margin-left: 28px;
+    margin-top: 5px;
+}
+/*right*/
+#main .right{
+    box-sizing: border-box;
+    width: 514px;
+    height: 924px;
+    float: right;
+    background: url('../../img/focusNews-img/right.png');
+    position: relative;
+}
+#main .right-chart{
+    position: absolute;
+    width: 170px;
+    height: 170px;
+}
+/*top*/
+#main .right-top-chart{
+    top: 88px;
+    left: 50px;
+}
+#main .right-top-center{
+    box-sizing: border-box;
+    position: absolute;
+    top:116px;
+    left: 245px;
+    width: 200px;
+    height: 120px;
+    padding-top: 5px;
+}
+#main .hot-ul{
+    font-size: 12px;
+    color: #6ad0c5;
+}
+#main .hot-ul .hot-li{
+    margin-bottom: 16px;
+}
+.hot-title,.hot-strip,.hot-num{
+    float: left;
+}
+.hot-num{
+    float: right;
+}
+#main .hot-li .hot-title{
+    text-align: end;
+    margin-right: 15px;
+}
+#main .hot-li .hot-strip{
+    height: 4px;
+    width: 80px;
+    background: #42cdc1;
+    /*margin-right: 20px;*/
+    margin-top: 6px;
+    -webkit-transform:skewX(45deg);
+}
+/*middle*/
+#main .right-middle-chart{
+    top: 263px;
+    left: 285px;
+}
+#main .right-middle-center{
+    box-sizing: border-box;
+    position: absolute;
+    top:320px;
+    left: 75px;
+    width: 194px;
+    padding-top: 7px;
+    padding-left: 16px;
+}
+#main .right-middle-center .hot-li .hot-title{
+    margin-right: 26px;
+}
+/*bottom*/
+#main .right-bottom-chart{
+    top: 435px;
+    left: 50px;
+}
+#main .right-bottom-center{
+    box-sizing: border-box;
+    position: absolute;
+    top:495px;
+    left: 245px;
+    width: 205px;
+    padding-top: 5px;
+}
+#main .right-bottom-center .hot-li:last-child{
+    padding-left: 12px;
+}
+#main .right-bottom-center .hot-li:last-child .hot-title{
+    margin-right: 26px;
+}
+/*map*/
+#main .map-chart{
+    position: absolute;
+    width: 320px;
+    height: 290px;
+    top: 610px;
+    left: 20px;
+}
+#main .map-info{
+    position:absolute;
+    top: 630px;
+    left: 370px;
+    width: 120px;
+    height: 200px;
+}
+#main .map-info .map-info-title{
+    font-size: 16px;
+    color:#6ad0c5;
+    margin-bottom: 26px;
+}
+#main .map-info .map-info-center{
+    color:#6ad0c5;
+    font-size: 12px;
+}
+#main .map-info-center>div div {
+    float: left;
+    margin-top: 10px;
+    vertical-align: middle;
+}
+#main .map-info-center .color{
+    width:12px;
+    height: 12px;
+    margin-right: 20px;
+    margin-top: 12px;
+}
+#main .map-info-center .dark-color{
+    background: #08475a;
+}
+#main .map-info-center .medium-color{
+    background: #19647b;
+}
+#main .map-info-center .tint-color{
+    background: #368097;
+}
+/*消除vue渲染时，出现的鬼影*/
+[v-cloak]{
+    display: none;
+}
+.machine-table{
+    margin-top:40px;
+    margin-left:35px;
+    font-size:12px;
+    color:#6ad0c5;
+}
+.lgg-ul{
+    margin-top:25px;
+}
+/*第一次修BUG*/
+.tou>div{
+    float:left;
+}
+.td-name{
+    width: 115px;
+}
+.td-fen{
+    margin-left:10px;
+    width: 60px;
+}
+.td-user-type{
+    width: 110px;
+}
+.td-time{
+    width: 125px;
+    margin-left:10px;
+}
+.td-two{
+    width: 50px;
+}
+.lgg-li{
+    margin-bottom:10px;
+}
+.lgg-li div{
+    float:left;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis
+}
+.lgg-li .td-two{
+    text-align: center;
+}

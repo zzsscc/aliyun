@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>首页</title>
+    <link rel="stylesheet" href="css/ctrlcss/index.css">
+
+  </head>
+
+  <body>
+    <!-- 标题栏 -->
+    <div id="header">
+
+      <div class="container">
+        <div class="logo-wrap clearfix">
+          <div class="logo"></div>
+          <div class="title">品牌舆情控制台</div>
+        </div>
+        <ul class="nav clearfix">
+          <li><a href="#" class="active">可视化大屏</a></li>
+          <li><a href="#" >舆情盒子</a></li>
+          <li><a href="#" >设置</a></li>
+        </ul>
+        <div class="user-inf">
+          欢迎您，
+          <span>admin</span>
+           |
+          <span>退出</span>
+        </div>
+        <div style="height:1px; margin-top:-1px;clear:both;overflow:hidden;" /></div>
+      </div>
+
+    </div>
+
+    <!-- 内容 -->
+    <div id="main">
+      <div class="container">
+
+        <div class="screens">
+          <img class="thumbnail" src="img/thumb1.png"></img>
+          <p class="thumbname">竞品影响分析</p>
+        </div>
+
+        <div class="screens">
+          <img class="thumbnail" src="img/thumb2.png"></img>
+          <p class="thumbname">媒体传播分析</p>
+        </div>
+
+        <div class="screens" style="margin-right:0;">
+          <img class="thumbnail" src="img/thumb3.png"></img>
+          <p class="thumbname">自身品牌分析</p>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="js/lib/jquery-1.8.3.min.js"></script>
+
+
+    <script>
+      $('.thumbnail').on('hover',function(){
+        $(this).parent('').children('.thumbname').toggleClass('colorblue');
+      });
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,247 @@
+/*通用样式*/
+html,body,ul,li{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width:1200px;
+    margin:0 auto;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+.clearfix:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+[v-cloak]{
+    display: none;
+}
+/*头部*/
+#header{
+    color:#fff;
+    background-color: #293038;
+    font-size: 12px;
+}
+#header .active{
+    color: #65bfff;
+    border-bottom: 5px solid #65bfff;
+}
+.logo-wrap{
+    width: 155px;
+    float: left;
+}
+.logo{
+    height: 34px;
+    width:32px;
+    margin-top: 8px;
+    float: left;
+    background: url("../../img/ctrl-LOGO.png") no-repeat;
+}
+.title{
+    height:50px;
+    float: right;
+    line-height: 50px;
+}
+
+.nav{
+    float: left;
+    margin-left:100px;
+}
+/*小改*/
+.nav>li{
+    float: left;
+    margin-right:30px;
+}
+.nav>li>a{
+    display: block;
+    width: 80px;
+    height: 50px;
+    line-height:50px;
+    text-align: center;
+    box-sizing: border-box;
+    color:#fff;
+}
+.nav>li>a:hover{
+    color:#65bfff;
+    border-bottom: 5px solid #65bfff;
+}
+/*开始添加*/
+.da{
+    position: relative;
+}
+.da-drop-down{
+    display: none;
+    position: absolute;
+    left: -12px;
+    background-color: #343d47;
+    z-index:100;
+}
+.da-drop-down>li{
+    width: 80px;
+    height: 31px;
+    line-height: 32px;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0 12px;
+    border-bottom: 1px solid #424c56;
+}
+.da-drop-down>li a{
+    color:#fff;
+}
+.da-drop-down>li:last-child{
+    border-bottom:0;
+}
+.da-drop-down>li a:hover{
+    color:#65bfff;
+}
+.da:hover .da-drop-down{
+    display: block;
+}
+/*添加结束*/
+.user-inf{
+    height:50px;
+    float:right;
+    line-height: 50px;
+}
+/*中间*/
+.data-setting {
+    margin-top:75px;
+}
+.setting{
+    border-bottom: 1px solid #e6e6e6;
+}
+.setting-title{
+    width: 150px;
+    float: left;
+    font-weight: bolder;
+}
+.setting-action{
+    font-size: 12px;
+    float: left;
+}
+.add-product{
+    width: 80px;
+    height: 22px;
+    box-sizing: border-box;
+    line-height:22px;
+    text-align: center;
+    padding:0 10px;
+    border:1px solid #e6e6e6;
+    background-color: #f7f7f7;
+    border-radius: 3px ;
+}
+.add-product:hover{
+    cursor: pointer;
+}
+.del-ps-btn{
+    width: 40px;
+    height: 20px;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 20px;
+    border:1px solid #e6e6e6;
+    background-color: #f7f7f7;
+    vertical-align: middle;
+    border-radius: 3px;
+}
+.del-ps-btn:hover{
+    cursor: pointer;
+}
+.data-setting .add-in-ps{
+    width: 130px;
+}
+.add-in-ps{
+    min-width: 120px;
+    height: 34px;
+    box-sizing: border-box;
+    line-height:34px;
+    text-align: center;
+    padding:0 25px;
+    border:1px solid #e6e6e6;
+    background-color: #f7f7f7;
+    border-radius: 3px;
+    margin-top:40px;
+    margin-bottom: 40px;
+}
+.add-in-ps:hover{
+    cursor:pointer;
+}
+.product-list>li{
+    height: 20px;
+    margin-top:20px;
+}
+.product-list>li>input{
+    vertical-align: middle;
+    margin-right:20px;
+}
+.product-list>li>span{
+    vertical-align: middle;
+    margin-right:20px;
+}
+
+.btn{
+    width: 120px;
+    height: 34px;
+    line-height:34px;
+    text-align: center;
+    border:1px solid #e6e6e6;
+    background-color: #f7f7f7;
+    border-radius: 3px;
+    margin:40px auto;
+    font-size: 12px;
+}
+/*数据范围*/
+.data-li{
+    margin-bottom: 20px;
+}
+.data-li input{
+    vertical-align: middle;
+}
+.data-li label{
+    vertical-align: middle;
+}
+.data-li label:hover{
+    cursor: pointer;
+}
+.data-setting .setting-action{
+    margin-bottom: 20px;
+}
+/*时间范围*/
+.time-setting {
+    margin-top:40px;
+}
+.time-setting .setting-action{
+    margin-bottom: 40px;
+}
+.time-setting .setting-action input{
+    width: 160px;
+}
+/*消息接收*/
+.message-setting{
+    margin-top:40px;
+}
+.message-setting .setting-action{
+    margin-bottom: 20px;
+}
+.message-setting .setting-action>div{
+    margin-bottom: 20px;
+}
+.message-setting .setting-action input{
+    width: 160px;
+}
+/*告警条件*/
+.alarm-setting{
+    margin-top:40px;
+}
+.alarm-setting .setting-action{
+    margin-bottom: 20px;
+}
+.alarm-setting .setting-action>div{
+    margin-bottom: 20px;
+}

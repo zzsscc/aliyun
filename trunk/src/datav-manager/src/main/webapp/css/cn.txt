@@ -1,0 +1,14 @@
+{
+	"sLengthMenu" : "显示 <select><option value=\"20\">20</option><option value=\"50\">50</option><option value=\"100\">100</option></select> 条记录",
+	"sInfo" : "当前显示 (_START_ 至 _END_)，共有 _TOTAL_ 条",
+	"oPaginate" : {
+		"sNext" : "下一页",
+		"sPrevious" : "上一页",
+		"sFirst" : "第一页",
+		"sLast" : "最后一页"
+	},
+	"sLoadingRecords": "加载中...",
+	"sZeroRecords": "对不起，查询不到相关数据！",
+	"sInfoEmpty": "当前显示 (_START_ 至 _END_)，共有 _TOTAL_ 条",
+	"sSearch" : "搜索:"
+}

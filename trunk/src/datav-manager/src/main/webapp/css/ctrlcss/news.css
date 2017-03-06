@@ -1,0 +1,515 @@
+/*通用样式*/
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width:1200px;
+    margin:0 auto;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+a:link{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+.clearfix:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+button{
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+/*头部*/
+#header{
+    color:#fff;
+    background-color: #293038;
+    font-size: 12px;
+}
+#header .active{
+    color: #65bfff;
+    border-bottom: 5px solid #65bfff;
+}
+.logo-wrap{
+    width: 155px;
+    float: left;
+}
+.logo{
+    height: 34px;
+    width:32px;
+    margin-top: 8px;
+    float: left;
+    background: url("../../img/ctrl-LOGO.png") no-repeat;
+}
+.title{
+    height:50px;
+    float: right;
+    line-height: 50px;
+}
+
+.nav{
+    float: left;
+    margin-left:100px;
+}
+/*小改*/
+.nav>li{
+    float: left;
+    margin-right:30px;
+}
+.nav>li>a{
+    display: block;
+    width: 80px;
+    height: 50px;
+    line-height:50px;
+    text-align: center;
+    box-sizing: border-box;
+    color:#fff;
+}
+.nav>li>a:hover{
+    color:#65bfff;
+    border-bottom: 5px solid #65bfff;
+}
+.nav li a.active{
+    color:#65bfff;
+    border-bottom: 5px solid #65bfff;
+}
+.user-inf{
+    height:50px;
+    float:right;
+    line-height: 50px;
+}
+/*开始添加*/
+.da{
+    position: relative;
+}
+.da-drop-down{
+    display: none;
+    position: absolute;
+    left: -12px;
+    background-color: #343d47;
+    z-index:100;
+}
+.da-drop-down>li{
+    width: 80px;
+    height: 31px;
+    line-height: 32px;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0 12px;
+    border-bottom: 1px solid #424c56;
+}
+.da-drop-down>li a{
+    color:#fff;
+}
+.da-drop-down>li:last-child{
+    border-bottom:0;
+}
+.da-drop-down>li a:hover{
+    color:#65bfff;
+}
+.da:hover .da-drop-down{
+    display: block;
+}
+/*添加结束*/
+/*字体*/
+@font-face {
+    font-family: 'iconfont';
+    src: url('//at.alicdn.com/t/font_1476671289_2358418.eot'); /* IE9*/
+    src: url('//at.alicdn.com/t/font_1476671289_2358418.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('//at.alicdn.com/t/font_1476671289_2358418.woff') format('woff'), /* chrome、firefox */
+    url('//at.alicdn.com/t/font_1476671289_2358418.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('//at.alicdn.com/t/font_1476671289_2358418.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family:'iconfont';
+    font-style:normal;
+}
+/*帮助*/
+.help{
+    color: #333;
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 20px;
+}
+.helpText{
+    float: right;
+    cursor: pointer;
+}
+.helpText i{
+    margin-right: 10px;
+}
+/*垃圾箱*/
+.Dustbin{
+    color: #333;
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+.DustbinText{
+    float: left;
+    cursor: pointer;
+    margin-right: 25px;
+}
+.DustbinText i{
+    margin-left: 10px;
+}
+#checkbox-8-3{
+    display: none;
+}
+/*中间列表*/
+.l-wrap{
+
+}
+/*列表标题*/
+.list-title{
+    height: 30px;
+    box-sizing: border-box;
+    border:1px solid #e6e6e6;
+    color:#999;
+    background-color: #f7f7f7;
+    font-size: 12px;
+    line-height: 30px;
+}
+.keyword{
+    margin-left:50px;
+}
+.website{
+    margin-left:334px;
+}
+.filtering-rules{
+    margin-left: 262px;
+}
+.creat-time{
+    margin-left:130px;
+}
+.control{
+    margin-left:133px;
+}
+/*列表li*/
+.item{
+    height: 45px;
+    line-height:45px;
+    box-sizing: content-box;
+    font-size: 12px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.item>div{
+    float: left;
+}
+.change{
+    width: 45px;
+    height: 20px;
+    margin-top:10px;
+    margin-bottom: 10px;
+    margin-right:10px;
+    float: left;
+    box-sizing: border-box;
+    border:1px solid #e6e6e6;
+    background-color: #f7f7f7;
+    border-radius: 3px;
+    line-height: 20px;
+    text-align: center;
+}
+.change:hover{
+    cursor: pointer;
+}
+.del{
+    width: 45px;
+    height: 20px;
+    margin-top:10px;
+    margin-bottom: 10px;
+    float: left;
+    box-sizing: border-box;
+    border:1px solid #e6e6e6;
+    background-color: #f7f7f7;
+    border-radius: 3px;
+    line-height: 20px;
+    text-align: center;
+}
+.del:hover{
+    cursor:pointer;
+}
+
+/*各个宽度*/
+.item-checkbox{
+    width:50px;
+    height:40px;
+    text-align: center;
+}
+.item-checkbox>input[type='checkbox']{
+    margin-top:14px;
+}
+.item-name{
+    width:360px;
+}
+.item-source{
+    width: 310px;
+}
+.item-rule{
+    width:180px;
+}
+.item-twrap{
+    width: 175px;
+}
+
+/*列表最后一行*/
+.list-end{
+    height: 40px;
+    line-height:40px;
+    box-sizing: border-box;
+    font-size: 12px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.list-end>div{
+    float: left;
+}
+.end-ctrl>div{
+    float: left;
+}
+.del-all{
+    width: 60px;
+    height: 20px;
+    margin-top:10px;
+    margin-bottom: 10px;
+    margin-right:10px;
+    float: left;
+    box-sizing:content-box;
+    border:1px solid #e6e6e6;
+    background-color: #f7f7f7;
+    border-radius: 3px;
+    line-height: 20px;
+    text-align: center;
+}
+.del-all:hover{
+    cursor:pointer;
+}
+.add-keyword{
+    width: 60px;
+    height: 20px;
+    margin-top:10px;
+    margin-bottom: 10px;
+    margin-right:10px;
+    float: left;
+    box-sizing:content-box;
+    border:1px solid #e6e6e6;
+    background-color: #f7f7f7;
+    border-radius: 3px;
+    line-height: 20px;
+    text-align: center;
+}
+.add-keyword:hover{
+    cursor:pointer;
+}
+
+.page-wrap {
+    width: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right:20px;
+    float: right;
+}
+.page-wrap li{
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    float: left;
+    line-height: 20px;
+    text-align: center;
+    border:1px solid #e6e6e6;
+    background-color: #f7f7f7;
+}
+.page-wrap li:hover{
+    cursor: pointer;
+}
+.page-wrap .active{
+    background-color: #fff;
+}
+/*蒙版*/
+#main .mask{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#000;
+    opacity:0.2;
+    filter:alpha(opacity=20);
+    z-index:9999;
+}
+/*公用弹窗*/
+.dialog{
+    box-sizing: border-box;
+    position:fixed;
+    vertical-align:middle;
+    top: 50%;
+    left: 50%;
+    background: #fff;
+    z-index:10000;
+    border: 1px solid #e6e6e6;
+    padding:18px 33px;
+}
+.dialog-title{
+    box-sizing: border-box;
+    height: 32px;
+    font-size: 14px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.dialog-title-word{
+    float: left;
+}
+.dialog-title i{
+    float: right;
+    color:#b3b3b3;
+    cursor: pointer;
+}
+.dialog-center{
+    border-bottom: 1px solid #e6e6e6;
+}
+.dialog-bottom{
+    margin-top: 20px;
+}
+.dialog-bottom button{
+    width: 60px;
+    height: 32px;
+    float: right;
+    border: 1px solid #e6e6e6;
+    margin-left: 20px;
+}
+.dialog-bottom .blue-button{
+    background: #65bfff;
+    color: #fff;
+}
+.dialog-bottom .white-button{
+    background: #fff;
+    color: #000;
+}
+/*帮助对话框*/
+.help-dialog{
+    width:660px;
+    height:518px;
+}
+.help-dialog .dialog-center{
+    font-size: 14px;
+    box-sizing: border-box;
+    padding-top: 40px;
+}
+.help-dialog .dialog-center li{
+    margin-bottom: 20px;
+}
+.help-dialog .dialog-center li:last-child{
+    margin-bottom: 40px;
+}
+.help-dialog .dialog-center li a{
+    color:#65bfff;
+}
+/*过滤规则对话框*/
+.setup-dialog,.add-dialog{
+    width:660px;
+    height:448px;
+}
+.setup-dialog .dialog-center,.add-dialog .dialog-center{
+    font-size: 14px;
+    box-sizing: border-box;
+    padding-top: 40px;
+}
+.dialog-center-top{
+    height: 60px;
+    margin-bottom: 40px;
+}
+.dialog-center-left{
+    width: 60px;
+    text-align: right;
+    float: left;
+    margin-right: 40px;
+}
+.dialog-center-left1{
+    margin-top: 8px;
+}
+.dialog-center-right{
+    float: left;
+}
+.dialog-center-right .zhengzeinput{
+    box-sizing: border-box;
+    height: 32px;
+    width: 490px;
+    border: 1px solid #b3b3b3;
+    padding-left: 5px;
+}
+.dialog-center-right .zhengzetishi{
+    margin-top: 8px;
+    color: #b3b3b3;
+    font-size: 12px;
+}
+.radios{
+    margin-bottom: 40px;
+}
+.radios label{
+    vertical-align: middle;
+    margin-right: 60px;
+}
+.radios input{
+    vertical-align: middle;
+    margin-right: 15px;
+}
+.checkboxs{
+    width: 490px;
+    margin-bottom: 40px;
+}
+.checkboxSel input{
+    vertical-align: middle;
+    margin-right: 15px;
+}
+.checkboxSel label{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 53px;
+    margin-bottom: 15px;
+}
+.checkboxs > label{
+    vertical-align: middle;
+}
+.checkboxs > label input{
+    vertical-align: middle;
+    margin-right: 15px;
+}
+/*删除规则弹窗*/
+.del-rule-dialog{
+    width:522px;
+    height:240px;
+}
+.del-word{
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+/*批量删除弹窗*/
+.del-allrule-dialog{
+    width:522px;
+    height:240px;
+}
+.del-word{
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+/*垃圾箱弹窗*/
+.dustbin-dialog{
+    width:600px;
+    height:255px;
+}
+/*带蒙版的弹窗*/
+.popup{
+    display: none;
+}

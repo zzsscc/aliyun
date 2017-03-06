@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>竞品影响分析</title>
+    <link rel="stylesheet" href="./css/competitorcss/competitor.css">
+</head>
+<body>
+    <div id="header">
+        <div class="content">
+            <div class="h-title">竞品影响分析</div>
+            <div class="logo"></div>
+        </div>
+    </div>
+    <div id="main">
+        <div class="content clearfix">
+            <!--竞品基础信息-->
+            <div class="left ie-box">
+                <div class="sub-title">竞品基础信息</div>
+                <!--固定图片-->
+                <div class="bg">
+                    <!--专题-->
+                    <div class="ps-topic"></div>
+                    <!--主竞品-->
+                    <!--没用的img-ct，只是为了方便js查找dom元素-->
+                    <div class="img-ct">
+                        <div class="product m-product-one"></div>
+                        <div class="product s-product-one"></div>
+                        <div class="product s-product-two"></div>
+                        <div class="product s-product-three"></div>
+                        <div class="product m-product-two"></div>
+                        <div class="product s-product-four"></div>
+                        <div class="product m-product-three"></div>
+                    </div>
+                    <!--文字-->
+                    <div class="island island1">
+                        <div class="i-title"></div>
+                        <!--<div class="score"><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe602</i><span class="score-num">9.0分</span></div>-->
+                    </div>
+                    <!--大陈岛-->
+                    <div class="island island2">
+                        <div class="i-title"></div>
+                        <!--<div class="score"><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><span class="score-num">10.0分</span></div>-->
+                    </div>
+                    <!--大沙岱-->
+                    <div class="island island3">
+                        <div class="i-title"></div>
+                        <!--<div class="score"><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe602</i><span class="score-num">9.0分</span></div>-->
+                    </div>
+                    <!--东引岛-->
+                    <div class="island island4">
+                        <div class="i-title"></div>
+                        <!--<div class="score"><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><span class="score-num">9.5分</span></div>-->
+                    </div>
+                    <!--地点-->
+                    <div class="port port1"></div>
+                    <div class="port port2"></div>
+                    <div class="port port3"></div>
+                    <div class="port port4"></div>
+                </div>
+            </div>
+            <!--中间-->
+            <div class="center">
+                <!--竞品动态-->
+                <div class="dynamic-state ie-box">
+                    <div class="sub-title">竞品动态</div>
+                    <div class="activity-wrap clearfix">
+                        <div class="activity"></div>
+                    </div>
+                    <div class="list clearfix">
+                        <ul class="list-ul">
+                            <!--<li class="clearfix">-->
+                                <!--<div class="list-num">1</div>-->
+                                <!--<div class="list-text">[赞]//@雷希颖：去年在澳洲时也是这样的，只...</div>-->
+                                <!--<div class="list-date">9.4</div>-->
+                                <!--<div class="channel">珍珠美人</div>-->
+                            <!--</li>-->
+
+                        </ul>
+                    </div>
+
+                </div>
+                <!--竞品舆情指数-->
+                <div class="ps-num ie-box">
+                    <div class="sub-title">竞品舆情指数</div>
+                    <div id="ps-map"></div>
+                </div>
+            </div>
+            <!--情感值对比-->
+            <div class="right ie-box">
+                <div class="sub-title">情感值对比</div>
+                <div class="emotion">
+                    <div class="em">
+                        <div id="em1" class="emh"></div>
+                        <div class="total clearfix">
+                            <!--<div class="total-l">正面舆情 ：80条</div>-->
+                            <!--<div class="total-r">负面舆情 ：1条</div>-->
+                        </div>
+                    </div>
+                    <div class="em">
+                        <div id="em2" class="emh"></div>
+                        <div class="total clearfix">
+                            <!--<div class="total-l">正面舆情 ：28条</div>-->
+                            <!--<div class="total-r">负面舆情 ：2条</div>-->
+                        </div>
+                    </div>
+                    <div class="em">
+                        <div id="em3" class="emh"></div>
+                        <div class="total clearfix">
+                            <!--<div class="total-l">正面舆情 ：46条</div>-->
+                            <!--<div class="total-r">负面舆情 ：2条</div>-->
+                        </div>
+                    </div>
+                    <div class="em">
+                        <div id="em4" class="emh"></div>
+                        <div class="total clearfix">
+                            <!--<div class="total-l">正面舆情 ：65条</div>-->
+                            <!--<div class="total-r">负面舆情 ：1条</div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+    <script src="js/lib/echarts.js"></script>
+    <script src="js/lib/vue.js"></script>
+    <script src="./js/lib/jquery-2.2.3.min.js"></script>
+    <script src="./js/competitorjs/competitor.js"></script>
+    <script src="./js/competitorjs/competitorApi.js"></script>
+
+</body>
+</html>

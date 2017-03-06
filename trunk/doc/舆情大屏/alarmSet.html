@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>告警设置</title>
+    <link rel="stylesheet" href="./css/ctrlcss/alarmSet.css">
+</head>
+<body>
+<div id="header">
+    <div class="container clearfix">
+        <div class="logo-wrap clearfix">
+            <div class="logo"></div>
+            <div class="title">品牌舆情控制台</div>
+        </div>
+        <ul class="nav clearfix">
+            <li><a href="./keyword-set.html">关键词设置</a></li>
+            <li><a href="./news.html">新闻过滤设置</a></li>
+            <li><a href="./propagation-analysis-set.html">传播分析设置</a></li>
+            <li><a href="./product-set.html">竞品设置</a></li>
+            <li><a href="./alarmSet.html" class="active">告警设置</a></li>
+            <li class="da"><a href="#">可视化大屏</a>
+                <ul class="da-drop-down">
+                    <li><a href="competitor.html" target="_blank">竞品影响分析</a></li>
+                    <li class="da-active"><a href="focusNews.html" target="_blank">媒体传播分析</a></li>
+                    <li><a href="tiantai.html" target="_blank">自身品牌舆情</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="user-inf">欢迎您，<span>admin</span> | <span>退出</span></div>
+    </div>
+</div>
+<div id="main">
+    <div class="container">
+        <div class="data-setting setting clearfix">
+            <div class="setting-title">数据范围</div>
+            <div class="setting-action">
+                <ul class="data-ul">
+                    <li class="data-li">
+                        <input type="radio" id="new" name="source">&nbsp;<label for="new">新闻</label>
+                    </li>
+                    <li class="data-li">
+                        <input type="radio" id="wb" name="source">&nbsp;<label for="wb">微博</label>
+                    </li>
+                    <li class="data-li">
+                        <input type="radio" id="forum" name="source">&nbsp;<label for="forum">论坛</label>
+                    </li>
+                    <li class="data-li">
+                        <input type="radio" id="wc" name="source">&nbsp;<label for="wc">微信</label>
+                    </li>
+                    <li class="data-li">
+                        <input type="radio" id="tb" name="source">&nbsp;<label for="tb">贴吧</label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="time-setting setting clearfix">
+            <div class="setting-title">时间范围</div>
+            <div class="setting-action">
+                <input type="date">&nbsp;至&nbsp;<input type="date">
+            </div>
+        </div>
+        <div class="message-setting setting clearfix">
+            <div class="setting-title">消息接收</div>
+            <div class="setting-action">
+                <div class="mes">短信</div>
+                <div><input type="text"></div>
+                <div class="email">邮箱</div>
+                <div><input type="text"></div>
+            </div>
+        </div>
+        <div class="alarm-setting setting clearfix">
+            <div class="setting-title">告警条件</div>
+            <div class="setting-action">
+                <div>舆情同期增长百分比</div>
+                <div><input type="text">&nbsp;<span style="font-size:16px">%</span></div>
+                <div>舆情同期增长数量</div>
+                <div><input type="text"></div>
+                <div>品牌情感值低于</div>
+                <div><input type="text"></div>
+            </div>
+        </div>
+        <div class="btn">提交设置</div>
+    </div>
+</div>
+
+
+<script src="js/lib/jquery-2.2.3.min.js"></script>
+
+</body>
+</html>

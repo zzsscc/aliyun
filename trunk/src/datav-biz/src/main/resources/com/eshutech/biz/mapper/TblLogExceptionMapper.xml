@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.eshutech.biz.mapper.TblLogExceptionMapper" >
+  <resultMap id="BaseResultMap" type="com.eshutech.biz.entity.TblLogException" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="logger_type" property="loggerType" jdbcType="VARCHAR" />
+    <result column="logger_desc" property="loggerDesc" jdbcType="VARCHAR" />
+    <result column="logger_seesion" property="loggerSeesion" jdbcType="VARCHAR" />
+    <result column="logger_linkid" property="loggerLinkid" jdbcType="VARCHAR" />
+    <result column="logger_ip" property="loggerIp" jdbcType="VARCHAR" />
+    <result column="logger_agent" property="loggerAgent" jdbcType="VARCHAR" />
+    <result column="logger_content" property="loggerContent" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, logger_type, logger_desc, logger_seesion, logger_linkid, logger_ip, logger_agent, 
+    logger_content, create_time
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.eshutech.biz.entity.TblLogExceptionExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tbl_log_exception
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.eshutech.biz.entity.TblLogExceptionExample" >
+    delete from tbl_log_exception
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.eshutech.biz.entity.TblLogException" >
+    insert into tbl_log_exception (id, logger_type, logger_desc, 
+      logger_seesion, logger_linkid, logger_ip, 
+      logger_agent, logger_content, create_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{loggerType,jdbcType=VARCHAR}, #{loggerDesc,jdbcType=VARCHAR}, 
+      #{loggerSeesion,jdbcType=VARCHAR}, #{loggerLinkid,jdbcType=VARCHAR}, #{loggerIp,jdbcType=VARCHAR}, 
+      #{loggerAgent,jdbcType=VARCHAR}, #{loggerContent,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.eshutech.biz.entity.TblLogException" >
+    insert into tbl_log_exception
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="loggerType != null" >
+        logger_type,
+      </if>
+      <if test="loggerDesc != null" >
+        logger_desc,
+      </if>
+      <if test="loggerSeesion != null" >
+        logger_seesion,
+      </if>
+      <if test="loggerLinkid != null" >
+        logger_linkid,
+      </if>
+      <if test="loggerIp != null" >
+        logger_ip,
+      </if>
+      <if test="loggerAgent != null" >
+        logger_agent,
+      </if>
+      <if test="loggerContent != null" >
+        logger_content,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="loggerType != null" >
+        #{loggerType,jdbcType=VARCHAR},
+      </if>
+      <if test="loggerDesc != null" >
+        #{loggerDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="loggerSeesion != null" >
+        #{loggerSeesion,jdbcType=VARCHAR},
+      </if>
+      <if test="loggerLinkid != null" >
+        #{loggerLinkid,jdbcType=VARCHAR},
+      </if>
+      <if test="loggerIp != null" >
+        #{loggerIp,jdbcType=VARCHAR},
+      </if>
+      <if test="loggerAgent != null" >
+        #{loggerAgent,jdbcType=VARCHAR},
+      </if>
+      <if test="loggerContent != null" >
+        #{loggerContent,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.eshutech.biz.entity.TblLogExceptionExample" resultType="java.lang.Integer" >
+    select count(*) from tbl_log_exception
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tbl_log_exception
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.loggerType != null" >
+        logger_type = #{record.loggerType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.loggerDesc != null" >
+        logger_desc = #{record.loggerDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.loggerSeesion != null" >
+        logger_seesion = #{record.loggerSeesion,jdbcType=VARCHAR},
+      </if>
+      <if test="record.loggerLinkid != null" >
+        logger_linkid = #{record.loggerLinkid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.loggerIp != null" >
+        logger_ip = #{record.loggerIp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.loggerAgent != null" >
+        logger_agent = #{record.loggerAgent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.loggerContent != null" >
+        logger_content = #{record.loggerContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tbl_log_exception
+    set id = #{record.id,jdbcType=INTEGER},
+      logger_type = #{record.loggerType,jdbcType=VARCHAR},
+      logger_desc = #{record.loggerDesc,jdbcType=VARCHAR},
+      logger_seesion = #{record.loggerSeesion,jdbcType=VARCHAR},
+      logger_linkid = #{record.loggerLinkid,jdbcType=VARCHAR},
+      logger_ip = #{record.loggerIp,jdbcType=VARCHAR},
+      logger_agent = #{record.loggerAgent,jdbcType=VARCHAR},
+      logger_content = #{record.loggerContent,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

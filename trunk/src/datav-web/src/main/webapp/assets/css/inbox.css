@@ -1,0 +1,133 @@
+/*我修改的*/
+.list-group-item{
+  display: none;
+}
+
+.celltable{
+  /*display: none !important;*/
+}
+
+.celldetail{
+  /*display: none !important;*/
+}
+
+.ng-scope{
+  background-color: rgb(249,249,249);
+  border: 1px solid rgb(235,235,235);
+  margin: 15px !important;
+}
+
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.modal {
+    z-index: 2050 !important;
+    position: fixed;
+    outline: 0;
+}
+
+.modal-dialog {
+    z-index: 2200;
+    position: relative;
+    left:0 !important;
+    /*width:50px !important;*/
+    margin-top: 300px;
+    padding-bottom: 0px;
+}
+
+.modal-content {
+    background-clip: padding-box;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    outline: 0 none;
+    position: relative;
+    width:60px;
+    margin:auto;
+    height:50px;
+}
+
+.modal-backdrop.in{
+  opacity: .5;
+}
+
+.modal-backdrop{
+  z-index: 2040 !important;
+}
+
+.nodatalist{
+    font-size: 40px;
+    text-align: center;
+    padding-top: 200px;
+}
+/*分页*/
+.page-wrap {
+    /*margin-top: 10px;*/
+    margin-bottom: 0px;
+    /*margin-right:20px;*/
+    float: right;
+}
+.page-wrap li{
+    list-style: none;
+    padding: 0;
+    cursor: pointer;
+}
+.page-wrap li{
+    list-style: none;
+    padding: 0;
+    cursor: pointer;
+}
+.page-wrap li a{
+  color:black;
+}
+.page-wrap li a:hover{
+  /*color:green;*/
+  text-decoration: none;
+}
+.page-wrap li a:visited{
+  text-decoration: none;
+}
+.page-wrap li a:focus{
+  text-decoration: none;
+}
+.page-wrap .first,.page-wrap .last{
+    width: 50px;
+    height: 30px;
+    box-sizing: content-box;
+    float: left;
+    line-height: 30px;
+    text-align: center;
+    border:1px solid #e6e6e6;
+    background-color: #f7f7f7;
+}
+.page-wrap .prev,.page-wrap .next{
+    width: 60px;
+    height: 30px;
+    box-sizing: content-box;
+    float: left;
+    line-height: 30px;
+    text-align: center;
+    border:1px solid #e6e6e6;
+    border-left:none;
+    background-color: #f7f7f7;
+}
+.page-wrap .next{
+    border-right:none;
+}
+.page-wrap .page{
+    width: 30px;
+    height: 30px;
+    box-sizing: content-box;
+    float: left;
+    line-height: 30px;
+    text-align: center;
+    border:1px solid #e6e6e6;
+    border-left:none;
+    background-color: #f7f7f7;
+}
+.page-wrap .active{
+    background-color: #fff;
+}

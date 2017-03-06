@@ -1,0 +1,46 @@
+{
+  "success": true,
+  "errorCode": null,
+  "other": null,
+  "msgCode": null,
+  "msgInfo": null,
+  "messages": [ ],
+  "errorMessages": [ ],
+  "result": [
+    {
+      "id": 3,
+      "name": "新闻",
+      "langType": "ch"
+    },
+    {
+      "id": 26,
+      "name": "论坛",
+      "langType": "ch"
+    },
+    {
+      "id": 30,
+      "name": "贴吧",
+      "langType": "ch"
+    },
+    {
+      "id": 34,
+      "name": "微博",
+      "langType": "ch"
+    },
+    {
+      "id": 35,
+      "name": "微信",
+      "langType": "ch"
+    },
+    {
+      "id": 37,
+      "name": "政府",
+      "langType": "ch"
+    },
+    {
+      "id": 38,
+      "name": "视频",
+      "langType": "ch"
+    }
+  ]
+}

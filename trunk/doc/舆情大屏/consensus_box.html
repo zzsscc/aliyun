@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>舆情中心-舆情列表</title>
+    <link rel="stylesheet" href="css/ctrlcss/consensus_box.css">
+    <script type="text/javascript" src="js/ctrljs/consensus_box.js">
+    </script>
+
+</head>
+<body onload=getboxsinfo()>
+<!-- <body> -->
+<!-- 标题 -->
+<div id="header">
+
+  <div class="container">
+    <div class="logo-wrap clearfix">
+      <div class="logo"></div>
+      <div class="title">品牌舆情控制台</div>
+    </div>
+    <ul class="nav clearfix">
+      <li><a href="#" >可视化大屏</a></li>
+      <li><a href="#" class="active">舆情盒子</a></li>
+      <li><a href="#" >设置</a></li>
+    </ul>
+    <div class="user-inf">
+      欢迎您，
+      <span>admin</span>
+       |
+      <span>退出</span>
+    </div>
+    <div style="height:1px; margin-top:-1px;clear:both;overflow:hidden;" /></div>
+  </div>
+
+</div>
+
+<div id="main">
+    <div class="container">
+        <!-- <div class="center-title clearfix">
+            <div class="center-nav">
+                <ul class="clearfix">
+                    <li class="active"><a href="public-sentiment-analyze.html">舆情分析</a></li>
+                    <li><a href="public-sentiment-list.html" class="active">舆情列表</a></li>
+                    <li><a href="propagation-path.html">传播路径</a></li>
+                    <li class="last-li"><a href="competitive-products-analyze.html" >竞品分析</a></li>
+                </ul>
+            </div>
+            <div class="current-location">
+                <span>当前位置</span>:<span class='location'>舆情中心</span>><span class="z-location">舆情列表</span>
+            </div>
+        </div> -->
+        <!--舆情-->
+        <div class="public-sentiment clearfix">
+            <!--舆情左边-->
+            <div class="public-sentiment-l">
+                <!--搜索框-->
+                <div class="search-box">
+                    <input type="text" placeholder="搜索">
+                    <i class="iconfont">&#xe600</i>
+                </div>
+                <!--舆情信息wrap-->
+
+                <!--媒体分类wrap-->
+                <div class="media-sort-wrap">
+                    <hr>
+                    <!--媒体分类title-->
+                    <div class="media-sort-title">媒体分类</div>
+                    <!--媒体分类-->
+                    <ul class="mediat-sort clearfix">
+                      <!-- TODO -->
+                        <li id="newsbtn" class="clearfix">
+                          <div class="icon-clolor skyblue">
+                          </div>
+                          <div id="mediat-news" class="mediat-name">新闻</div>
+                        </li>
+
+                        <li id="weibobtn" class="mediabtn clearfix"><div class="icon-clolor red"></div><div class="mediat-name">微博</div></li>
+                        <li id="bbsbtn" class="mediabtn clearfix"><div class="icon-clolor blue"></div><div class="mediat-name">论坛</div></li>
+                        <li id="tiebabtn" class="mediabtn clearfix last-li"><div class="icon-clolor yellow"></div><div class="mediat-name">贴吧</div></li>
+                    </ul>
+                </div>
+                <!--关键词wrap-->
+                <div class="key-word-wrap">
+                    <hr>
+                    <!--关键词title-->
+                    <div class="key-word-title">关键词</div>
+                    <!--关键词分类-->
+                    <ul class="key-word clearfix">
+                        <li >
+                          <i class="iconfont">&#xe605</i>
+                          <!-- <div class="cha">×</div> -->
+                          <div class="keywords">旅游</div>
+                        </li>
+
+                        <li>
+                          <i class="iconfont">&#xe605</i>
+                          <div class="keywords">椒江</div>
+                        </li>
+
+                        <li>
+                          <i class="iconfont">&#xe605</i>
+                          <!-- <div class="cha">×</div> -->
+                          <div class="keywords">天台山</div>
+                        </li>
+
+                        <li>
+                          <i class="iconfont">&#xe605</i>
+                          <!-- <div class="cha">×</div> -->
+                          <div class="keywords">台州</div>
+                        </li>
+                        <li>
+                          <i class="iconfont">&#xe605</i>
+                          <!-- <div class="cha">×</div> -->
+                          <div class="keywords">大陈岛</div>
+                        </li>
+                        <li>
+                          <i class="iconfont">&#xe605</i>
+                          <!-- <div class="cha">×</div> -->
+                          <div class="keywords">一江山岛</div>
+                        </li>
+                        <li>
+                          <i class="iconfont">&#xe605</i>
+                          <!-- <div class="cha">×</div> -->
+                          <div class="keywords">魅力</div>
+                        </li>
+                        <li>
+                          <i class="iconfont">&#xe605</i>
+                          <!-- <div class="cha">×</div> -->
+                          <div class="keywords">杭州西湖</div>
+                        </li>
+                    </ul>
+                </div>
+                <!--关键词设置-->
+                <!-- <div class="key-word-set-wrap clearfix">
+                    <div class="key-word-set-title">关键词设置 : </div>
+                    <ul class="key-word-set clearfix">
+                        <li>添加</li>
+                        <li>删除</li>
+                    </ul>
+                </div> -->
+            </div>
+            <div class="public-sentiment-r">
+               <!--舆情盒子title-->
+                <div class="public-sentiment-box-title clearfix">
+                    <div class="public-sentiment-box-title-l">
+                        舆情盒子
+                    </div>
+                    <div class="public-sentiment-box-title-r">
+                        <i onClick="getboxsinfo()" class="iconfont" style="margin-right: 30px">&#xe602</i>
+                        <!-- <i class="iconfont">&#xe604</i> -->
+                    </div>
+                </div>
+                <!--舆情盒子主体-->
+                <ul class="public-sentiment-box-main">
+                    <li class="clearfix">
+                      <div class="box-checkbox">
+                        <input class = "checks" type="checkbox">
+                      </div>
+                      <div id="keyword1" class="bug-box-key-word box-key-word">
+
+                      </div>
+                      <div id="title1" class="box-news-title">
+                      </div>
+                      <!-- url地址 -->
+                      <div id="url1" class="url"></div>
+                      <div id="time1" class="box-news-time">
+                      </div>
+                      <div class="box-news-source blue clearfix">
+                    </li>
+
+                    <li class="clearfix">
+                      <div class="box-checkbox">
+                        <input class = "checks" type="checkbox">
+                      </div>
+                      <div id="keyword2" class="box-key-word">
+                      </div>
+                      <div  id="title2" class="box-news-title">
+                      </div>
+                      <div id="url2" class="url"></div>
+                      <div id="time2" class="box-news-time">
+                      </div>
+                      <div class="box-news-source blue clearfix">
+                      </li>
+                    <li class="clearfix"><div class="box-checkbox"><input class = "checks" type="checkbox"></div><div id="keyword3" class="box-key-word"></div><div id="title3" class="box-news-title"></div><div id="url3" class="url"></div><div id="time3" class="box-news-time"></div><div class="box-news-source sky-blue clearfix"></li>
+                    <li class="clearfix"><div class="box-checkbox"><input class = "checks" type="checkbox"></div><div id="keyword4" class="box-key-word"></div><div id="title4" class="box-news-title"></div><div id="url4" class="url"></div><div id="time4" class="box-news-time"></div><div class="box-news-source sky-blue clearfix"></li>
+                    <li class="clearfix"><div class="box-checkbox"><input class = "checks" type="checkbox"></div><div id="keyword5" class="box-key-word"></div><div id="title5" class="box-news-title"></div><div id="url5" class="url"></div><div id="time5" class="box-news-time"></div><div class="box-news-source sky-blue clearfix"></li>
+                    <li class="clearfix"><div class="box-checkbox"><input class = "checks" type="checkbox"></div><div id="keyword6" class="box-key-word"></div><div id="title6" class="box-news-title"></div><div id="url6" class="url"></div><div id="time6" class="box-news-time"></div><div class="box-news-source red clearfix"></li>
+                    <li class="clearfix"><div class="box-checkbox"><input class = "checks" type="checkbox"></div><div id="keyword7" class="box-key-word"></div><div id="title7" class="box-news-title"></div><div id="url7" class="url"></div><div id="time7" class="box-news-time"></div><div class="box-news-source red clearfix"></li>
+                    <li class="clearfix"><div class="box-checkbox"><input class = "checks" type="checkbox"></div><div id="keyword8" class="box-key-word"></div><div id="title8" class="box-news-title"></div><div id="url8" class="url"></div><div id="time8" class="box-news-time"></div><div class="box-news-source yellow clearfix"></li>
+                    <li class="clearfix"><div class="box-checkbox"><input class = "checks" type="checkbox"></div><div id="keyword9" class="box-key-word"></div><div id="title9" class="box-news-title"></div><div id="url9" class="url"></div><div id="time9" class="box-news-time"></div><div class="box-news-source sky-blue clearfix"></li>
+                    <li class="clearfix"><div class="box-checkbox"><input class = "checks" type="checkbox"></div><div id="keyword10" class="box-key-word"></div><div id="title10" class="box-news-title"></div><div id="url10" class="url"></div><div id="time10" class="box-news-time"></div><div class="box-news-source red clearfix"></li>
+                    <li class="clearfix"><div class="box-checkbox"><input class = "checks" type="checkbox"></div><div id="keyword11" draggable=""class="box-key-word"></div><div id="title11" class="box-news-title"></div><div id="url11" class="url"></div><div id="time11" class="box-news-time"></div><div class="box-news-source yellow clearfix"></li>
+                </ul>
+                <!--分页器-->
+                    <ul class="page-wrap clearfix">
+                        <li class="nextpage big-li">下一页</li>
+                        <li class ="page">10</li>
+                        <li class ="page">9</li>
+                        <li class ="page">8</li>
+                        <li class ="page">7</li>
+                        <li class ="page">6</li>
+                        <li class ="page">5</li>
+                        <li class ="page">4</li>
+                        <li class ="page">3</li>
+                        <li class ="page" >2</li>
+                        <li class="page page-active">1</li>
+                        <!-- <li class="big-li">上一页</li> -->
+                        <li class="lastpage big-li">上一页</li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <div class="container">
+        Copyright © 2016 杭州以数科技有限公司
+    </div>
+</div>
+<script src="js/lib/jquery-1.8.3.min.js"></script>
+
+<script>
+
+  // 页数
+    $('.page').on('click',function(){
+        $('.page-wrap li').removeClass('page-active');
+            $(this).addClass('page-active');
+        getboxsinfo();
+    });
+
+    // 媒体
+    $('.mediat-name').on('click',function(){
+            $(this).toggleClass('mediaselected');
+        // getboxsinfo();
+        test();
+    });
+    // 关键词
+    $('.key-word li').on('click',function(){
+            $(this).toggleClass('colorchange');
+            $(this).children(".keywords").toggleClass('keywordselected');
+        // getboxsinfo();
+        test();
+    });
+
+    $('.checks').on('click',function(){
+      if(this.checked){
+        //被选中
+        $(this).parent().parent().addClass('colorchange');
+      }
+      else{
+        $(this).parent().parent().removeClass('colorchange');
+      }
+    });
+
+    $('.box-news-title').on('click',function(){
+      var url = $(this).parent('').children(".url").html();
+      window.open(url);
+    });
+
+    // $('.lastpage').on('click',function(){
+    //   var nowpage = $(".page-active").html();
+    //     $('.page-wrap li').removeClass('page-active');
+    //         $(this).addClass('page-active');
+    //     getboxsinfo();
+    // });
+
+</script>
+
+
+
+</body>
+</html>

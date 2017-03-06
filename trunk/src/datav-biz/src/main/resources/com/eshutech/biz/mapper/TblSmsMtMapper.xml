@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.eshutech.biz.mapper.TblSmsMtMapper" >
+  <resultMap id="BaseResultMap" type="com.eshutech.biz.entity.TblSmsMt" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="mt_type" property="mtType" jdbcType="VARCHAR" />
+    <result column="mt_phone" property="mtPhone" jdbcType="VARCHAR" />
+    <result column="mt_msg" property="mtMsg" jdbcType="VARCHAR" />
+    <result column="mt_content" property="mtContent" jdbcType="VARCHAR" />
+    <result column="mt_linkid" property="mtLinkid" jdbcType="VARCHAR" />
+    <result column="mt_channel" property="mtChannel" jdbcType="VARCHAR" />
+    <result column="mt_status" property="mtStatus" jdbcType="VARCHAR" />
+    <result column="mt_time" property="mtTime" jdbcType="TIMESTAMP" />
+    <result column="mt_count" property="mtCount" jdbcType="VARCHAR" />
+    <result column="mt_id" property="mtId" jdbcType="VARCHAR" />
+    <result column="mo_status" property="moStatus" jdbcType="VARCHAR" />
+    <result column="mo_time" property="moTime" jdbcType="TIMESTAMP" />
+    <result column="mo_id" property="moId" jdbcType="VARCHAR" />
+    <result column="data_desc" property="dataDesc" jdbcType="VARCHAR" />
+    <result column="data_status" property="dataStatus" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, mt_type, mt_phone, mt_msg, mt_content, mt_linkid, mt_channel, mt_status, mt_time, 
+    mt_count, mt_id, mo_status, mo_time, mo_id, data_desc, data_status, create_time, 
+    modify_time
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.eshutech.biz.entity.TblSmsMtExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tbl_sms_mt
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.eshutech.biz.entity.TblSmsMtExample" >
+    delete from tbl_sms_mt
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.eshutech.biz.entity.TblSmsMt" >
+    insert into tbl_sms_mt (id, mt_type, mt_phone, 
+      mt_msg, mt_content, mt_linkid, 
+      mt_channel, mt_status, mt_time, 
+      mt_count, mt_id, mo_status, 
+      mo_time, mo_id, data_desc, 
+      data_status, create_time, modify_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{mtType,jdbcType=VARCHAR}, #{mtPhone,jdbcType=VARCHAR}, 
+      #{mtMsg,jdbcType=VARCHAR}, #{mtContent,jdbcType=VARCHAR}, #{mtLinkid,jdbcType=VARCHAR}, 
+      #{mtChannel,jdbcType=VARCHAR}, #{mtStatus,jdbcType=VARCHAR}, #{mtTime,jdbcType=TIMESTAMP}, 
+      #{mtCount,jdbcType=VARCHAR}, #{mtId,jdbcType=VARCHAR}, #{moStatus,jdbcType=VARCHAR}, 
+      #{moTime,jdbcType=TIMESTAMP}, #{moId,jdbcType=VARCHAR}, #{dataDesc,jdbcType=VARCHAR}, 
+      #{dataStatus,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.eshutech.biz.entity.TblSmsMt" >
+    insert into tbl_sms_mt
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="mtType != null" >
+        mt_type,
+      </if>
+      <if test="mtPhone != null" >
+        mt_phone,
+      </if>
+      <if test="mtMsg != null" >
+        mt_msg,
+      </if>
+      <if test="mtContent != null" >
+        mt_content,
+      </if>
+      <if test="mtLinkid != null" >
+        mt_linkid,
+      </if>
+      <if test="mtChannel != null" >
+        mt_channel,
+      </if>
+      <if test="mtStatus != null" >
+        mt_status,
+      </if>
+      <if test="mtTime != null" >
+        mt_time,
+      </if>
+      <if test="mtCount != null" >
+        mt_count,
+      </if>
+      <if test="mtId != null" >
+        mt_id,
+      </if>
+      <if test="moStatus != null" >
+        mo_status,
+      </if>
+      <if test="moTime != null" >
+        mo_time,
+      </if>
+      <if test="moId != null" >
+        mo_id,
+      </if>
+      <if test="dataDesc != null" >
+        data_desc,
+      </if>
+      <if test="dataStatus != null" >
+        data_status,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="modifyTime != null" >
+        modify_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="mtType != null" >
+        #{mtType,jdbcType=VARCHAR},
+      </if>
+      <if test="mtPhone != null" >
+        #{mtPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="mtMsg != null" >
+        #{mtMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="mtContent != null" >
+        #{mtContent,jdbcType=VARCHAR},
+      </if>
+      <if test="mtLinkid != null" >
+        #{mtLinkid,jdbcType=VARCHAR},
+      </if>
+      <if test="mtChannel != null" >
+        #{mtChannel,jdbcType=VARCHAR},
+      </if>
+      <if test="mtStatus != null" >
+        #{mtStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="mtTime != null" >
+        #{mtTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mtCount != null" >
+        #{mtCount,jdbcType=VARCHAR},
+      </if>
+      <if test="mtId != null" >
+        #{mtId,jdbcType=VARCHAR},
+      </if>
+      <if test="moStatus != null" >
+        #{moStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="moTime != null" >
+        #{moTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="moId != null" >
+        #{moId,jdbcType=VARCHAR},
+      </if>
+      <if test="dataDesc != null" >
+        #{dataDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="dataStatus != null" >
+        #{dataStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.eshutech.biz.entity.TblSmsMtExample" resultType="java.lang.Integer" >
+    select count(*) from tbl_sms_mt
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tbl_sms_mt
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.mtType != null" >
+        mt_type = #{record.mtType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mtPhone != null" >
+        mt_phone = #{record.mtPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mtMsg != null" >
+        mt_msg = #{record.mtMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mtContent != null" >
+        mt_content = #{record.mtContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mtLinkid != null" >
+        mt_linkid = #{record.mtLinkid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mtChannel != null" >
+        mt_channel = #{record.mtChannel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mtStatus != null" >
+        mt_status = #{record.mtStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mtTime != null" >
+        mt_time = #{record.mtTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.mtCount != null" >
+        mt_count = #{record.mtCount,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mtId != null" >
+        mt_id = #{record.mtId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.moStatus != null" >
+        mo_status = #{record.moStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.moTime != null" >
+        mo_time = #{record.moTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.moId != null" >
+        mo_id = #{record.moId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dataDesc != null" >
+        data_desc = #{record.dataDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dataStatus != null" >
+        data_status = #{record.dataStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.modifyTime != null" >
+        modify_time = #{record.modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tbl_sms_mt
+    set id = #{record.id,jdbcType=INTEGER},
+      mt_type = #{record.mtType,jdbcType=VARCHAR},
+      mt_phone = #{record.mtPhone,jdbcType=VARCHAR},
+      mt_msg = #{record.mtMsg,jdbcType=VARCHAR},
+      mt_content = #{record.mtContent,jdbcType=VARCHAR},
+      mt_linkid = #{record.mtLinkid,jdbcType=VARCHAR},
+      mt_channel = #{record.mtChannel,jdbcType=VARCHAR},
+      mt_status = #{record.mtStatus,jdbcType=VARCHAR},
+      mt_time = #{record.mtTime,jdbcType=TIMESTAMP},
+      mt_count = #{record.mtCount,jdbcType=VARCHAR},
+      mt_id = #{record.mtId,jdbcType=VARCHAR},
+      mo_status = #{record.moStatus,jdbcType=VARCHAR},
+      mo_time = #{record.moTime,jdbcType=TIMESTAMP},
+      mo_id = #{record.moId,jdbcType=VARCHAR},
+      data_desc = #{record.dataDesc,jdbcType=VARCHAR},
+      data_status = #{record.dataStatus,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      modify_time = #{record.modifyTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

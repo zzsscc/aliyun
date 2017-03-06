@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>帮助说明</title>
+    <style>
+        /*通用样式*/
+        *{
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        html,body,ul,li{
+            margin:0;
+            padding: 0;
+        }
+        .container{
+            width:1200px;
+            margin:0 auto;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        a:hover{
+            text-decoration: none;
+            color: #000;
+        }
+        a:link{
+            text-decoration: none;
+            color: #000;
+        }
+        li{
+            list-style: none;
+        }
+        .clearfix:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        button{
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+        input{
+            outline: none;
+            border: none;
+        }
+        /*头部*/
+        #header{
+            color:#fff;
+            background-color: #293038;
+            font-size: 12px;
+        }
+        #header .active{
+            color: #65bfff;
+            border-bottom: 5px solid #65bfff;
+        }
+        .logo-wrap{
+            width: 170px;
+            float: left;
+        }
+        .logo{
+            height: 34px;
+            width:32px;
+            margin-top: 8px;
+            float: left;
+            background: url("/img/ctrl-LOGO.png") no-repeat;
+        }
+        .title{
+            height:50px;
+            float: right;
+            line-height: 50px;
+            font-size: 16px;
+        }
+        .nav{
+            float: left;
+            margin-left:100px;
+        }
+        /*小改*/
+        .nav>li{
+            float: left;
+            margin-right:30px;
+        }
+        .nav>li>a{
+            display: block;
+            width: 80px;
+            height: 50px;
+            line-height:50px;
+            text-align: center;
+            box-sizing: border-box;
+            color:#fff;
+        }
+        .nav>li>a:hover{
+            color:#65bfff;
+            border-bottom: 5px solid #65bfff;
+        }
+        .nav li a.active{
+            color:#65bfff;
+            border-bottom: 5px solid #65bfff;
+        }
+        .user-inf{
+            height:50px;
+            float:right;
+            line-height: 50px;
+        }
+        /*中间*/
+        h1{
+            text-align: center;
+        }
+        p{
+            font-size: 16px;
+            line-height: 28px;
+            text-indent: 32px;
+        }
+        img{
+            max-width:1200px ;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <div class="container">
+        <h1>舆情大屏产品说明及操作指导</h1>
+        <h2>一、	产品介绍</h2>
+        <p>以数品牌舆情大屏是一款可视化数据动态展示软件，可投放于PC端、TV端、大屏端；已接入阿里云公众趋势分析API数据接口，用户可直接通过阿里云账号登录进行品牌舆情相关操作；可实时监控当日品牌舆情热点，营销事件追踪分析、竞品舆情分析等品牌全域核心数据。</p>
+        <p>以数品牌舆情大屏是基于大数据的可视化平台，实现了品牌对全网舆情数据的实时监控，全域营销动态全盘掌握及竞品动态一览。</p>
+        <h2>二、	产品功能概述</h2>
+        <p>品牌舆情产品是用户观察互联网以及感知品牌营销及舆情状况的入口，产品涵盖三条主线：覆盖主流新闻媒体网站进行舆情采集、专题及关键词的多维度分析、媒体传播情感趋势以及关键节点分析。</p>
+        <p>产品除了前端大屏展示外共分为4大功能，分别是主控制台、舆情盒子、品牌管理以及传播分析：</p>
+        <h3>1.	主控制台</h3>
+        <p>主控制台是后台展示功能的驾驶舱，同时也是三块大屏的入口，通过主控制台，用户可以看到品牌专题、关键词以及微博分析的总数。</p>
+        <img src="/img/01/01.png" alt=""/>
+        <h3>2.	舆情盒子</h3>
+        <p>舆情盒子可以实时展示舆情信息，根据设置的关键词进行舆情的采集、分析，最后将结果汇总展示。一般情况下，在设置完关键词后的5到10分钟后即可看到舆情盒子中的内容，每条舆情信息都可以点击并跳转至源链接地址以供查看。</p>
+        <h3>3.	品牌管理</h3>
+        <p>品牌管理分为自身品牌设置、关注品牌设置以及品牌位置设置三个功能。通过对自身品牌以及关注品牌的名称、关键词以及位置等信息的设置，即可完成品牌管理的核心设置。设置完成后，主控制台、舆情盒子以及大屏会在一定的时间内关联及展示相关的舆情数据。</p>
+        <h3>4.	传播分析</h3>
+        <p>传播分析为用户提供了对微博进行深度分析的能力。通过对微博账号地址的分析，识别微博传播的核心节点以及传播层级，区分用户属性、账号类别以及地域等信息。根据微博转发量的不同，微博传播的分析时间也会不同，从几分钟到几十分钟不等。</p>
+        <h2>三、	产品设置和功能说明</h2>
+        <h3>1.	引导页</h3>
+        <p>首次登陆进入主控制台后，会有引导页指引操作，按照每一个步骤进行系统功能的简单讲解。第二次登陆后不会自动引导，但是可以在主控制台右上角点击并查看。引导页的每一步如下图所示：</p>
+        <p>a)	品牌管理</p>
+        <img src="/img/02/01.png" alt=""/>
+        <p>b)	舆情盒子</p>
+        <img src="/img/02/02.png" alt=""/>
+        <p>c)	传播分析</p>
+        <img src="/img/02/03.png" alt=""/>
+        <p>d)	主控制台</p>
+        <img src="/img/02/04.png" alt=""/>
+        <p>e)	帮助信息</p>
+        <img src="/img/02/05.png" alt=""/>
+        <p>f)	操作指引</p>
+        <img src="/img/02/06.png" alt=""/>
+        <h3>2.	品牌管理</h3>
+        <p>首次进入“品牌舆情大屏”管理控制台，需要为分析对象配置品牌、关键词以及位置等信息。分析对象可以是企业或品牌，可以用一个或多个关键词组合进行描述。如用户关注的品牌是“互联网金融”，则可能会定义的关键词有“陆金所”、“支付宝 招财宝”、“宜人贷”等等。除了自身品牌，系统还支持配置7个其他关注品牌。</p>
+        <p>系统后台将采集包含这些品牌名称和关键词组合的文章内容，进行汇总分析。后续一些统计图表也将主要针对监控品牌及关键词进行分析。</p>
+        <h3>A.	自身品牌设置</h3>
+        <p>a)	首次进入自身品牌设置功能页面，需要添加自身品牌，如下图</p>
+        <img src="/img/03/01.png" alt=""/>
+        <p>b)	点击添加自身品牌，在弹出页进行品牌名称的编辑，如下图</p>
+        <img src="/img/03/02.png" alt=""/>
+        <p>c)	保存品牌专题后也可以对其进行再次编辑，之后需要进行关键词的配置，如下图</p>
+        <img src="/img/03/03.png" alt=""/>
+        <p>d)	点击添加关键词后，在弹出页添加关键词信息，如下图</p>
+        <img src="/img/03/04.png" alt=""/>
+        <p>e)	关键词设置并保存后，可以对其进行编辑或者删除操作，如下图</p>
+        <img src="/img/03/05.png" alt=""/>
+        <h3>B.	关注品牌设置</h3>
+        <p>a)	同自身品牌设置一样，首次进入关注品牌模块也需要先设置关注品牌的专题，如下图</p>
+        <img src="/img/03/06.png" alt=""/>
+        <p>b)	点击添加关注品牌，在弹出页编辑关注品牌的名称，同时可以设置是否启用该专题，如下图</p>
+        <img src="/img/03/07.png" alt=""/>
+        <p>c)	保存专题后，需要进行关注品牌的关键词设置，如下图</p>
+        <img src="/img/03/08.png" alt=""/>
+        <p>d)	点击添加关键词，在弹出页设置关键词并保存，如下图</p>
+        <img src="/img/03/09.png" alt=""/>
+        <p>e)	同样，在保存关键词后，也可以对其进行在此编辑和删除，如下图</p>
+        <img src="/img/03/10.png" alt=""/>
+        <p><strong>注意：</strong>“关键词”框可以同时输入多个关键词，其中同一行的关键词表示“与”关系，用空格分割，不同行的关键词表示“或”关系。“源站类型”则是选择抓取舆情来源站点的类型。</p>
+        <h3>C.	品牌位置设置</h3>
+        <p>品牌位置用于设置首页大屏展示中自身品牌以及关注品牌的图标、图片信息。</p>
+        <p>a)	点击圆圈进行自身品牌以及其他关注品牌的url信息，如下</p>
+        <img src="/img/03/11.png" alt=""/>
+        <p>b)	设置自身品牌图片url</p>
+        <img src="/img/03/12.png" alt=""/>
+        <p>c)	设置关注品牌url</p>
+        <img src="/img/03/13.png" alt=""/>
+        <p>注意：图标一般为品牌LOGO或其他相关图片，需由用户自行提供。</p>
+        <h3>3.	传播分析</h3>
+        <p>a)	首次进入传播分析设置页，需要添加新微博，如下</p>
+        <img src="/img/04/01.png" alt=""/>
+        <p>b)	在弹出页进行微博地址的设置，要注意根据红框提示进行操作，如下</p>
+        <img src="/img/04/02.png" alt=""/>
+        <p>c)	成功添加后会进行微博传播分析，时间按照转发量计算，从几分钟到几十分钟不等，分析成功后，可以及选择或者取消大屏预览以及大屏展示，如下</p>
+        <img src="/img/04/03.png" alt=""/>
+        <p>d)	在主控制台页面，进入实时要闻传播分析后，即可看到大屏展示效果</p>
+        <h3>4.	舆情盒子</h3>
+        <p>舆情盒子提供了舆情信息的展示功能，根据品牌管理中设置的不同的关键词信息，后台会进行采集、分析，最终将结果汇总。默认情况下， 设置完关键词信息后的5到10分钟内，舆情盒子便会采集到相关的舆情信息，每条舆情信息都可以单击跳转至原链接地址。如下图所示</p>
+        <img src="/img/05/01.png" alt=""/>
+        <h3>5.	可视化大屏</h3>
+        <p>完成品牌管理以及传播分析的设置以后，在主控制台点击页面下方的“自身品牌舆情”、“实时要闻传播分析”以及“关注品牌分析”三块大屏的缩略图，即可切换并跳转至可视化大屏页面，在PC端分别展示这三块大屏，查看分析结果。</p>
+        <img src="/img/06/01.png" alt=""/>
+        <p><span style="color:red;">特别提醒：</span>由于后台需要采集、分析以及汇总计算，所以可视化大屏的数据并不会立刻更新，需要等待1小时左右。</p>
+        <p>通过物理链接，即可在物理大屏上展示。通过复制三块子屏的链接，可嵌入其他系统和界面。如需更多扩展功能，可与客服联系。</p>
+
+
+
+
+
+    </div>
+</div>
+
+</body>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260654542'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260654542' type='text/javascript'%3E%3C/script%3E"));</script>
+<script type="text/javascript">
+    document.getElementById('cnzz_stat_icon_1260654542').style.display = 'none';
+    //        $("#cnzz_stat_icon_1260654542").hide();
+
+</script>
+</html>

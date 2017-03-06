@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>竞品影响分析</title>
+    <style>
+        /*通用样式*/
+        html,body,ul,li{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family:'Microsoft Yahei';
+            color:#6ad0c5;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .clearfix:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .content{
+            width: 1840px;
+            margin: 0 auto;
+        }
+        body{
+            background: url("img/切图/背景.png");
+        }
+        .sub-title{
+            margin-left: 40px;
+            font-size: 26px;
+            color:#6ad0c5;
+        }
+        .ie-box{
+            box-sizing: border-box;
+            padding-top: 20px;
+        }
+        /*图标样式*/
+        @font-face {
+            font-family: 'iconfont';
+            src: url('http://at.alicdn.com/t/font_1473761822_777503.eot'); /* IE9*/
+            src: url('http://at.alicdn.com/t/font_1473761822_777503.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('http://at.alicdn.com/t/font_1473761822_777503.woff') format('woff'), /* chrome、firefox */
+            url('http://at.alicdn.com/t/font_1473761822_777503.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+            url('http://at.alicdn.com/t/font_1473761822_777503.svg#iconfont') format('svg'); /* iOS 4.1- */
+        }
+
+        .iconfont {
+            font-family:'iconfont';
+            font-style:normal;
+            font-size:16px;
+        }
+        /*头部*/
+        #header{
+            height: 120px;
+            line-height: 120px;
+            text-align: center;
+            color:#6ad0c5;
+        }
+        #header .content{
+            position:relative;
+        }
+        .h-title{
+            font-size:40px;
+        }
+        .logo{
+            height: 60px;
+            width: 153px;
+            position:absolute;
+            right:0;
+            top:30px;
+            background: url("img/切图/logo.png");
+        }
+        /*main*/
+        /*左边*/
+        .left{
+            float: left;
+            height: 924px;
+            width: 524px;
+            position:relative;
+            background: url("img/切图/竞品影响分析-竞品基础信息.png");
+        }
+        .island{
+            width: 179px;
+            height: 80px;
+            font-size: 16px;
+        }
+        .island i{
+            margin-left: 5px;
+        }
+        .island1{
+            position:absolute;
+            top:76px;
+            left:197px;
+
+        }
+        .island2{
+            position:absolute;
+            top:422px;
+            left:277px;
+        }
+        .island3{
+            position:absolute;
+            top:719px;
+            left:329px;
+        }
+        .island4{
+            position:absolute;
+            top:817px;
+            left:156px;
+        }
+        .i-title{
+            margin-top:15px;
+            margin-left:20px;
+            margin-bottom: 10px;
+            font-size:16px;
+        }
+        .score{
+            margin-left:15px;
+        }
+        .score-num{
+            margin-left: 8px;
+        }
+
+        .port{
+            position: absolute;
+            font-size: 16px;
+        }
+        .port1{
+            left: 288px;
+            top:222px;
+        }
+        .port2{
+            left:380px;
+            top:280px;
+        }
+        .port3{
+            left: 5px;
+            top:633px;
+        }
+        .port4{
+            left: 260px;
+            top:682px;
+        }
+
+        /*中间*/
+        .center{
+            float: left;
+            width: 964px;
+            margin-left: 14px;
+
+        }
+        /*竞品动态*/
+        .dynamic-state{
+            height: 444px;
+            background: url("img/切图/竞品影响分析-竞品动态.png");
+        }
+        .activity-wrap{
+            margin-top:10px;
+            margin-bottom: 50px;
+            font-size:16px;
+        }
+        .activity{
+            float: right;
+            margin-right:48px;
+        }
+        .list{
+            margin-left:48px;
+            margin-right:48px;
+            font-size:12px;
+        }
+        .list li{
+            margin-bottom: 25px;
+        }
+        .list .last-li{
+            margin-bottom:0;
+        }
+        .list-l{
+            float: left;
+        }
+        .list-l>li div{
+            float: left;
+        }
+        .list-r{
+            float: left;
+            margin-left:70px;
+        }
+        .list-r>li div{
+            float: left;
+        }
+        .list-r .list-text{
+            width: 310px;
+        }
+        /*列表细节*/
+        .list-num{
+            margin-right: 15px;
+        }
+        .list-text{
+            width: 284px;
+        }
+        .list-date{
+            width: 37px;
+        }
+        /*竞品舆情指数*/
+        .ps-num{
+            height: 464px;
+            margin-top: 16px;
+            background:url("img/切图/竞品影响分析-竞品舆情指数.png")
+        }
+        #ps-map{
+            width: 880px;
+            height: 380px;
+            margin:0 auto;
+        }
+        /*右边*/
+        .right{
+            float: left;
+            height: 924px;
+            width: 324px;
+            margin-left: 14px;
+            background: url("img/切图/竞品影响分析-情感值对比.png");
+        }
+        .em{
+            height: 210px;
+            position: relative;
+        }
+        .qg{
+            position: absolute;
+            top:112px;
+            left:138px;
+        }
+        .emh{
+            height:190px;
+        }
+        .total{
+            width: 188px;
+            height:20px;
+            margin: 0 auto;
+            line-height: 20px;
+            font-size:12px;
+        }
+        .total-l{
+            float:left;
+        }
+        .total-r{
+            float:right;
+        }
+
+        /*底部*/
+        #footer{
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div class="content">
+            <div class="h-title">竞品影响分析</div>
+            <div class="logo"></div>
+        </div>
+    </div>
+    <div id="main">
+        <div class="content clearfix">
+            <!--竞品基础信息-->
+            <div class="left ie-box">
+                <div class="sub-title">竞品基础信息</div>
+                <!--蛇盘岛-->
+                <div class="island island1">
+                    <div class="i-title">蛇盘岛</div>
+                    <div class="score"><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe602</i><span class="score-num">9.0分</span></div>
+                </div>
+                <!--大陈岛-->
+                <div class="island island2">
+                    <div class="i-title">大陈岛</div>
+                    <div class="score"><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><span class="score-num">10.0分</span></div>
+                </div>
+                <!--大沙岱-->
+                <div class="island island3">
+                    <div class="i-title">大沙岱</div>
+                    <div class="score"><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe602</i><span class="score-num">9.0分</span></div>
+                </div>
+                <!--东引岛-->
+                <div class="island island4">
+                    <div class="i-title">东引岛</div>
+                    <div class="score"><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><span class="score-num">9.5分</span></div>
+                </div>
+                <!--地点-->
+                <div class="port port1">神仙居景区</div>
+                <div class="port port2">临海国家地质公园</div>
+                <div class="port port3">牛头山旅游度假区</div>
+                <div class="port port4">仙岩洞</div>
+            </div>
+            <!--中间-->
+            <div class="center">
+                <!--竞品动态-->
+                <div class="dynamic-state ie-box">
+                    <div class="sub-title">竞品动态</div>
+                    <div class="activity-wrap clearfix">
+                        <div class="activity">【2016.3.20-22】活动公告：东引岛台湾马祖列岛——跳岛自由行（周五——周六）</div>
+                    </div>
+                    <div class="list clearfix">
+                        <ul class="list-l">
+                            <li class="clearfix"><div class="list-num">1</div><div class="list-text">[赞]//@雷希颖：去年在澳洲时也是这样的，只...</div><div class="list-date">9.4</div><div class="channel">珍珠美人</div></li>
+                            <li class="clearfix"><div class="list-num">2</div><div class="list-text">#赤峰街拍# @吴球球1943：这是哪里呀？你又...</div><div class="list-date">9.4</div><div class="channel">赤峰之窗</div></li>
+                            <li class="clearfix"><div class="list-num">3</div><div class="list-text">//@雷希颖：去年在澳洲时也是这样的，只有中...</div><div class="list-date">9.4</div><div class="channel">杭州仙根</div></li>
+                            <li class="clearfix"><div class="list-num">4</div><div class="list-text">早上九点四十到十点可以到万达周边欣赏免费...</div><div class="list-date">9.4</div><div class="channel">鲁阿特</div></li>
+                            <li class="clearfix"><div class="list-num">5</div><div class="list-text">马路本来就是以便民为目的，商铺门口不画停车...</div><div class="list-date">9.4</div><div class="channel">奶牛爱过</div></li>
+                            <li class="clearfix"><div class="list-num">6</div><div class="list-text">[赞]//@雷希颖：去年在澳洲时也是这样的，只...</div><div class="list-date">9.4</div><div class="channel">一条咸鱼</div></li>
+                            <li class="clearfix last-li"><div class="list-num">7</div><div class="list-text">跟鬼佬球迷谈素质。。。别忘了足球流氓这个...</div><div class="list-date">9.4</div><div class="channel">双垂尾Ur</div></li>
+                        </ul>
+
+                        <ul class="list-r">
+                            <li class="clearfix"><div class="list-num">1</div><div class="list-text">十二届全国人大常委会第十二次会议举行第二次全体会议</div><div class="list-date">8.31</div><div class="channel">腾讯</div></li>
+                            <li class="clearfix"><div class="list-num">2</div><div class="list-text">李克强与加拿大总理共同会见记者.</div><div class="list-date">8.31</div><div class="channel">腾讯</div></li>
+                            <li class="clearfix"><div class="list-num">3</div><div class="list-text">李克强举行仪式欢迎加拿大总理访华</div><div class="list-date">8.31</div><div class="channel">腾讯</div></li>
+                            <li class="clearfix"><div class="list-num">4</div><div class="list-text">国家保密局局长夏勇严重违纪被撤销政协委员资格</div><div class="list-date">8.31</div><div class="channel">腾讯</div></li>
+                            <li class="clearfix"><div class="list-num">5</div><div class="list-text">女航天员刘洋当选妇联副主席为什么是兼职？</div><div class="list-date">8.31</div><div class="channel">腾讯</div></li>
+                            <li class="clearfix"><div class="list-num">6</div><div class="list-text">中国在辽宁浙江重庆等地新增7个自贸试验区</div><div class="list-date">8.31</div><div class="channel">腾讯</div></li>
+                            <li class="clearfix last-li"><div class="list-num">7</div><div class="list-text">央视走心G20宣传片 看完热血沸腾了</div><div class="list-date">8.31</div><div class="channel">腾讯</div></li>
+                        </ul>
+
+                    </div>
+
+                </div>
+                <!--竞品舆情指数-->
+                <div class="ps-num ie-box">
+                    <div class="sub-title">竞品舆情指数</div>
+                    <div id="ps-map"></div>
+                </div>
+            </div>
+            <!--情感值对比-->
+            <div class="right ie-box">
+                <div class="sub-title">情感值对比</div>
+                <div class="emotion">
+                    <div class="em">
+                        <div id="em1" class="emh"></div>
+                        <div class="total clearfix">
+                            <div class="total-l">正面舆情 ：80条</div>
+                            <div class="total-r">负面舆情 ：1条</div>
+                        </div>
+                        <div class="qg">情感值</div>
+                    </div>
+                    <div class="em">
+                        <div id="em2" class="emh"></div>
+                        <div class="total clearfix">
+                            <div class="total-l">正面舆情 ：28条</div>
+                            <div class="total-r">负面舆情 ：2条</div>
+                        </div>
+                        <div class="qg">情感值</div>
+                    </div>
+                    <div class="em">
+                        <div id="em3" class="emh"></div>
+                        <div class="total clearfix">
+                            <div class="total-l">正面舆情 ：46条</div>
+                            <div class="total-r">负面舆情 ：2条</div>
+                        </div>
+                        <div class="qg">情感值</div>
+                    </div>
+                    <div class="em">
+                        <div id="em4" class="emh"></div>
+                        <div class="total clearfix">
+                            <div class="total-l">正面舆情 ：65条</div>
+                            <div class="total-r">负面舆情 ：1条</div>
+                        </div>
+                        <div class="qg">情感值</div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+    <script src="echarts.js"></script>
+    <script>
+    //        折线图
+    var psmap = echarts.init(document.getElementById('ps-map'));
+    var psmapOption =  {
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        data:['大陈岛','东引岛','蛇蟠岛','大沙岱'],
+        textStyle:{color:'#57aba3'},
+        x:800,
+        y:140
+    },
+    grid: {
+//        x:65,
+//        y:40,
+//        x2:60,
+//        y2:20
+    },
+    xAxis:  {
+        type: 'category',
+//        name : '（月份）',
+        boundaryGap: false,
+        data: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+        axisLine:{
+            lineStyle:{
+                color:'#093f50',
+                width:2
+            }
+        },
+        axisLabel:{
+            textStyle:{
+                color:'#6ad0c5'
+            }
+        },
+        splitLine:{
+            show:true,
+            lineStyle:{
+                color:'#17172a',
+                width:2
+            }
+        },
+        axisTick:{
+            inside:true,
+            lineStyle:{
+                width:2
+            }
+        }
+    },
+    yAxis: {
+        type: 'value',
+        min:400,
+        max:1100,
+        name : '数量',
+        nameTextStyle:{
+            color:'#6ad0c5'
+        },
+        axisLine:{
+            lineStyle:{
+                color:'#093f50',
+                width:2
+            }
+        },
+        axisLabel:{
+            textStyle:{
+                color:'#6ad0c5'
+            }
+        },
+        splitLine:{
+            show:true,
+            lineStyle:{
+                color:'#17172a',
+                width:2
+            }
+        },
+        axisTick:{
+            inside:true,
+            lineStyle:{
+                width:2
+            }
+        }
+    },
+    series: [
+        {
+            name:'大陈岛',
+            type:'line',
+            symbol:'circle',
+            symbolSize:10,
+            data:[650, 780, 870, 940, 980, 1030,1020,930,970,1100,1010,840],
+            itemStyle: {
+                normal: {
+                    color:'#50edb3'
+                }
+            }
+        },
+        {
+            name:'东引岛',
+            type:'line',
+            symbol:'circle',
+            symbolSize:10,
+            data:[460, 740, 820, 680, 930, 900,980,740,860,840,980,940],
+            itemStyle: {
+                normal: {
+                    color:'#9fe6fb'
+                }
+            }
+        },
+        {
+            name:'蛇蟠岛',
+            type:'line',
+            symbol:'circle',
+            symbolSize:10,
+            data:[550, 670, 630, 740, 720, 830,790,820,940,1040,1080,650],
+            itemStyle: {
+                normal: {
+                    color:'#e09a74'
+                }
+            }
+        },
+        {
+            name:'大沙岱',
+            type:'line',
+            symbol:'circle',
+            symbolSize:10,
+            data:[500, 580, 700, 870, 800, 970,900,890,1030,980,870,750],
+            itemStyle: {
+                normal: {
+                    color:'#cf5b5b'
+                }
+            }
+        }
+    ]
+};
+    psmap.setOption(psmapOption);
+    </script>
+
+    <script>
+//        指针图
+    var eA1 = echarts.init(document.getElementById('em1'));
+    var eA2 = echarts.init(document.getElementById('em2'));
+    var eA3 = echarts.init(document.getElementById('em3'));
+    var eA4 = echarts.init(document.getElementById('em4'));
+    var eA1Option = {
+    tooltip : {
+        formatter: "{a} <br/>{b} : {c}%"
+    },
+    series: [
+        {
+            name: '情感分析',
+            type: 'gauge',
+            min: -100,
+            max: 100,
+            startAngle:220,
+            endAngle:-40,
+            splitNumber:4,
+            center:	['50%', '65%'],
+            radius:90,
+            axisLine: {            // 坐标轴线
+                lineStyle: {       // 属性lineStyle控制线条样式
+                    width: 0,
+//                    百分之25之前是红色  百分之25之后到百分之75之前是黄色  百分之75之后到百分之100之前是黄色
+//                    color: [[0.125, '#4cd3a5'], [0.25, '#489c91'],[0.375, '#8eb5f9'],[0.5, '#384162'],[0.625, '#aaa3fe'], [0.75, '#c19af5'],[0.89, '#ea8ddb'],[1, '#393a5a']]
+//                    color: [[0.25, '#50edb3'], [0.89, '#ea8cdb'], [1, '#393a5a']]
+                    color: [
+                        [0.025, '#50edb3'],
+                        [0.075, '#50edb3'] ,
+                        [0.125, '#55e8b9'],
+                        [0.175, '#5be2c1'],
+                        [0.225, '#51a4a1'],
+                        [0.275, '#6cd2d7'],
+                        [0.325, '#68afc7'],
+                        [0.375, '#7fc0eb'],
+                        [0.425, '#88b9f5'],
+                        [0.475, '#88b9f5'],
+                        [0.525, '#9cabff'],
+                        [0.575, '#b0a1fd'],
+                        [0.625, '#bb9cf8'],
+                        [0.675, '#c798f2'],
+                        [0.725, '#c798f2'],
+                        [0.755, '#cb90e4'],
+                        [0.825, '#cb90e4'],
+                        [0.875, '#d98fe1'],
+                        [1, '#393a5a']]
+                }
+            },
+            axisTick: {            // 坐标轴小标记
+                length:10,        // 属性length控制线长
+                splitNumber:10,
+                inside:false,
+                lineStyle: {       // 属性lineStyle控制线条样式
+                    color:'auto',
+                    width:2
+//                    color:'red'
+//                    color: [[0.09, 'red'],[0.82, 'yellow'],[1, 'blue']]
+                }
+            },
+            splitLine: {           // 主分隔线
+                length:10,         // 属性length控制线长
+
+                lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
+                    color:'auto'
+                }
+            },
+            axisLabel:{             //坐标轴文本 数值
+                textStyle:{
+                    color:'#6ad0c5'
+                }
+            },
+//                指针宽度
+            pointer: {
+                width:0
+            },
+
+//            标题 正能量
+            title:{
+              show:true,
+              textStyle:{
+                  color:'#6ad0c5',
+                  fontSize:16
+              }
+            },
+            detail: {
+                textStyle: {
+                    color:'#6ad0c5',
+                    fontSize:16
+                }
+                //加上百分比
+//                formatter:'{value}%'
+            },
+            data: [{
+                value: 78,
+                name: '大陈岛'
+            }]
+        }
+    ]
+};
+    var eA2Option = {
+    tooltip : {
+        formatter: "{a} <br/>{b} : {c}%"
+    },
+    series: [
+        {
+            name: '情感分析',
+            type: 'gauge',
+            min: -100,
+            max: 100,
+            startAngle:220,
+            endAngle:-40,
+            splitNumber:4,
+            center:	['50%', '65%'],
+            radius:90,
+            axisLine: {            // 坐标轴线
+                lineStyle: {       // 属性lineStyle控制线条样式
+                    width: 0,
+//                    百分之25之前是红色  百分之25之后到百分之75之前是黄色  百分之75之后到百分之100之前是黄色
+//                    color: [[0.125, '#4cd3a5'], [0.25, '#489c91'],[0.375, '#8eb5f9'],[0.5, '#384162'],[0.625, '#aaa3fe'], [0.75, '#c19af5'],[0.89, '#ea8ddb'],[1, '#393a5a']]
+//                    color: [[0.25, '#50edb3'], [0.89, '#ea8cdb'], [1, '#393a5a']]
+                    color: [
+                        [0.025, '#50edb3'],
+                        [0.075, '#50edb3'] ,
+                        [0.125, '#55e8b9'],
+                        [0.175, '#5be2c1'],
+                        [0.225, '#51a4a1'],
+                        [0.275, '#6cd2d7'],
+                        [0.325, '#68afc7'],
+                        [0.375, '#7fc0eb'],
+                        [0.425, '#88b9f5'],
+                        [0.475, '#88b9f5'],
+                        [0.525, '#9cabff'],
+                        [0.575, '#b0a1fd'],
+                        [0.62, '#bb9cf8'],
+                        [1, '#393a5a']]
+                }
+            },
+            axisTick: {            // 坐标轴小标记
+                length:10,        // 属性length控制线长
+                splitNumber:10,
+                inside:false,
+                lineStyle: {       // 属性lineStyle控制线条样式
+                    color:'auto',
+                    width:2
+//                    color:'red'
+//                    color: [[0.09, 'red'],[0.82, 'yellow'],[1, 'blue']]
+                }
+            },
+            splitLine: {           // 主分隔线
+                length:10,         // 属性length控制线长
+
+                lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
+                    color:'auto'
+                }
+            },
+            axisLabel:{             //坐标轴文本 数值
+                textStyle:{
+                    color:'#6ad0c5'
+                }
+            },
+//                指针宽度
+            pointer: {
+                width:0
+            },
+
+//            标题 正能量
+            title:{
+                show:true,
+                textStyle:{
+                    color:'#6ad0c5',
+                    fontSize:16
+                }
+            },
+            detail: {
+                textStyle: {
+                    color:'#6ad0c5',
+                    fontSize:16
+                }
+                //加上百分比
+//                formatter:'{value}%'
+            },
+            data: [{
+                value: 24,
+                name: '蛇蟠岛'
+            }]
+        }
+    ]
+};
+    var eA3Option = {
+    tooltip : {
+        formatter: "{a} <br/>{b} : {c}%"
+    },
+    series: [
+        {
+            name: '情感分析',
+            type: 'gauge',
+            min: -100,
+            max: 100,
+            startAngle:220,
+            endAngle:-40,
+            splitNumber:4,
+            center:	['50%', '65%'],
+            radius:90,
+            axisLine: {            // 坐标轴线
+                lineStyle: {       // 属性lineStyle控制线条样式
+                    width: 0,
+//                    百分之25之前是红色  百分之25之后到百分之75之前是黄色  百分之75之后到百分之100之前是黄色
+//                    color: [[0.125, '#4cd3a5'], [0.25, '#489c91'],[0.375, '#8eb5f9'],[0.5, '#384162'],[0.625, '#aaa3fe'], [0.75, '#c19af5'],[0.89, '#ea8ddb'],[1, '#393a5a']]
+//                    color: [[0.25, '#50edb3'], [0.89, '#ea8cdb'], [1, '#393a5a']]
+                    color: [
+                        [0.025, '#50edb3'],
+                        [0.075, '#50edb3'] ,
+                        [0.125, '#55e8b9'],
+                        [0.175, '#5be2c1'],
+                        [0.225, '#51a4a1'],
+                        [0.275, '#6cd2d7'],
+                        [0.325, '#68afc7'],
+                        [0.375, '#7fc0eb'],
+                        [0.425, '#88b9f5'],
+                        [0.475, '#88b9f5'],
+                        [0.525, '#9cabff'],
+                        [0.575, '#b0a1fd'],
+                        [0.625, '#bb9cf8'],
+                        [0.675, '#c798f2'],
+                        [0.71, '#c798f2'],
+                        [1, '#393a5a']]
+                }
+
+            },
+            axisTick: {            // 坐标轴小标记
+                length:10,        // 属性length控制线长
+                splitNumber:10,
+                inside:false,
+                lineStyle: {       // 属性lineStyle控制线条样式
+                    color:'auto',
+                    width:2
+//                    color:'red'
+//                    color: [[0.09, 'red'],[0.82, 'yellow'],[1, 'blue']]
+                }
+            },
+            splitLine: {           // 主分隔线
+                length:10,         // 属性length控制线长
+
+                lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
+                    color:'auto'
+                }
+            },
+            axisLabel:{             //坐标轴文本 数值
+                textStyle:{
+                    color:'#6ad0c5'
+                }
+            },
+//                指针宽度
+            pointer: {
+                width:0
+            },
+
+//            标题 正能量
+            title:{
+                show:true,
+                textStyle:{
+                    color:'#6ad0c5',
+                    fontSize:16
+                }
+            },
+            detail: {
+                textStyle: {
+                    color:'#6ad0c5',
+                    fontSize:16
+                }
+                //加上百分比
+//                formatter:'{value}%'
+            },
+            data: [{
+                value: 42,
+                name: '大沙岱'
+            }]
+        }
+    ]
+};
+    var eA4Option = {
+    tooltip : {
+        formatter: "{a} <br/>{b} : {c}%"
+    },
+    series: [
+        {
+            name: '情感分析',
+            type: 'gauge',
+            min: -100,
+            max: 100,
+            startAngle:220,
+            endAngle:-40,
+            splitNumber:4,
+            center:	['50%', '65%'],
+            radius:90,
+            axisLine: {            // 坐标轴线
+                lineStyle: {       // 属性lineStyle控制线条样式
+                    width: 0,
+//                    百分之25之前是红色  百分之25之后到百分之75之前是黄色  百分之75之后到百分之100之前是黄色
+//                    color: [[0.125, '#4cd3a5'], [0.25, '#489c91'],[0.375, '#8eb5f9'],[0.5, '#384162'],[0.625, '#aaa3fe'], [0.75, '#c19af5'],[0.89, '#ea8ddb'],[1, '#393a5a']]
+//                    color: [[0.25, '#50edb3'], [0.89, '#ea8cdb'], [1, '#393a5a']]
+                    color: [
+                        [0.025, '#50edb3'],
+                        [0.075, '#50edb3'] ,
+                        [0.125, '#55e8b9'],
+                        [0.175, '#5be2c1'],
+                        [0.225, '#51a4a1'],
+                        [0.275, '#6cd2d7'],
+                        [0.325, '#68afc7'],
+                        [0.375, '#7fc0eb'],
+                        [0.425, '#88b9f5'],
+                        [0.475, '#88b9f5'],
+                        [0.525, '#9cabff'],
+                        [0.575, '#b0a1fd'],
+                        [0.625, '#bb9cf8'],
+                        [0.675, '#c798f2'],
+                        [0.725, '#c798f2'],
+                        [0.755, '#cb90e4'],
+                        [0.815, '#cb90e4'],
+                        [1, '#393a5a']]
+                }
+            },
+            axisTick: {            // 坐标轴小标记
+                length:10,        // 属性length控制线长
+                splitNumber:10,
+                inside:false,
+                lineStyle: {       // 属性lineStyle控制线条样式
+                    color:'auto',
+                    width:2
+//                    color:'red'
+//                    color: [[0.09, 'red'],[0.82, 'yellow'],[1, 'blue']]
+                }
+            },
+            splitLine: {           // 主分隔线
+                length:10,         // 属性length控制线长
+
+                lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
+                    color:'auto'
+                }
+            },
+            axisLabel:{             //坐标轴文本 数值
+                textStyle:{
+                    color:'#6ad0c5'
+                }
+            },
+//                指针宽度
+            pointer: {
+                width:0
+            },
+
+//            标题 正能量
+            title:{
+                show:true,
+                textStyle:{
+                    color:'#6ad0c5',
+                    fontSize:16
+                }
+            },
+            detail: {
+                textStyle: {
+                    color:'#6ad0c5',
+                    fontSize:16
+                }
+                //加上百分比
+//                formatter:'{value}%'
+            },
+            data: [{
+                value: 63,
+                name: '东引岛'
+            }]
+        }
+    ]
+};
+    eA1.setOption(eA1Option);
+    eA2.setOption(eA2Option);
+    eA3.setOption(eA3Option);
+    eA4.setOption(eA4Option);
+
+    </script>
+</body>
+</html>

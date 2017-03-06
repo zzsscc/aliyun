@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>天台山舆情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/tiantai.css">
+    <script type="text/javascript" src="js/tiantai.js"></script>
+    <style>
+        #main {
+            width: 1903px;
+            height: 1080px;
+            background: url('img/背景.png');
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main" class="clearfix">
+        <!--headline:  头部标题加右侧logo-->
+        <div class="headline clearfix">
+            <p id="bigtitle">天台山舆情</p>
+            <img id="logoimg" src="img/logo.png">
+        </div>
+        <!--第二行-->
+        <div class="secondline">
+            <!--分三块-->
+            <!--热门事件-->
+            <div id="secondline-firstcol">
+                <div class="smalltitle">热门事件</div>
+                <div class="events">
+                    <!--文字-->
+                    <div class="lefttextbox">
+                        <p class="lefttext">椒江区大陈岛位于浙江中部...</p>
+                        <p class="lefttext">海门老街历史悠长，是集...</p>
+                        <p class="lefttext">戚继光纪念馆位于椒江区东山...</p>
+                        <p class="lefttext">全国百佳红色旅游景点景区...</p>
+                        <p class="lefttext">椒江上半年完成四块“空闲土地”...</p>
+                        <p class="lefttext">椒江海岛游，今后更方便省时了”...</p>
+                        <p class="lefttext">椒江十大春意小楼揭晓，椒江”...</p>
+                    </div>
+                    <!--竖线-->
+                    <img id="rectangle" src="img/矩形2.png">
+                    <!--右边横条-->
+                    <div class="rightlinebox">
+                        <div class="rightline">
+                            <p class="righttext" style="text-align:right;">162</p>
+                            <div class="line"></div>
+                        </div>
+                        <div class="rightline">
+                            <p class="righttext" style="width:82%;">133</p>
+                            <div class="line" style="width:82%;"></div>
+                        </div>
+                        <div class="rightline">
+                            <p class="righttext" style="width:66%;">108</p>
+                            <div class="line" style="width:66%;"></div>
+                        </div>
+                        <div class="rightline">
+                            <p class="righttext" style="width:56.8%;">92</p>
+                            <div class="line" style="width:56.8%;"></div>
+                        </div>
+                        <div class="rightline">
+                            <p class="righttext" style="width:44.4%;">72</p>
+                            <div class="line" style="width:44.4%;"></div>
+                        </div>
+                        <div class="rightline">
+                            <p class="righttext" style="width:33.3%;">54</p>
+                            <div class="line" style="width:33.3%;"></div>
+                        </div>
+                        <div class="rightline">
+                            <p class="righttext" style="width:19.8%;">32</p>
+                            <div class="line" style="width:19.8%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--情感分析-->
+            <div id="secondline-secondcol">
+                <div class="smalltitle" style="margin-left:12%;margin-top:5%;">情感分析</div>
+                <div id="chart1"></div>
+                <div id="trueconsensus">正确舆情：80条</div>
+                <div id="falseconsensus">负面舆情：1条</div>
+            </div>
+            <!--情感趋势-->
+            <div id="secondline-thirdcol">
+                <div class="smalltitle" style="margin-left:5%;margin-top:2%;">情感趋势</div>
+                <div id="chart2"></div>
+            </div>
+        </div>
+        <!--第三行-->
+        <div class="thirdline">
+            <!--分四块-->
+            <div id="thirdline-firstcol">
+                <!--热搜媒体-->
+                <div class="smalltitle" style="margin-left:14%;margin-top:5%;">热搜媒体</div>
+                <div class="contents">
+                    <!--排名-->
+                    <div class="rank">
+                        <p class="textstyle" style="margin-top:26.25%;color: rgb(106, 208, 197);">排名</p>
+                        <p class="textstyle" style="margin-top:26.25%;color: rgb(23, 195, 118);">1</p>
+                        <p class="textstyle" style="margin-top:26.25%;color: rgb(23, 187, 124);">2</p>
+                        <p class="textstyle" style="margin-top:26.25%;color: rgb(21, 164, 140);">3</p>
+                        <p class="textstyle" style="margin-top:26.25%;color: rgb(19, 117, 165);">4</p>
+                        <p class="textstyle" style="margin-top:26.25%;color: rgb(18, 87, 163);">5</p>
+                        <p class="textstyle" style="margin-top:26.25%;  color: rgb(17, 53, 133);">6</p>
+                    </div>
+                    <!--媒体-->
+                    <div class="media">
+                        <p class="textstyle" style="color: rgb(106, 208, 197);">媒体</p>
+                        <p class="textstyle" style="color: rgb(23, 195, 118);">微博</p>
+                        <p class="textstyle" style="color: rgb(23, 187, 124);">百度搜索</p>
+                        <p class="textstyle" style="color: rgb(21, 164, 140);">百度知道</p>
+                        <p class="textstyle" style="color: rgb(19, 117, 165);">搜狐网</p>
+                        <p class="textstyle" style="color: rgb(18, 87, 163);">天涯论坛</p>
+                        <p class="textstyle" style="color: rgb(17, 53, 133);">凤凰网</p>
+                    </div>
+                    <!--舆情数量-->
+                    <div class="consensus">
+                        <p class="textstyle" style="color: rgb(106, 208, 197);">舆情数量</p>
+                        <p class="textstyle" style="color: rgb(23, 195, 118);">12363</p>
+                        <p class="textstyle" style="color: rgb(23, 187, 124);">2639</p>
+                        <p class="textstyle" style="color: rgb(21, 164, 140);">2200</p>
+                        <p class="textstyle" style="color: rgb(19, 117, 165);">899</p>
+                        <p class="textstyle" style="color: rgb(18, 87, 163);">620</p>
+                        <p class="textstyle" style="  color: rgb(17, 53, 133);">220</p>
+                    </div>
+                </div>
+            </div>
+            <div id="thirdline-secondcol">
+                <!--热词搜索-->
+                <div class="smalltitle" style="margin-left:15%;margin-top:5%;">热词搜索</div>
+                <div class="contents">
+                    <!--排名-->
+                    <div class="rank">
+                        <p class="textstyle" style="margin-top:26.25%;color: rgb(106, 208, 197);">排名</p>
+                        <p class="textstyle" style="margin-top:26.25%;color: rgb(23, 195, 118);">1</p>
+                        <p class="textstyle" style="margin-top:26.25%;color: rgb(23, 187, 124);">2</p>
+                        <p class="textstyle" style="margin-top:26.25%;color: rgb(21, 164, 140);">3</p>
+                        <p class="textstyle" style="margin-top:26.25%;color: rgb(19, 117, 165);">4</p>
+                        <p class="textstyle" style="margin-top:26.25%;color: rgb(18, 87, 163);">5</p>
+                        <p class="textstyle" style="margin-top:26.25%;color: rgb(17, 53, 133);">6</p>
+                        <p class="textstyle" style="margin-top:26.25%;color: rgb(17, 36, 115);">7</p>
+
+                    </div>
+                    <!--媒体-->
+                    <div class="media">
+                        <p class="textstyle" style="color: rgb(106, 208, 197);">媒体</p>
+                        <p class="textstyle" style="color: rgb(23, 195, 118);">微博</p>
+                        <p class="textstyle" style="color: rgb(23, 187, 124);">百度搜索</p>
+                        <p class="textstyle" style="color: rgb(21, 164, 140);">百度知道</p>
+                        <p class="textstyle" style="color: rgb(19, 117, 165);">搜狐网</p>
+                        <p class="textstyle" style="color: rgb(18, 87, 163);">天涯论坛</p>
+                        <p class="textstyle" style="color: rgb(17, 53, 133);">凤凰网</p>
+                        <p class="textstyle" style="color: rgb(17, 36, 115);">老街</p>
+                    </div>
+                    <!--舆情数量-->
+                    <div class="consensus">
+                        <p class="textstyle" style="color: rgb(106, 208, 197);">舆情数量</p>
+                        <p class="textstyle" style="color: rgb(23, 195, 118);">12363</p>
+                        <p class="textstyle" style="color: rgb(23, 187, 124);">2639</p>
+                        <p class="textstyle" style="color: rgb(21, 164, 140);">2200</p>
+                        <p class="textstyle" style="color: rgb(19, 117, 165);">899</p>
+                        <p class="textstyle" style="color: rgb(18, 87, 163);">620</p>
+                        <p class="textstyle" style="color: rgb(17, 53, 133);">220</p>
+                        <p class="textstyle" style="color: rgb(17, 36, 115);">16</p>
+                    </div>
+                </div>
+            </div>
+            <div id="thirdline-thirdcol">
+                <!--舆情指数-->
+                <div class="smalltitle" style="margin-left:12%;margin-top:4%;">舆情指数</div>
+                <div id="centernumber" style="color: rgb(106, 208, 197);">10700</div>
+                <div id="textbox">
+                    <div class="onelinetext" style="color: rgb(106, 208, 197);">正面&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;700</div>
+                    <div class="onelinetext" style="color: rgb(106, 208, 197);">中性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9995</div>
+                    <div class="onelinetext" style="color: rgb(106, 208, 197);">负面&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5</div>
+                </div>
+            </div>
+            <div id="thirdline-fourthcol">
+                <!--舆情指数-->
+                <div class="smalltitle" style="margin-left:5%;margin-top:2%;">舆情指数走势</div>
+                <div id="chart3"></div>
+            </div>
+
+        </div>
+  </div>
+        <script src="js/jquery-1.8.3.min.js"></script>
+        <script src="js/echarts.js"></script>
+        <script src="http://echarts.baidu.com/build/dist/echarts-all.js"></script>
+</body>
+
+</html>

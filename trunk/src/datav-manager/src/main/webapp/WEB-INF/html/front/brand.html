@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>品牌舆情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="/css/selfcss/public.css"/>
+    <link rel="stylesheet" href="/css/selfcss/tiantai.css"/>
+    <link rel="icon" type="image/ico" href="/assets/images/favicon.ico" />
+    <style>
+        body {
+            background: #02020d;
+        }
+
+        #main {
+            width: 1903px;
+            height: 1080px;
+            background: url('/img/self-img/background.png');
+        }
+
+        #heatEvent-map {
+            width: 600px;
+            height: 350px;
+            margin-left: 30px;
+            margin-top: 35px;
+        }
+
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="main" class="clearfix">
+    <!--headline:  头部标题加右侧logo-->
+    <div class="headline clearfix">
+        <p id="bigtitle">品牌舆情</p>
+        <!--<img id="logoimg" src="/img/self-img/logo.png"/>-->
+    </div>
+    <!--第二行-->
+    <div class="secondline clearfix">
+        <!--分三块-->
+        <!--热门事件-->
+        <div id="secondline-firstcol">
+            <div class="smalltitle">热门事件</div>
+            <div id="heatEvent-map">
+
+            </div>
+        </div>
+        <!--情感分析-->
+        <div id="secondline-secondcol">
+            <div class="smalltitle" style="margin-left:12%;margin-top:5%;">情感分析</div>
+            <div id="chart1"></div>
+            <div id="trueconsensus" style="display: none">正确舆情：80条</div>
+            <div id="falseconsensus" style="display: none">负面舆情：1条</div>
+        </div>
+        <!--情感趋势-->
+        <div id="secondline-thirdcol">
+            <div class="smalltitle" style="margin-left:5%;margin-top:2%;">情感趋势</div>
+            <div id="chart2"></div>
+        </div>
+    </div>
+    <!--第三行-->
+    <div class="thirdline clearfix">
+        <!--分四块-->
+        <div id="thirdline-firstcol">
+            <!--热搜媒体-->
+            <div class="smalltitle" style="margin-left:14%;margin-top:5%;">热搜媒体</div>
+            <div class="contents clearfix">
+                <!--排名-->
+                <div class="rank" id="rank">
+                    <p class="textstyle" style="margin-top:26.25%;color: rgb(106, 208, 197);">排名</p>
+                    <p class="textstyle" style="margin-top:26.25%;color: rgb(23, 195, 118);"></p>
+                    <p class="textstyle" style="margin-top:26.25%;color: rgb(23, 187, 124);"></p>
+                    <p class="textstyle" style="margin-top:26.25%;color: rgb(21, 164, 140);"></p>
+                    <p class="textstyle" style="margin-top:26.25%;color: rgb(19, 117, 165);"></p>
+                    <p class="textstyle" style="margin-top:26.25%;color: rgb(18, 87, 163);"></p>
+                    <p class="textstyle" style="margin-top:26.25%;  color: rgb(17, 53, 133);"></p>
+                    <p class="textstyle" style="margin-top:26.25%;  color: rgb(17, 53, 133);"></p>
+                </div>
+                <!--媒体-->
+                <div class="media" id="mt">
+                    <p class="textstyle" style="color: rgb(106, 208, 197);">媒体</p>
+                    <p class="textstyle" style="color: rgb(23, 195, 118);"></p>
+                    <p class="textstyle" style="color: rgb(23, 187, 124);"></p>
+                    <p class="textstyle" style="color: rgb(21, 164, 140);"></p>
+                    <p class="textstyle" style="color: rgb(19, 117, 165);"></p>
+                    <p class="textstyle" style="color: rgb(18, 87, 163);"></p>
+                    <p class="textstyle" style="color: rgb(17, 53, 133);"></p>
+                    <p class="textstyle" style="color: rgb(17, 53, 133);"></p>
+                </div>
+                <!--舆情数量-->
+                <div class="consensus" id="mtNum">
+                    <p class="textstyle" style="color: rgb(106, 208, 197);">舆情数量</p>
+                    <p class="textstyle" style="color: rgb(23, 195, 118);"></p>
+                    <p class="textstyle" style="color: rgb(23, 187, 124);"></p>
+                    <p class="textstyle" style="color: rgb(21, 164, 140);"></p>
+                    <p class="textstyle" style="color: rgb(19, 117, 165);"></p>
+                    <p class="textstyle" style="color: rgb(18, 87, 163);"></p>
+                    <p class="textstyle" style="  color: rgb(17, 53, 133);"></p>
+                    <p class="textstyle" style="  color: rgb(17, 53, 133);"></p>
+                </div>
+            </div>
+        </div>
+        <div id="thirdline-secondcol">
+            <!--热词搜索-->
+            <div class="smalltitle" style="margin-left:15%;margin-top:5%;">热词搜索</div>
+            <div class="contents">
+                <!--排名-->
+                <div class="rank" id="rcRank">
+                    <p class="textstyle" style="margin-top:26.25%;color: rgb(106, 208, 197);">排名</p>
+                    <p class="textstyle" style="margin-top:26.25%;color: rgb(23, 195, 118);"></p>
+                    <p class="textstyle" style="margin-top:26.25%;color: rgb(23, 187, 124);"></p>
+                    <p class="textstyle" style="margin-top:26.25%;color: rgb(21, 164, 140);"></p>
+                    <p class="textstyle" style="margin-top:26.25%;color: rgb(19, 117, 165);"></p>
+                    <p class="textstyle" style="margin-top:26.25%;color: rgb(18, 87, 163);"></p>
+                    <p class="textstyle" style="margin-top:26.25%;color: rgb(17, 53, 133);"></p>
+                    <p class="textstyle" style="margin-top:26.25%;color: rgb(17, 36, 115);"></p>
+
+                </div>
+                <!--关键词-->
+                <div class="media" id="rcMedia">
+                    <p class="textstyle" style="color: rgb(106, 208, 197);">关键词</p>
+                    <p class="textstyle" style="color: rgb(23, 195, 118);"></p>
+                    <p class="textstyle" style="color: rgb(23, 187, 124);"></p>
+                    <p class="textstyle" style="color: rgb(21, 164, 140);"></p>
+                    <p class="textstyle" style="color: rgb(19, 117, 165);"></p>
+                    <p class="textstyle" style="color: rgb(18, 87, 163);"></p>
+                    <p class="textstyle" style="color: rgb(17, 53, 133);"></p>
+                    <p class="textstyle" style="color: rgb(17, 36, 115);"></p>
+                </div>
+                <!--搜索量-->
+                <div class="consensus" id="rcNum">
+                    <p class="textstyle" style="color: rgb(106, 208, 197);">搜索量</p>
+                    <p class="textstyle" style="color: rgb(23, 195, 118);"></p>
+                    <p class="textstyle" style="color: rgb(23, 187, 124);"></p>
+                    <p class="textstyle" style="color: rgb(21, 164, 140);"></p>
+                    <p class="textstyle" style="color: rgb(19, 117, 165);"></p>
+                    <p class="textstyle" style="color: rgb(18, 87, 163);"></p>
+                    <p class="textstyle" style="color: rgb(17, 53, 133);"></p>
+                    <p class="textstyle" style="color: rgb(17, 36, 115);"></p>
+                </div>
+            </div>
+        </div>
+        <div id="thirdline-thirdcol">
+            <!--舆情指数-->
+            <div class="smalltitle" style="margin-left:12%;margin-top:4%;">舆情指数</div>
+            <div id="centernumber" style="color: rgb(106, 208, 197); text-align: center"></div>
+            <div id="textbox" style="display: none">
+                <div class="onelinetext" style="color: rgb(106, 208, 197);">舆情&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;700</div>
+                <div class="onelinetext" style="color: rgb(106, 208, 197);">中性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9995</div>
+                <div class="onelinetext" style="color: rgb(106, 208, 197);">负面&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5</div>
+            </div>
+        </div>
+        <div id="thirdline-fourthcol">
+            <!--舆情指数-->
+            <div class="smalltitle" style="margin-left:5%;margin-top:2%;">舆情指数走势</div>
+            <div id="chart3"></div>
+        </div>
+
+    </div>
+    <div class="spinner">
+        <div class="spinner-container container1">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+        <div class="spinner-container container2">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+        <div class="spinner-container container3">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+</div>
+<script type="text/javascript" th:inline="text">
+    /*<![CDATA[*/
+    var type=0;
+    var topicId=[[${topicId}]];
+    var time=[[${time}]];
+    /*]]>*/
+</script>
+<script src="/js/lib/jquery-1.8.3.min.js"></script>
+<script src="/js/lib/echarts.js"></script>
+<!--<script src="http://echarts.baidu.com/build/dist/echarts-all.js"></script>-->
+<script src="/js/selfjs/tiantai.js"></script>
+<script src="/js/selfjs/selfapi.js"></script>
+</body>
+<script type="text/javascript">
+    $(window).load(function(){
+        $("#cnzz_stat_icon_1260654542").hide();
+    });
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260654542'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260654542' type='text/javascript'%3E%3C/script%3E"));</script>
+</html>

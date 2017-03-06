@@ -1,0 +1,380 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>品牌舆情控制台</title>
+    <link rel="icon" type="image/ico" href="/assets/images/favicon.ico" />
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" href="/assets/css/vendor/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/assets/css/vendor/animate.css"/>
+    <link rel="stylesheet" href="/assets/css/vendor/font-awesome.min.css"/>
+    <link rel="stylesheet" href="/assets/js/vendor/animsition/css/animsition.min.css"/>
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="stylesheet" href="/css/swiper-3.3.1.min.css"/>
+    <link rel="stylesheet" href="/assets/js/vendor/rickshaw/rickshaw.min.css"/>
+    <link rel="stylesheet" href="/assets/css/introjs.css"/>
+    <!--<link rel="stylesheet" href="/assets/css/introjs.cs"/>-->
+    <script src="/assets/js/vendor/modernizr/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <style>
+        *{
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        a{
+            color:#555;
+            text-decoration: none;
+        }
+        a:hover{
+            color:#555;
+            text-decoration: none;
+        }
+        a:link{
+            color:#555;
+            text-decoration: none;
+        }
+        .card-container .card {
+            cursor: default;
+        }
+        .floatr{
+            float: right;
+            color: #00aced
+        }
+        .pro-cg{
+            -webkit-transform:skewX(45deg) !important;
+            -moz-transform:skewX(45deg) !important;
+            -o-transform:skewX(45deg) !important;
+        }
+        .showzy{
+            cursor: pointer;
+        }
+        /*轮播图开始*/
+        .swiper-container {
+            width:100%;
+            height:480px;
+            padding-top:40px;
+            padding-bottom:40px;
+        }
+        .swiper-slide{
+            display: block;
+            background-position: center;
+            background-size: cover;
+            width: 518px;
+            height: 400px;
+        }
+        .my-color{
+            background-color: #0d0d1f;
+        }
+        .my-pt{
+            padding-top:100px;
+            padding-bottom:100px;
+        }
+        .swiper-slide-active{
+            transition: all 0.5s !important;
+        }
+        .swiper-slide-active:hover{
+            transform:scale(1.2) !important;
+        }
+        /*轮播图结束*/
+        /*跳动数字*/
+        .tiaodong{
+            overflow: hidden;
+            height: 34px;
+        }
+        .tiaodong span{
+            display: block;
+            /*-webkit-transform:translateY(-34px) !important;*/
+            -webkit-transition:1s !important;
+            /*-moz-transform:translateY(-34px) !important;*/
+            -moz-transition:1s !important;
+            /*-o-transform:translateY(-34px) !important;*/
+            -o-transition:1s !important;
+            /*-ms-transform:translateY(-34px) !important;*/
+            -ms-transition:1s !important;
+        }
+    </style>
+</head>
+<body id="pixel" class="appWrapper cyan-scheme-color">
+
+<!--  Application Content  -->
+<div id="wrap" class="animsition">
+
+    <!--  HEADER Content -->
+    <!-- HEADER Content -->
+    <section id="header">
+        <header class="clearfix">
+            <!-- Branding -->
+            <div class="branding scheme-cyan"> <a class="brand" href="index"><span><strong>品牌舆情</strong></span></a> <a role="button" tabindex="0" class="offcanvas-toggle visible-xs-inline"><i class="fa fa-bars"></i></a> </div>
+            <!-- Branding end -->
+            <!-- Left-side navigation -->
+            <ul class="nav-left pull-left list-unstyled list-inline">
+                <li class="sidebar-collapse"><a role="button" tabindex="0" class="collapse-sidebar"><i class="fa fa-outdent"></i></a></li></ul>
+            <!-- Left-side navigation end -->
+
+            <!-- Search -->
+            <!-- <div class="search" id="main-search">
+              <input type="text" class="form-control underline-input" placeholder="Search...">
+            </div> -->
+            <!-- Search end -->
+
+            <!-- Right-side navigation -->
+            <ul class="nav-right pull-right list-inline">
+                <li class="dropdown nav-profile">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="/assets/images/profile-photo.jpg" alt="" class="br-5 size-30x30" />
+                        <span><span th:inline="text">[[${session.username}]]</span> <i class="fa fa-angle-down"></i></span>
+                    </a>
+                    <ul class="dropdown-menu animated littleFadeInDown br-5" role="menu">
+
+
+                        <li><a role="button" tabindex="0" href="/logout"><i class="fa fa-sign-out"></i>退出</a></li>
+                    </ul>
+                    <li class="users">
+                        <a class="showzy"> <i class="fa fa-hand-o-right"></i> <span id="step6"> 操作指引</span></a>
+                        <a href="/img/guide.pdf" target="_blank"> <i class="fa fa-question-circle"></i> <span id="step5"> 帮助</span></a>
+                    </li>
+                </li>
+            </ul>
+            <!-- Right-side navigation end -->
+        </header>
+    </section>
+    <!--/ HEADER Content  -->
+
+    <!--  CONTROLS Content  -->
+    <div id="controls">
+        <!--SIDEBAR Content -->
+        <aside id="sidebar">
+            <div id="sidebar-wrap">
+                <div class="panel-group slim-scroll" role="tablist">
+                    <div class="panel panel-default">
+                        <div id="sidebarNav" class="panel-collapse collapse in" role="tabpanel">
+                            <div class="panel-body">
+                                <!--  NAVIGATION Content -->
+                                <ul id="navigation">
+                                    <li class="active"><a href="index"><i class="fa fa-dashboard"></i> <span>主控制台</span></a></li>
+                                    <li><a role="button" tabindex="0"><i class="fa fa-envelope"></i> <span>平台管理</span></a>
+                                        <ul>
+                                            <li><a href="users"><i class="fa fa-angle-right"></i> 用户 </a></li>
+                                            <li><a href="topics"><i class="fa fa-angle-right"></i> 专题 </a></li>
+                                            <li><a href="keywords"><i class="fa fa-angle-right"></i> 关键字 </a></li>
+                                            <li><a href="analysis"><i class="fa fa-angle-right"></i> 传播分析 </a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a role="button" tabindex="0"><i class="fa fa-list"></i> <span>云端管理</span></a>
+                                        <ul>
+                                            <li><a href="aliTopic"><i class="fa fa-angle-right"></i> 专题</a></li>
+                                            <li><a href="aliKeyword"><i class="fa fa-angle-right"></i> 关键字</a></li>
+                                            <li><a href="competitionV2"><i class="fa fa-angle-right"></i> 传播分析</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a role="button" tabindex="0"><i class="fa fa-pencil"></i> <span>传播分析</span></a>
+                                        <ul>
+                                            <li><a href="analysisV2"><i class="fa fa-angle-right"></i> 微博传播分析</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <!--/ NAVIGATION Content -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!--/ SIDEBAR Content -->
+    </div>
+    <!--/ CONTROLS Content -->
+
+    <!-- CONTENT -->
+    <section id="content" th:inline="text">
+        <div class="page page-dashboard">
+            <!-- cards row -->
+            <div class="row">
+                <div class="card-container col-lg-3 col-sm-12">
+                    <div class="card">
+                        <div class="front bg-white br-5">
+                            <div class="row">
+                                <div class="col-xs-4"> <img src="/assets/images/ppicon.png"/> </div>
+                                <div class="col-xs-8">
+                                    <p class="text-elg text-strong mb-5 tiaodong pptiaodong" >[[${topicNum}]]</p>
+                                    <span>品牌总数</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card-container col-lg-3 col-sm-12">
+                    <div class="card">
+                        <div class="front bg-white br-5">
+                            <div class="row">
+                                <div class="col-xs-4"> <img src="/assets/images/gjzicon.png"/> </div>
+                                <div class="col-xs-8">
+                                    <!--<p class="text-elg text-strong mb-5">10</p>-->
+                                    <p class="text-elg text-strong mb-5 tiaodong gjztiaodong">[[${keywordNum}]]</p>
+                                    <span>关键词总数</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-container col-lg-3 col-sm-12">
+                    <div class="card">
+                        <div class="front bg-white br-5">
+                            <div class="row">
+                                <div class="col-xs-4"> <img src="/assets/images/yq.png"/> </div>
+                                <div class="col-xs-8">
+                                    <p class="text-elg text-strong mb-5 tiaodong yqtiaodong" >[[${sentimentNum}]]</p>
+                                    <span>舆情总数</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-container col-lg-3 col-sm-12">
+                    <div class="card">
+                        <div class="front bg-white br-5">
+                            <div class="row">
+                                <div class="col-xs-4"> <img src="/assets/images/weiboicon.png"/> </div>
+                                <div class="col-xs-8">
+                                    <p class="text-elg text-strong mb-5 tiaodong wbtiaodong">[[${weiboAnalysisNum}]]</p>
+                                    <span>微博分析</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="row">-->
+                <!--<div class="col-xs-12">-->
+                    <!--<section class="tile" style="padding-bottom: 50px;padding-right: 20px;">-->
+                        <!--&lt;!&ndash; <div class="tile-body p-0 br-5" style="height: 400px; overflow:hidden;"> &ndash;&gt;-->
+                        <!--&lt;!&ndash; label显示舆情数 &ndash;&gt;-->
+                        <!--<div class="details" style="margin-left: 20px;padding-top: 10px;margin-bottom: 20px;">-->
+                            <!--<div class="title text-lg" id="nowwidth" style="line-height:30px">-->
+                                <!--&lt;!&ndash; <strong>当前舆情数：</strong> &ndash;&gt;-->
+                                <!--当前舆情数：-->
+                                <!--<strong class="nowConsensus"></strong>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--&lt;!&ndash; 图表 &ndash;&gt;-->
+                        <!--<div class="rickshaw rickshaw_graph" id="realtime-rickshaw" style="margin-left: 20px;margin-top: 50px;">-->
+                        <!--</div>-->
+
+                        <!--&lt;!&ndash; </div> &ndash;&gt;-->
+                    <!--</section>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+    </section>
+    <!--/ CONTENT -->
+
+</div>
+
+<div class="spinner" style="display:none">
+    <div class="spinner-container container1">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+    </div>
+    <div class="spinner-container container2">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+    </div>
+    <div class="spinner-container container3">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+    </div>
+</div>
+<div class="overlay"></div>
+
+<script type="text/javascript" src="/assets/js/vendor/jquery/jquery-1.11.2.min.js"></script>
+<script src="/assets/js/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="/assets/js/vendor/jRespond/jRespond.min.js"></script>
+<script src="/assets/js/vendor/sparkline/jquery.sparkline.min.js"></script>
+<script src="/assets/js/vendor/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="/assets/js/vendor/animsition/js/jquery.animsition.min.js"></script>
+<script src="/assets/js/vendor/screenfull/screenfull.min.js"></script>
+<script src="/assets/js/jquery.cookie.js"></script>
+<script src="/assets/js/intro.js"></script>
+<script type="text/javascript">
+
+</script>
+
+<!--<script src="/assets/js/vendor/d3/d3.min.js"></script>-->
+<!--<script src="/assets/js/vendor/d3/d3.layout.min.js"></script>-->
+<!--<script src="/assets/js/vendor/rickshaw/rickshaw.min.js"></script>-->
+<!--<script src="/assets/js/vendor/rickshaw/Rickshaw.Fixtures.Time.js"></script>-->
+<!--<script src="/assets/js/vendor/rickshaw/Rickshaw.Fixtures.Time.Local.js"></script>-->
+<!--<script src="/assets/js/index_cph.js"></script>-->
+
+<!--/ vendor javascripts -->
+
+<!-- Custom JavaScripts -->
+<script src="/assets/js/main.js"></script>
+
+<script>
+    /*<![CDATA[*/
+    $(function(){
+        //跳动数字及进度条
+        //品牌
+        var ppNum=$('.pptiaodong').html();
+        $('.pptiaodong').html('');
+        $('.pphas-uersd').html(ppNum);
+        var ppTop=0;
+        $('.pptiaodong').append('<span>'+ppNum+'</span>');
+
+        //关键字
+        var gjzNum=$('.gjztiaodong').html();
+        $('.gjztiaodong').html('');
+        $('.gjzhas-uersd').html(gjzNum);
+        var gjzTop=0;
+        $('.gjztiaodong').append('<span>'+gjzNum+'</span>');
+
+        var yqNum=$('.yqtiaodong').html();
+        $('.yqtiaodong').html('');
+        $('.yqhas-uersd').html(yqNum);
+        var yqTop=0;
+        $('.yqtiaodong').append('<span>'+yqNum+'</span>');
+
+        var wbNum=$('.wbtiaodong').html();
+        $('.wbtiaodong').html('');
+        $('.wbhas-uersd').html(wbNum);
+        var wbTop=0;
+        $('.wbtiaodong').append('<span>'+wbNum+'</span>');
+
+
+        function settiaodong(obj,top){
+            obj.css({
+                'transform':'translateY('+top+'px)',
+                '-ms-transform':'translateY('+top+'px)',
+                '-moz-transform':'translateY('+top+'px)',
+                '-webkit-transform':'translateY('+top+'px)',
+                '-o-transform':'translateY('+top+'px)'
+            })
+        }
+        //执行跳动
+        settiaodong($('.pptiaodong').find('span'),ppTop);
+        settiaodong($('.gjztiaodong').find('span'),gjzTop);
+        settiaodong($('.wbtiaodong').find('span'),wbTop);
+        settiaodong($('.yqtiaodong').find('span'),yqTop);
+    });
+    /*]]>*/
+</script>
+</body>
+</html>

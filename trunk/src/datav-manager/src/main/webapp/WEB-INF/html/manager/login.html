@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>登录</title>
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/login.css"/>
+    <link rel="icon" type="image/ico" href="/assets/images/favicon.ico" />
+</head>
+
+<body>
+  <!-- 主要内容 -->
+  <div class="wrap">
+  <div id="main">
+
+    <div class="nav1">
+      <div class="logo">
+        <img src="/img/logo2.png"/>
+      </div>
+      <div class="logotext">|&nbsp;&nbsp;品牌舆情可视化大屏</div>
+      <div style="height:1px; margin-top:-1px;clear:both;overflow:hidden;" ></div>
+    </div>
+
+    <div class="container1">
+
+      <div class ="inner-container">
+      <!-- 轮播图 -->
+      <div class="ct-left">
+        <!-- 整个滑动窗 bootstrap -->
+      <div class="slidebox">
+      <!-- 引入 -->
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+     <!-- Indicators -->
+     <ol class="carousel-indicators">
+       <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+       <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+       <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+     </ol>
+
+     <!-- Wrapper for slides -->
+                   <div class="carousel-inner" role="listbox">
+
+                     <div class="item active">
+                      <div class="productimg">
+                        <!-- 轮播图片1地址 -->
+                        <img class="innerimg" src="/img/banner1.png"/></div>
+
+                       <div class="carousel-caption">
+                       </div>
+                     </div>
+
+                     <div class="item">
+                      <div class="productimg">
+                          <!-- 轮播图片2地址 -->
+                        <img class="innerimg" src="/img/banner2.png"/>
+                        </div>
+                          <!-- <img class ="innerimg" src="img/indexproductimg2.jpg" style="width:100%;" alt="..."> -->
+
+
+                       <div class="carousel-caption">
+                       </div>
+
+
+                     </div>
+
+                     <!-- ... -->
+                     <div class="item">
+                      <div class="productimg">
+                          <!-- 轮播图片3地址 -->
+                        <img class="innerimg" src="/img/banner3.png"/>
+                      </div>
+
+                       <div class="carousel-caption">
+                       </div>
+
+
+
+                     </div>
+
+                   </div>
+
+                   <!-- Controls -->
+                   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                     <span class="glyphicon glyphicon-chevron-left"></span>
+                     <span class="sr-only">Previous</span>
+                   </a>
+                   <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                     <span class="glyphicon glyphicon-chevron-right"></span>
+                     <span class="sr-only">Next</span>
+                   </a>
+                 </div>
+
+               </div>
+
+          <!-- <img src="banner1.png"></img> -->
+
+
+      </div>
+      <!-- 登录form -->
+      <div class="ct-right">
+          <!-- <p class="bigtitle"></p> -->
+          <p class="bigtitle">登录</p>
+          <div class="blueline"></div>
+          <form class="loginform"  action="/login" method="post">
+              <input class="username" type="text" name="username" placeholder="请输入账号"></input>
+              <input class="password" type="password" name="password" placeholder="请输入密码"></input>
+              <input class="submit" type="submit" name="" value="登 录"></input>
+              <label class="inline-block" style="color:red" th:inline="text" th:if="${error != null}">
+            [[${error}]]
+           </label>
+          </form>
+
+      </div>
+
+
+      <div style="height:1px; margin-top:-1px;clear:both;overflow:hidden;" ></div>
+
+      </div>
+    </div>
+
+    <div style="height:1px; margin-top:-1px;clear:both;overflow:hidden;" ></div>
+  </div>
+
+  <!-- 页脚 -->
+  <div id="footer" >
+    Copyright © 2016 杭州以数科技有限公司  浙ICP备12121815号-1
+  </div>
+
+  <div style="height:1px; margin-top:-1px;clear:both;overflow:hidden;" ></div>
+  </div>
+  <script src="/js/jquery.1.11.min.js"></script>
+  <script src="/css/bootstrap/bootstrap.min.js"></script>
+</body>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260654542'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260654542' type='text/javascript'%3E%3C/script%3E"));</script>
+<script type="text/javascript">
+    document.getElementById('cnzz_stat_icon_1260654542').style.display = 'none';
+</script>
+</html>

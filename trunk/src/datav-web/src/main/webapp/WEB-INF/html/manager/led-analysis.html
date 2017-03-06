@@ -1,0 +1,462 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>品牌舆情控制台</title>
+<link rel="icon" type="image/ico" href="assets/images/favicon.ico" />
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/vendor/animate.css">
+<link rel="stylesheet" href="assets/css/vendor/font-awesome.min.css">
+<link rel="stylesheet" href="assets/js/vendor/animsition/css/animsition.min.css">
+<link rel="stylesheet" href="assets/js/vendor/datetimepicker/css/bootstrap-datetimepicker.min.css">
+<link rel="stylesheet" href="assets/css/main.css">
+<script src="assets/js/vendor/modernizr/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+<body id="pixel" class="appWrapper">
+<!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]--> 
+
+<!--  Application Content  -->
+<div id="wrap" class="animsition"> 
+  <!-- HEADER Content -->
+  <section id="header">
+    <header class="clearfix"> 
+      <!-- Branding -->
+      <div class="branding"> <a class="brand" href="index.html"><span><strong>品牌舆情</strong></span></a> <a role="button" tabindex="0" class="offcanvas-toggle visible-xs-inline"><i class="fa fa-bars"></i></a> </div>
+      <!-- Branding end --> 
+      <!-- Left-side navigation -->
+      <ul class="nav-left pull-left list-unstyled list-inline">
+        <li class="sidebar-collapse"><a role="button" tabindex="0" class="collapse-sidebar"><i class="fa fa-outdent"></i></a></li>
+        <li class="dropdown settings"> <a role="button" tabindex="0" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cog"></i></a>
+          <ul class="dropdown-menu with-arrow animated littleFadeInUp br-5 w-280" role="menu">
+            <li>
+              <ul class="color-schemes list-inline br-5">
+                <li class="title w-100">Header Color :</li>
+                <li><a role="button" tabindex="0" class="scheme-drank header-scheme" data-scheme="scheme-default"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-black header-scheme" data-scheme="scheme-black"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-dutch header-scheme" data-scheme="scheme-dutch"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-cyan header-scheme" data-scheme="scheme-cyan"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-amethyst header-scheme" data-scheme="scheme-amethyst"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-light header-scheme" data-scheme="scheme-light"></a></li>
+              </ul>
+              <ul class="color-schemes list-inline">
+                <li class="title w-100">Branding Color :</li>
+                <li><a role="button" tabindex="0" class="scheme-drank branding-scheme" data-scheme="scheme-default"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-black branding-scheme" data-scheme="scheme-black"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-dutch branding-scheme" data-scheme="scheme-dutch"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-cyan branding-scheme" data-scheme="scheme-cyan"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-amethyst branding-scheme" data-scheme="scheme-amethyst"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-light branding-scheme" data-scheme="scheme-light"></a></li>
+              </ul>
+              <ul class="color-schemes list-inline">
+                <li class="title w-100">Sidebar Color :</li>
+                <li><a role="button" tabindex="0" class="scheme-drank sidebar-scheme" data-scheme="scheme-default"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-black sidebar-scheme" data-scheme="scheme-black"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-dutch sidebar-scheme" data-scheme="scheme-dutch"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-cyan sidebar-scheme" data-scheme="scheme-cyan"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-amethyst sidebar-scheme" data-scheme="scheme-amethyst"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-light sidebar-scheme" data-scheme="scheme-light"></a></li>
+              </ul>
+              <ul class="color-schemes list-inline">
+                <li class="title w-100">Active Color :</li>
+                <li><a role="button" tabindex="0" class="scheme-drank color-scheme" data-scheme="drank-scheme-color"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-black color-scheme" data-scheme="black-scheme-color"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-dutch color-scheme" data-scheme="dutch-scheme-color"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-cyan color-scheme" data-scheme="cyan-scheme-color"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-amethyst color-scheme" data-scheme="amethyst-scheme-color"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-light color-scheme" data-scheme="light-scheme-color"></a></li>
+              </ul>
+            </li>
+            <li>
+              <div class="form-group p-20">
+                <div class="row">
+                  <div class="col-md-6">
+                    <label class="control-label">Fixed header</label>
+                    <div class="control-label">
+                      <div class="onoffswitch lightred larg">
+                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="fixed-header" checked="">
+                        <label class="onoffswitch-label" for="fixed-header"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="control-label">Fixed aside</label>
+                    <div class="control-label">
+                      <div class="onoffswitch lightred larg">
+                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="fixed-aside" checked="">
+                        <label class="onoffswitch-label" for="fixed-aside"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <!-- Left-side navigation end --> 
+      
+      <!-- Search -->
+      <!-- <div class="search" id="main-search">
+        <input type="text" class="form-control underline-input" placeholder="Search...">
+      </div> -->
+      <!-- Search end --> 
+      
+      <!-- Right-side navigation -->
+      <ul class="nav-right pull-right list-inline">
+        <li class="dropdown nav-profile"> <a "href" class="dropdown-toggle" data-toggle="dropdown"> <img src="assets/images/profile-photo.jpg" alt="" class="br-5 size-30x30"> <span>用户名 <i class="fa fa-angle-down"></i></span> </a>
+          <ul class="dropdown-menu animated littleFadeInDown br-5" role="menu">
+
+
+            <li><a role="button" tabindex="0"><i class="fa fa-sign-out"></i>退出</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- Right-side navigation end --> 
+    </header>
+  </section>
+  <!--/ HEADER Content  --> 
+  
+  <!--  CONTROLS Content -->
+  <div id="controls"> 
+    <!--SIDEBAR Content -->
+    <aside id="sidebar">
+      <div id="sidebar-wrap">
+        <div class="panel-group slim-scroll" role="tablist">
+          <div class="panel panel-default">
+            <!-- <div class="panel-heading" role="tab">
+              <h4 class="panel-title"><a data-toggle="collapse" href="index.html#sidebarNav">导航菜单 <i class="fa fa-angle-up"></i></a></h4>
+            </div> -->
+            <div id="sidebarNav" class="panel-collapse collapse in" role="tabpanel">
+              <div class="panel-body"> 
+                <!--  NAVIGATION Content -->
+                <ul id="navigation">
+                  <li><a href="index.html"><i class="fa fa-dashboard"></i> <span>主控制台</span></a></li>
+                  <li > <a role="button" tabindex="0"><i class="fa fa-envelope"></i> <span>舆情盒子</span> <span class="badge bg-lightred">6</span></a>
+                    <ul>
+                      <li><a href="inbox.html"><i class="fa fa-angle-right"></i> 新舆情 <span class="label br-10 label-success">new</span></a></li>
+                    </ul>
+                  </li>
+                  <li > <a role="button" tabindex="0"><i class="fa fa-list"></i> <span>品牌管理</span></a>
+                    <ul>
+                      <li><a href="brand-setting.html"><i class="fa fa-angle-right"></i> 自身品牌设置</a></li>
+                      <li ><a href="attention-setting.html"><i class="fa fa-angle-right"></i> 关注品牌设置</a></li>
+                    
+                    </ul>
+                  </li>
+                  <li  class="active open"> <a role="button" tabindex="0"><i class="fa fa-pencil"></i> <span>传播分析</span></a>
+                    <ul>
+                      <li class="active"><a href="weibo-analysis.html"><i class="fa fa-angle-right"></i> 微博传播分析</a></li>
+                    </ul>
+                  </li>
+                  <li class="active open"> <a role="button" tabindex="0"><i class="fa fa-desktop"></i> <span>舆情大屏</span> <span class="label br-10 label-success">new</span></a>
+                    <ul>
+                      <li><a href="led-brand.html"><i class="fa fa-angle-right"></i> 品牌舆情大屏</a></li>
+                      <li class="active"><a href="led-analysis.html"><i class="fa fa-angle-right"></i> 传播分析大屏</a></li>
+                      <li><a href="led-attention.html"><i class="fa fa-angle-right"></i> 关注品牌大屏</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <!--/ NAVIGATION Content --> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!--/ SIDEBAR Content --> 
+  </div>
+  <!--/ CONTROLS Content --> 
+  
+  <!--  CONTENT  -->
+  <section id="content">
+    
+  </section>
+  <!--/ CONTENT --> 
+</div>
+<!--/ Application Content --> 
+
+<!--  Vendor JavaScripts --> 
+<script type="text/javascript">window.jQuery || document.write('<script src="assets/js/vendor/jquery/jquery-1.11.2.min.js"><\/script>')</script> 
+<script src="assets/js/vendor/bootstrap/bootstrap.min.js"></script> 
+<script src="assets/js/vendor/jRespond/jRespond.min.js"></script> 
+<script src="assets/js/vendor/sparkline/jquery.sparkline.min.js"></script> 
+<script src="assets/js/vendor/slimscroll/jquery.slimscroll.min.js"></script> 
+<script src="assets/js/vendor/animsition/js/jquery.animsition.min.js"></script> 
+<script src="assets/js/vendor/screenfull/screenfull.min.js"></script> 
+<script src="assets/js/vendor/countTo/jquery.countTo.js"></script> 
+<script src="assets/js/vendor/daterangepicker/moment.min.js"></script> 
+<script src="assets/js/vendor/datetimepicker/js/bootstrap-datetimepicker.min.js"></script> 
+<script src="assets/js/vendor/raty-fa/jquery.raty-fa.js"></script> 
+<script src="assets/js/vendor/typeahead/typeahead.bundle.min.js"></script> 
+<script src="assets/js/vendor/handlebars/handlebars-v3.0.3.js"></script> 
+<!--/ vendor javascripts --> 
+
+<!--  Custom JavaScripts  --> 
+<script src="assets/js/main.js"></script> 
+<!--/ custom javascripts --> 
+
+<!--  Page Specific Scripts --> 
+<script type="text/javascript">
+	$(window).load(function() {
+		$('#datepicker-inline').datetimepicker({
+			inline: true
+		});
+		$('#datetimepicker1').datetimepicker();
+		$('#raty1').raty({
+			number: 10,
+			target: '#hint',
+			targetType: 'number'
+		});
+		$('#raty2').raty({
+			score: 3,
+			starOff: 'fa fa-star-o text-orange',
+			starOn: 'fa fa-star text-orange',
+			target: '#hint2',
+			targetType: 'number',
+			targetKeep: true
+		});
+		$('#raty3').raty({
+			score: 10,
+			number: 15,
+			starOff: 'fa fa-bug',
+			starOn: 'fa fa-bug text-cyan',
+			target: '#hint3',
+			targetType: 'number',
+			targetKeep: true
+		});
+		$('#raty4').raty({
+			readOnly: true,
+			score: 2
+		});
+		$('#raty5').raty({
+			cancel: true,
+			score: 4
+		});
+		var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
+		// constructs the suggestion engine
+		var states = new Bloodhound({
+			datumTokenizer: Bloodhound.tokenizers.whitespace,
+			queryTokenizer: Bloodhound.tokenizers.whitespace,
+			// `states` is an array of state names defined in "The Basics"
+			local: states
+		});
+		$('#basicTypeahead').typeahead({
+			hint: true,
+			highlight: true,
+			minLength: 1
+		}, {
+			name: 'states',
+			source: states
+		});
+		var countries = new Bloodhound({
+			datumTokenizer: Bloodhound.tokenizers.whitespace,
+			queryTokenizer: Bloodhound.tokenizers.whitespace,
+			// url points to a json file that contains an array of country names, see
+			// https://github.com/twitter/typeahead.js/blob/gh-pages/data/countries.json
+			prefetch: 'assets/extras/countries.json'
+		});
+		// passing in `null` for the `options` arguments will result in the default
+		// options being used
+		$('#jsonTypeahead').typeahead(null, {
+			name: 'countries',
+			source: countries
+		});
+		var usStates = [{
+			'name': 'Alabama',
+			'flag': '5/5c/Flag_of_Alabama.svg/45px-Flag_of_Alabama.svg.png'
+		}, {
+			'name': 'Alaska',
+			'flag': 'e/e6/Flag_of_Alaska.svg/43px-Flag_of_Alaska.svg.png'
+		}, {
+			'name': 'Arizona',
+			'flag': '9/9d/Flag_of_Arizona.svg/45px-Flag_of_Arizona.svg.png'
+		}, {
+			'name': 'Arkansas',
+			'flag': '9/9d/Flag_of_Arkansas.svg/45px-Flag_of_Arkansas.svg.png'
+		}, {
+			'name': 'California',
+			'flag': '0/01/Flag_of_California.svg/45px-Flag_of_California.svg.png'
+		}, {
+			'name': 'Colorado',
+			'flag': '4/46/Flag_of_Colorado.svg/45px-Flag_of_Colorado.svg.png'
+		}, {
+			'name': 'Connecticut',
+			'flag': '9/96/Flag_of_Connecticut.svg/39px-Flag_of_Connecticut.svg.png'
+		}, {
+			'name': 'Delaware',
+			'flag': 'c/c6/Flag_of_Delaware.svg/45px-Flag_of_Delaware.svg.png'
+		}, {
+			'name': 'Florida',
+			'flag': 'f/f7/Flag_of_Florida.svg/45px-Flag_of_Florida.svg.png'
+		}, {
+			'name': 'Georgia',
+			'flag': '5/54/Flag_of_Georgia_%28U.S._state%29.svg/46px-Flag_of_Georgia_%28U.S._state%29.svg.png'
+		}, {
+			'name': 'Hawaii',
+			'flag': 'e/ef/Flag_of_Hawaii.svg/46px-Flag_of_Hawaii.svg.png'
+		}, {
+			'name': 'Idaho',
+			'flag': 'a/a4/Flag_of_Idaho.svg/38px-Flag_of_Idaho.svg.png'
+		}, {
+			'name': 'Illinois',
+			'flag': '0/01/Flag_of_Illinois.svg/46px-Flag_of_Illinois.svg.png'
+		}, {
+			'name': 'Indiana',
+			'flag': 'a/ac/Flag_of_Indiana.svg/45px-Flag_of_Indiana.svg.png'
+		}, {
+			'name': 'Iowa',
+			'flag': 'a/aa/Flag_of_Iowa.svg/44px-Flag_of_Iowa.svg.png'
+		}, {
+			'name': 'Kansas',
+			'flag': 'd/da/Flag_of_Kansas.svg/46px-Flag_of_Kansas.svg.png'
+		}, {
+			'name': 'Kentucky',
+			'flag': '8/8d/Flag_of_Kentucky.svg/46px-Flag_of_Kentucky.svg.png'
+		}, {
+			'name': 'Louisiana',
+			'flag': 'e/e0/Flag_of_Louisiana.svg/46px-Flag_of_Louisiana.svg.png'
+		}, {
+			'name': 'Maine',
+			'flag': '3/35/Flag_of_Maine.svg/45px-Flag_of_Maine.svg.png'
+		}, {
+			'name': 'Maryland',
+			'flag': 'a/a0/Flag_of_Maryland.svg/45px-Flag_of_Maryland.svg.png'
+		}, {
+			'name': 'Massachusetts',
+			'flag': 'f/f2/Flag_of_Massachusetts.svg/46px-Flag_of_Massachusetts.svg.png'
+		}, {
+			'name': 'Michigan',
+			'flag': 'b/b5/Flag_of_Michigan.svg/45px-Flag_of_Michigan.svg.png'
+		}, {
+			'name': 'Minnesota',
+			'flag': 'b/b9/Flag_of_Minnesota.svg/46px-Flag_of_Minnesota.svg.png'
+		}, {
+			'name': 'Mississippi',
+			'flag': '4/42/Flag_of_Mississippi.svg/45px-Flag_of_Mississippi.svg.png'
+		}, {
+			'name': 'Missouri',
+			'flag': '5/5a/Flag_of_Missouri.svg/46px-Flag_of_Missouri.svg.png'
+		}, {
+			'name': 'Montana',
+			'flag': 'c/cb/Flag_of_Montana.svg/45px-Flag_of_Montana.svg.png'
+		}, {
+			'name': 'Nebraska',
+			'flag': '4/4d/Flag_of_Nebraska.svg/46px-Flag_of_Nebraska.svg.png'
+		}, {
+			'name': 'Nevada',
+			'flag': 'f/f1/Flag_of_Nevada.svg/45px-Flag_of_Nevada.svg.png'
+		}, {
+			'name': 'New Hampshire',
+			'flag': '2/28/Flag_of_New_Hampshire.svg/45px-Flag_of_New_Hampshire.svg.png'
+		}, {
+			'name': 'New Jersey',
+			'flag': '9/92/Flag_of_New_Jersey.svg/45px-Flag_of_New_Jersey.svg.png'
+		}, {
+			'name': 'New Mexico',
+			'flag': 'c/c3/Flag_of_New_Mexico.svg/45px-Flag_of_New_Mexico.svg.png'
+		}, {
+			'name': 'New York',
+			'flag': '1/1a/Flag_of_New_York.svg/46px-Flag_of_New_York.svg.png'
+		}, {
+			'name': 'North Carolina',
+			'flag': 'b/bb/Flag_of_North_Carolina.svg/45px-Flag_of_North_Carolina.svg.png'
+		}, {
+			'name': 'North Dakota',
+			'flag': 'e/ee/Flag_of_North_Dakota.svg/38px-Flag_of_North_Dakota.svg.png'
+		}, {
+			'name': 'Ohio',
+			'flag': '4/4c/Flag_of_Ohio.svg/46px-Flag_of_Ohio.svg.png'
+		}, {
+			'name': 'Oklahoma',
+			'flag': '6/6e/Flag_of_Oklahoma.svg/45px-Flag_of_Oklahoma.svg.png'
+		}, {
+			'name': 'Oregon',
+			'flag': 'b/b9/Flag_of_Oregon.svg/46px-Flag_of_Oregon.svg.png'
+		}, {
+			'name': 'Pennsylvania',
+			'flag': 'f/f7/Flag_of_Pennsylvania.svg/45px-Flag_of_Pennsylvania.svg.png'
+		}, {
+			'name': 'Rhode Island',
+			'flag': 'f/f3/Flag_of_Rhode_Island.svg/32px-Flag_of_Rhode_Island.svg.png'
+		}, {
+			'name': 'South Carolina',
+			'flag': '6/69/Flag_of_South_Carolina.svg/45px-Flag_of_South_Carolina.svg.png'
+		}, {
+			'name': 'South Dakota',
+			'flag': '1/1a/Flag_of_South_Dakota.svg/46px-Flag_of_South_Dakota.svg.png'
+		}, {
+			'name': 'Tennessee',
+			'flag': '9/9e/Flag_of_Tennessee.svg/46px-Flag_of_Tennessee.svg.png'
+		}, {
+			'name': 'Texas',
+			'flag': 'f/f7/Flag_of_Texas.svg/45px-Flag_of_Texas.svg.png'
+		}, {
+			'name': 'Utah',
+			'flag': 'f/f6/Flag_of_Utah.svg/45px-Flag_of_Utah.svg.png'
+		}, {
+			'name': 'Vermont',
+			'flag': '4/49/Flag_of_Vermont.svg/46px-Flag_of_Vermont.svg.png'
+		}, {
+			'name': 'Virginia',
+			'flag': '4/47/Flag_of_Virginia.svg/44px-Flag_of_Virginia.svg.png'
+		}, {
+			'name': 'Washington',
+			'flag': '5/54/Flag_of_Washington.svg/46px-Flag_of_Washington.svg.png'
+		}, {
+			'name': 'West Virginia',
+			'flag': '2/22/Flag_of_West_Virginia.svg/46px-Flag_of_West_Virginia.svg.png'
+		}, {
+			'name': 'Wisconsin',
+			'flag': '2/22/Flag_of_Wisconsin.svg/45px-Flag_of_Wisconsin.svg.png'
+		}, {
+			'name': 'Wyoming',
+			'flag': 'b/bc/Flag_of_Wyoming.svg/43px-Flag_of_Wyoming.svg.png'
+		}];
+		// constructs the suggestion engine
+		var usStates = new Bloodhound({
+			datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+			queryTokenizer: Bloodhound.tokenizers.whitespace,
+			// `states` is an array of state names defined in "The Basics"
+			local: usStates
+		});
+		$('#customTypeahead').typeahead(null, {
+			name: 'us-states',
+			display: 'name',
+			source: usStates,
+			templates: {
+				empty: ['<div class="empty-message">', 'unable to find any US States that match the current query', '</div>'].join('\n'),
+				suggestion: Handlebars.compile('<div><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/{{flag}}" width="16" class="mr-10"><strong>{{name}}</strong></div>')
+			}
+		});
+	});
+</script> 
+<!--/ Page Specific Scripts --> 
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. --> 
+<script type="text/javascript">
+	(function(b, o, i, l, e, r) {
+		b.GoogleAnalyticsObject = l;
+		b[l] || (b[l] = function() {
+			(b[l].q = b[l].q || []).push(arguments)
+		});
+		b[l].l = +new Date;
+		e = o.createElement(i);
+		r = o.getElementsByTagName(i)[0];
+		e.src = 'https://www.google-analytics.com/analytics.js';
+		r.parentNode.insertBefore(e, r)
+	}(window, document, 'script', 'ga'));
+	ga('create', 'UA-XXXXX-X', 'auto');
+	ga('send', 'pageview');
+</script>
+</body>
+</html>

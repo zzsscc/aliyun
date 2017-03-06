@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+<configuration>
+	<plugins>
+		<plugin interceptor="com.github.miemiedev.mybatis.paginator.OffsetLimitInterceptor">
+			<property name="dialectClass" value="com.github.miemiedev.mybatis.paginator.dialect.MySQLDialect" />
+		</plugin>
+		<plugin interceptor="com.github.pagehelper.PageHelper">
+			<property name="dialect" value="mysql"/>
+		</plugin>
+	</plugins>
+	<mappers >
+		<mapper resource="com/eshutech/biz/mapper/TblDatavKeywordsMapper.xml" />
+		<mapper resource="com/eshutech/biz/mapper/TblDatavTopicsMapper.xml" />
+		<mapper resource="com/eshutech/biz/mapper/TblIsvInstancesMapper.xml" />
+		<mapper resource="com/eshutech/biz/mapper/TblLogEmailMapper.xml" />
+		<mapper resource="com/eshutech/biz/mapper/TblLogExceptionMapper.xml" />
+		<mapper resource="com/eshutech/biz/mapper/TblLogInterfaceMapper.xml" />
+		<mapper resource="com/eshutech/biz/mapper/TblLogOperationMapper.xml" />
+		<mapper resource="com/eshutech/biz/mapper/TblLogRecordMapper.xml" />
+		<mapper resource="com/eshutech/biz/mapper/TblSmsMoMapper.xml" />
+		<mapper resource="com/eshutech/biz/mapper/TblSmsMtMapper.xml" />
+		<mapper resource="com/eshutech/biz/mapper/TblWeiboAnalysisMapper.xml" />
+		<mapper resource="com/eshutech/biz/mapper/TblWeiboAnalysisResultMapper.xml" />
+		<mapper resource="com/eshutech/biz/mapper/TblCompetitionInfoMapper.xml" />
+	</mappers>
+</configuration>

@@ -1,0 +1,500 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>品牌舆情控制台</title>
+    <link rel="icon" type="image/ico" href="/assets/images/favicon.ico" />
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" href="/assets/css/vendor/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/assets/css/vendor/animate.css"/>
+    <link rel="stylesheet" href="/assets/css/vendor/font-awesome.min.css"/>
+    <link rel="stylesheet" href="/assets/js/vendor/animsition/css/animsition.min.css"/>
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="stylesheet" href="/css/swiper-3.3.1.min.css"/>
+    <link rel="stylesheet" href="/assets/js/vendor/rickshaw/rickshaw.min.css"/>
+    <link rel="stylesheet" href="/assets/css/introjs.css"/>
+    <!--<link rel="stylesheet" href="/assets/css/introjs.cs"/>-->
+    <script src="/assets/js/vendor/modernizr/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <style>
+        *{
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        a{
+            color:#555;
+            text-decoration: none;
+        }
+        a:hover{
+            color:#555;
+            text-decoration: none;
+        }
+        a:link{
+            color:#555;
+            text-decoration: none;
+        }
+        .card-container .card {
+            cursor: default;
+        }
+        .floatr{
+            float: right;
+        }
+        .pro-cg{
+            -webkit-transform:skewX(30deg) !important;
+        }
+        /*轮播图开始*/
+        .swiper-container {
+            width:100%;
+            height:480px;
+            padding-top:40px;
+            padding-bottom:40px;
+        }
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 518px;
+            height: 400px;
+        }
+        .swiper-slide a{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .my-color{
+            background-color: #0d0d1f;
+        }
+        .my-pt{
+            padding-top:100px;
+            padding-bottom:100px;
+        }
+        .swiper-slide-active{
+            transition: all 0.5s !important;
+        }
+        .swiper-slide-active:hover{
+            transform:scale(1.2) !important;
+        }
+        /*轮播图结束*/
+    </style>
+</head>
+<body id="pixel" class="appWrapper cyan-scheme-color">
+
+<!--  Application Content  -->
+<div id="wrap" class="animsition">
+
+    <!--  HEADER Content -->
+    <!-- HEADER Content -->
+    <section id="header">
+        <header class="clearfix">
+            <!-- Branding -->
+            <div class="branding scheme-cyan"> <a class="brand" href="index"><span><strong>品牌舆情</strong></span></a> <a role="button" tabindex="0" class="offcanvas-toggle visible-xs-inline"><i class="fa fa-bars"></i></a> </div>
+            <!-- Branding end -->
+            <!-- Left-side navigation -->
+            <!--<ul class="nav-left pull-left list-unstyled list-inline">-->
+                <!--<li class="sidebar-collapse"><a role="button" tabindex="0" class="collapse-sidebar"><i class="fa fa-outdent"></i></a></li>-->
+                <!--<li class="dropdown settings"> <a role="button" tabindex="0" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cog"></i></a>-->
+                    <!--<ul class="dropdown-menu with-arrow animated littleFadeInUp br-5 w-280" role="menu">-->
+                        <!--<li>-->
+                            <!--<ul class="color-schemes list-inline br-5">-->
+                                <!--<li class="title w-100">Header Color :</li>-->
+                                <!--<li><a role="button" tabindex="0" class="scheme-drank header-scheme" data-scheme="scheme-default"></a></li>-->
+                                <!--<li><a role="button" tabindex="0" class="scheme-black header-scheme" data-scheme="scheme-black"></a></li>-->
+                                <!--<li><a role="button" tabindex="0" class="scheme-dutch header-scheme" data-scheme="scheme-dutch"></a></li>-->
+                                <!--<li><a role="button" tabindex="0" class="scheme-cyan header-scheme" data-scheme="scheme-cyan"></a></li>-->
+                                <!--<li><a role="button" tabindex="0" class="scheme-amethyst header-scheme" data-scheme="scheme-amethyst"></a></li>-->
+                                <!--<li><a role="button" tabindex="0" class="scheme-light header-scheme" data-scheme="scheme-light"></a></li>-->
+                            <!--</ul>-->
+                            <!--<ul class="color-schemes list-inline">-->
+                                <!--<li class="title w-100">Branding Color :</li>-->
+                                <!--<li><a role="button" tabindex="0" class="scheme-drank branding-scheme" data-scheme="scheme-default"></a></li>-->
+                                <!--<li><a role="button" tabindex="0" class="scheme-black branding-scheme" data-scheme="scheme-black"></a></li>-->
+                                <!--<li><a role="button" tabindex="0" class="scheme-dutch branding-scheme" data-scheme="scheme-dutch"></a></li>-->
+                                <!--<li><a role="button" tabindex="0" class="scheme-cyan branding-scheme" data-scheme="scheme-cyan"></a></li>-->
+                                <!--<li><a role="button" tabindex="0" class="scheme-amethyst branding-scheme" data-scheme="scheme-amethyst"></a></li>-->
+                                <!--<li><a role="button" tabindex="0" class="scheme-light branding-scheme" data-scheme="scheme-light"></a></li>-->
+                            <!--</ul>-->
+                            <!--<ul class="color-schemes list-inline">-->
+                                <!--<li class="title w-100">Sidebar Color :</li>-->
+                                <!--<li><a role="button" tabindex="0" class="scheme-drank sidebar-scheme" data-scheme="scheme-default"></a></li>-->
+                                <!--<li><a role="button" tabindex="0" class="scheme-black sidebar-scheme" data-scheme="scheme-black"></a></li>-->
+                                <!--<li><a role="button" tabindex="0" class="scheme-dutch sidebar-scheme" data-scheme="scheme-dutch"></a></li>-->
+                                <!--<li><a role="button" tabindex="0" class="scheme-cyan sidebar-scheme" data-scheme="scheme-cyan"></a></li>-->
+                                <!--<li><a role="button" tabindex="0" class="scheme-amethyst sidebar-scheme" data-scheme="scheme-amethyst"></a></li>-->
+                                <!--<li><a role="button" tabindex="0" class="scheme-light sidebar-scheme" data-scheme="scheme-light"></a></li>-->
+                            <!--</ul>-->
+                            <!--<ul class="color-schemes list-inline">-->
+                                <!--<li class="title w-100">Active Color :</li>-->
+                                <!--<li><a role="button" tabindex="0" class="scheme-drank color-scheme" data-scheme="drank-scheme-color"></a></li>-->
+                                <!--<li><a role="button" tabindex="0" class="scheme-black color-scheme" data-scheme="black-scheme-color"></a></li>-->
+                                <!--<li><a role="button" tabindex="0" class="scheme-dutch color-scheme" data-scheme="dutch-scheme-color"></a></li>-->
+                                <!--<li><a role="button" tabindex="0" class="scheme-cyan color-scheme" data-scheme="cyan-scheme-color"></a></li>-->
+                                <!--<li><a role="button" tabindex="0" class="scheme-amethyst color-scheme" data-scheme="amethyst-scheme-color"></a></li>-->
+                                <!--<li><a role="button" tabindex="0" class="scheme-light color-scheme" data-scheme="light-scheme-color"></a></li>-->
+                            <!--</ul>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<div class="form-group p-20">-->
+                                <!--<div class="row">-->
+                                    <!--<div class="col-md-6">-->
+                                        <!--<label class="control-label">Fixed header</label>-->
+                                        <!--<div class="control-label">-->
+                                            <!--<div class="onoffswitch lightred larg">-->
+                                                <!--<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="fixed-header" checked=""/>-->
+                                                <!--<label class="onoffswitch-label" for="fixed-header"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-md-6">-->
+                                        <!--<label class="control-label">Fixed aside</label>-->
+                                        <!--<div class="control-label">-->
+                                            <!--<div class="onoffswitch lightred larg">-->
+                                                <!--<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="fixed-aside" checked=""/>-->
+                                                <!--<label class="onoffswitch-label" for="fixed-aside"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+            <!--</ul>-->
+            <!-- Left-side navigation end -->
+
+            <!-- Search -->
+            <!-- <div class="search" id="main-search">
+              <input type="text" class="form-control underline-input" placeholder="Search...">
+            </div> -->
+            <!-- Search end -->
+
+            <!-- Right-side navigation -->
+            <ul class="nav-right pull-right list-inline">
+                <li class="dropdown nav-profile">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="/assets/images/profile-photo.jpg" alt="" class="br-5 size-30x30" />
+                        <span><span th:inline="text">[[${session.username}]]</span> <i class="fa fa-angle-down"></i></span>
+                    </a>
+                    <ul class="dropdown-menu animated littleFadeInDown br-5" role="menu">
+
+
+                        <li><a role="button" tabindex="0" href="/logout"><i class="fa fa-sign-out"></i>退出</a></li>
+                    </ul>
+                <li class="users"> <a href="helpV2" target="_blank"> <i class="fa fa-question-circle"></i>
+                    <span id="step5">帮助</span>
+                </a>
+                </li>
+                </li>
+            </ul>
+            <!-- Right-side navigation end -->
+        </header>
+    </section>
+    <!--/ HEADER Content  -->
+
+    <!--  CONTROLS Content  -->
+    <div id="controls">
+        <!--SIDEBAR Content -->
+        <aside id="sidebar">
+            <div id="sidebar-wrap">
+                <div class="panel-group slim-scroll" role="tablist">
+                    <div class="panel panel-default">
+                        <div id="sidebarNav" class="panel-collapse collapse in" role="tabpanel">
+                            <div class="panel-body">
+                                <!--  NAVIGATION Content -->
+                                <ul id="navigation">
+                                    <li class="active"  id="step4"><a href="index"><i class="fa fa-dashboard"></i> <span>主控制台</span></a></li>
+                                    <li id="step2"><a role="button" tabindex="0"><i class="fa fa-envelope"></i> <span>舆情盒子</span></a>
+                                        <ul>
+                                            <li><a href="inbox"><i class="fa fa-angle-right"></i> 新舆情 </a></li>
+                                        </ul>
+                                    </li>
+                                    <li id="step1" class="open"> <a role="button" tabindex="0"><i class="fa fa-list"></i> <span>品牌管理</span></a>
+                                        <ul style="display: block">
+                                            <li><a href="self-setting"><i class="fa fa-angle-right"></i> 自身品牌设置</a></li>
+                                            <li><a href="attention-setting"><i class="fa fa-angle-right"></i> 关注品牌设置</a></li>
+                                            <li><a href="competitionV2"><i class="fa fa-angle-right"></i> 品牌位置设置</a></li>
+                                        </ul>
+                                    </li>
+                                    <li id="step3"> <a role="button" tabindex="0"><i class="fa fa-pencil"></i> <span>传播分析</span></a>
+                                        <ul>
+                                            <li><a href="analysisV2"><i class="fa fa-angle-right"></i> 微博传播分析</a></li>
+                                        </ul>
+                                    </li>
+                                    <!--<li> <a role="button" tabindex="0"><i class="fa fa-desktop"></i> <span>舆情大屏</span></a>-->
+                                        <!--<ul>-->
+                                            <!--<li><a href="led-brand.html"><i class="fa fa-angle-right"></i> 品牌舆情大屏</a></li>-->
+                                            <!--<li><a href="led-analysis.html"><i class="fa fa-angle-right"></i> 微博传播大屏</a></li>-->
+                                            <!--<li><a href="led-attention.html"><i class="fa fa-angle-right"></i> 关注品牌大屏</a></li>-->
+                                        <!--</ul>-->
+                                    <!--</li>-->
+                                </ul>
+                                <!--/ NAVIGATION Content -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!--/ SIDEBAR Content -->
+    </div>
+    <!--/ CONTROLS Content -->
+
+    <!-- CONTENT -->
+    <section id="content">
+        <div class="page page-dashboard">
+            <!-- cards row -->
+            <div class="row">
+                <div class="card-container col-lg-4 col-sm-12">
+                    <div class="card">
+                        <div class="front bg-white br-5">
+                            <div class="row">
+                                <div class="col-xs-4"> <img src="/assets/images/ppicon.png"/> </div>
+                                <div class="col-xs-8">
+                                    <p class="text-elg text-strong mb-5">10</p>
+                                    <span>品牌总数</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="pro-cg progress-sm not-rounded mb-0 inline-block progress col-xs-9" style="width: 70%;padding-left: 0; margin:20px 0 0 10%">
+                                    <div class="pro-cg progress-bar progress-bar-cyan" role="progressbar" data-aria-valuenow="42" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
+                                </div>
+                                <span class="col-xs-2 floatr" style="margin-top:16px"><span class="pphas-uersd">6</span>/8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-container col-lg-4 col-sm-12">
+                    <div class="card">
+                        <div class="front bg-white br-5">
+                            <div class="row">
+                                <div class="col-xs-4"> <img src="/assets/images/gjzicon.png"/> </div>
+                                <div class="col-xs-8">
+                                    <p class="text-elg text-strong mb-5">10</p>
+                                    <span>关键词总数</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="pro-cg progress-sm not-rounded mb-0 inline-block progress col-xs-9" style="width: 70%;padding-left: 0; margin:20px 0 0 10%">
+                                    <div class="pro-cg progress-bar progress-bar-cyan" role="progressbar" data-aria-valuenow="42" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
+                                </div>
+                                <span class="col-xs-2 floatr" style="margin-top:16px"><span class="gjzhas-uersd">6</span>/8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-container col-lg-4 col-sm-12">
+                    <div class="card">
+                        <div class="front bg-white br-5" style="padding-bottom: 65px">
+                            <div class="row">
+                                <div class="col-xs-4"> <img src="/assets/images/weiboicon.png"/> </div>
+                                <div class="col-xs-8">
+                                    <p class="text-elg text-strong mb-5">30</p>
+                                    <span>微博分析总数</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card-container col-xs-12">
+                    <div class="card my-color pl-10 pr-10 my-pt br-5">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide" style="background-image:url('/img/index-bg1.png')">
+                                    <a class="swiper-slide" href="/front/screen/brand" target="_blank"></a>
+                                </div>
+                                <div class="swiper-slide" style="background-image:url('/img/index-bg2.png')">
+                                    <a class="swiper-slide" href="/front/screen/analysis" target="_blank"></a>
+                                </div>
+                                <div class="swiper-slide" style="background-image:url('/img/index-bg3.png')">
+                                    <a class="swiper-slide" href="/front/screen/attention" target="_blank"></a>
+                                </div>
+                            </div>
+                            <!-- Add Pagination -->
+                            <!--<div class="swiper-pagination"></div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="row">-->
+                <!--<div class="col-xs-12">-->
+                    <!--<section class="tile" style="padding-bottom: 50px;padding-right: 20px;">-->
+                        <!--&lt;!&ndash; <div class="tile-body p-0 br-5" style="height: 400px; overflow:hidden;"> &ndash;&gt;-->
+                        <!--&lt;!&ndash; label显示舆情数 &ndash;&gt;-->
+                        <!--<div class="details" style="margin-left: 20px;padding-top: 10px;margin-bottom: 20px;">-->
+                            <!--<div class="title text-lg" id="nowwidth" style="line-height:30px">-->
+                                <!--&lt;!&ndash; <strong>当前舆情数：</strong> &ndash;&gt;-->
+                                <!--当前舆情数：-->
+                                <!--<strong class="nowConsensus"></strong>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--&lt;!&ndash; 图表 &ndash;&gt;-->
+                        <!--<div class="rickshaw rickshaw_graph" id="realtime-rickshaw" style="margin-left: 20px;margin-top: 50px;">-->
+                        <!--</div>-->
+
+                        <!--&lt;!&ndash; </div> &ndash;&gt;-->
+                    <!--</section>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+    </section>
+    <!--/ CONTENT -->
+
+</div>
+
+<div class="spinner">
+    <div class="spinner-container container1">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+    </div>
+    <div class="spinner-container container2">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+    </div>
+    <div class="spinner-container container3">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+    </div>
+</div>
+<div class="overlay"></div>
+
+<!--<div id="step1" style="width:150px;height:50px;">这里出现第一步引导</div>-->
+<!--<div id="step2" style="width:150px;height:50px;">这里出现第二步引导</div>-->
+<!--<div id="step3" style="width:150px;height:50px;">这里出现第三步引导</div>-->
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  -->
+<!-- <script type="">window.jQuery || document.write('<script src="assets/js/vendor/jquery/jquery-1.11.2.min.js"><\/script>')</script> -->
+<script type="text/javascript" src="/assets/js/vendor/jquery/jquery-1.11.2.min.js"></script>
+<script src="/assets/js/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="/assets/js/vendor/jRespond/jRespond.min.js"></script>
+<script src="/assets/js/vendor/sparkline/jquery.sparkline.min.js"></script>
+<script src="/assets/js/vendor/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="/assets/js/vendor/animsition/js/jquery.animsition.min.js"></script>
+<script src="/assets/js/vendor/screenfull/screenfull.min.js"></script>
+<script src="/assets/js/jquery.cookie.js"></script>
+<script src="/assets/js/intro.js"></script>
+<script type="text/javascript">
+
+</script>
+
+<!--<script src="/assets/js/vendor/d3/d3.min.js"></script>-->
+<!--<script src="/assets/js/vendor/d3/d3.layout.min.js"></script>-->
+<!--<script src="/assets/js/vendor/rickshaw/rickshaw.min.js"></script>-->
+<!--<script src="/assets/js/vendor/rickshaw/Rickshaw.Fixtures.Time.js"></script>-->
+<!--<script src="/assets/js/vendor/rickshaw/Rickshaw.Fixtures.Time.Local.js"></script>-->
+<!--<script src="/assets/js/index_cph.js"></script>-->
+
+<!--/ vendor javascripts -->
+
+<!-- Custom JavaScripts -->
+<script src="/assets/js/main.js"></script>
+<script src="/js/swiper-3.3.1.min.js"></script>
+
+<script>
+    $(function(){
+        var swiper = new Swiper('.swiper-container', {
+            loop :'true',
+//            autoplay:2000,
+//        用户操作以后是否会停止自动切换，默认值为true
+            autoplayDisableOnInteraction:false,
+//        pagination: '.swiper-pagination',
+////        分页器是否可以点击，默认值为false
+//        paginationClickable :true,
+
+            effect: 'coverflow',
+            zoom: true,
+//        抓手状
+//        grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            coverflow: {
+                rotate: 45,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows : true
+            }
+        });
+        var t = setTimeout( function(){
+
+        swiper.onResize();
+            if(!$.cookie('showStep')){
+                introJs().setOptions({
+                    //对应的按钮
+                    prevLabel:"上一步",
+                    nextLabel:"下一步",
+                    skipLabel:"跳过",
+                    doneLabel:"结束",
+                    //对应的数组，顺序出现每一步引导提示
+                    steps: [
+                        {
+                            //第一步引导
+                            //这个属性类似于jquery的选择器， 可以通过jquery选择器的方式来选择你需要选中的对象进行指引
+                            element: '#step1',
+                            //这里是每个引导框具体的文字内容，中间可以编写HTML代码
+                            intro: '<div style="width: 505px;margin-bottom: 10px">1，品牌管理 首次进入系统需要先进行品牌管理的设置，分别按照以下条件设置：</div>' +
+                            '<div style="margin-bottom: 5px">自身品牌设置 -> 专题 + 关键词</div>' +
+                            '<div style="margin-bottom: 5px">关注品牌设置 -> 专题 + 关键词</div>' +
+                            '<div style="margin-bottom: 5px">品牌位置设置 -> 设置展示的品牌信息(图片等)</div>',
+                            //这里可以规定引导框相对于选中对象出现的位置 top,bottom,left,right
+                            position: 'right'
+                        },
+                        {
+                            //第二步引导
+                            element: '#step2',
+                            intro: '<div style="width: 430px;">舆情盒子 在设置完关键词后的5到10分钟内就会看到相关的舆情信息</div>',
+                            position: 'right'
+                        },
+                        {
+                            //第三步引导
+                            element: '#step3',
+                            intro: '<div style="width: 500px;">传播分析 通过链接来分析微博传播情况，分析完毕后可以在主控制台"微博传播大屏"展示</div>',
+                            position: 'right'
+                        },
+                        {
+                            //第4步引导
+                            element: '#step4',
+                            intro: '<div style="width: 500px;">主控制台 品牌舆情、微博传播以及关注品牌三块大屏的入口，设置完品牌管理以及传播分析后1小时左右就可以看到可视化大屏啦~</div>',
+                            position: 'right'
+                        },
+                        {
+                            //第5步引导
+                            element: '#step5',
+                            intro: '<div style="width: 400px;">其他的设置问题以及疑问可以点击右上角帮助信息进行查看哦~</div>',
+                            position: 'left'
+                        }
+                    ]
+
+                }).start();
+
+                $.cookie('showStep' , '1' , {
+                    expires : 10000,       //设置过期时间，10000天后
+                    path : '/',          //设置路径，上一层
+//            domain : 'www.baidu.com',      //设置域名
+//            secure : true,            //默认为false，需要使用安全协议https
+                })
+            }
+        }, 100 );
+
+//        $('.swiper-slide').on('mouseenter',function(){
+//            if($(this).hasClass('swiper-slide-active')){
+//                console.log('是她');
+//            }
+//        });
+    });
+
+</script>
+
+</body>
+</html>

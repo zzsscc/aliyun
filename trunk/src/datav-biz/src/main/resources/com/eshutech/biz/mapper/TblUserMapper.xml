@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.eshutech.biz.mapper.TblUserMapper" >
+  <resultMap id="BaseResultMap" type="com.eshutech.biz.entity.TblUser" >
+    <id column="ID" property="id" jdbcType="INTEGER" />
+    <result column="ADDRESS" property="address" jdbcType="VARCHAR" />
+    <result column="AGE" property="age" jdbcType="SMALLINT" />
+    <result column="EMAIL" property="email" jdbcType="VARCHAR" />
+    <result column="ENABLED" property="enabled" jdbcType="VARCHAR" />
+    <result column="FULLNAME" property="fullname" jdbcType="VARCHAR" />
+    <result column="PASSWORD" property="password" jdbcType="VARCHAR" />
+    <result column="PLAIN_PASSWORD" property="plainPassword" jdbcType="VARCHAR" />
+    <result column="SALT" property="salt" jdbcType="VARCHAR" />
+    <result column="SEX" property="sex" jdbcType="VARCHAR" />
+    <result column="TYPE" property="type" jdbcType="INTEGER" />
+    <result column="USERNAME" property="username" jdbcType="VARCHAR" />
+    <result column="ORG" property="org" jdbcType="INTEGER" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="MODIFY_TIME" property="modifyTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <resultMap id="UserVo" type="com.eshutech.biz.model.vo.UserVo" >
+    <id column="ID" property="id" jdbcType="INTEGER" />
+    <result column="USERNAME" property="username" jdbcType="VARCHAR" />
+    <result column="EXPIRED_ON" property="expiredOn" jdbcType="VARCHAR" />
+    <result column="ALI_UID" property="aliUid" jdbcType="VARCHAR" />
+    <result column="MOBILE" property="mobile" jdbcType="VARCHAR" />
+    <result column="MODIFY_TIME" property="modifyTime" jdbcType="TIMESTAMP" />
+    <result column="sentiment_count" property="sentimentCount" jdbcType="INTEGER" />
+    <result column="weibo_analysis_count" property="weiboAnalysisCount" jdbcType="INTEGER" />
+    <result column="keywordCount" property="keywordCount" jdbcType="INTEGER" />
+    <result column="topicCount" property="topicCount" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+
+
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, ADDRESS, AGE, EMAIL, ENABLED, FULLNAME, PASSWORD, PLAIN_PASSWORD, SALT, SEX, 
+    TYPE, USERNAME, ORG, CREATE_TIME, MODIFY_TIME
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.eshutech.biz.entity.TblUserExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tbl_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_user
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tbl_user
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.eshutech.biz.entity.TblUserExample" >
+    delete from tbl_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.eshutech.biz.entity.TblUser" >
+    insert into tbl_user (ID, ADDRESS, AGE, 
+      EMAIL, ENABLED, FULLNAME, 
+      PASSWORD, PLAIN_PASSWORD, SALT, 
+      SEX, TYPE, USERNAME, 
+      ORG, CREATE_TIME, MODIFY_TIME
+      )
+    values (#{id,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR}, #{age,jdbcType=SMALLINT}, 
+      #{email,jdbcType=VARCHAR}, #{enabled,jdbcType=VARCHAR}, #{fullname,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{plainPassword,jdbcType=VARCHAR}, #{salt,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, 
+      #{org,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.eshutech.biz.entity.TblUser" >
+    insert into tbl_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="address != null" >
+        ADDRESS,
+      </if>
+      <if test="age != null" >
+        AGE,
+      </if>
+      <if test="email != null" >
+        EMAIL,
+      </if>
+      <if test="enabled != null" >
+        ENABLED,
+      </if>
+      <if test="fullname != null" >
+        FULLNAME,
+      </if>
+      <if test="password != null" >
+        PASSWORD,
+      </if>
+      <if test="plainPassword != null" >
+        PLAIN_PASSWORD,
+      </if>
+      <if test="salt != null" >
+        SALT,
+      </if>
+      <if test="sex != null" >
+        SEX,
+      </if>
+      <if test="type != null" >
+        TYPE,
+      </if>
+      <if test="username != null" >
+        USERNAME,
+      </if>
+      <if test="org != null" >
+        ORG,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="modifyTime != null" >
+        MODIFY_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null" >
+        #{age,jdbcType=SMALLINT},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="enabled != null" >
+        #{enabled,jdbcType=VARCHAR},
+      </if>
+      <if test="fullname != null" >
+        #{fullname,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="plainPassword != null" >
+        #{plainPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="salt != null" >
+        #{salt,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="org != null" >
+        #{org,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.eshutech.biz.entity.TblUserExample" resultType="java.lang.Integer" >
+    select count(*) from tbl_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tbl_user
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.address != null" >
+        ADDRESS = #{record.address,jdbcType=VARCHAR},
+      </if>
+      <if test="record.age != null" >
+        AGE = #{record.age,jdbcType=SMALLINT},
+      </if>
+      <if test="record.email != null" >
+        EMAIL = #{record.email,jdbcType=VARCHAR},
+      </if>
+      <if test="record.enabled != null" >
+        ENABLED = #{record.enabled,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fullname != null" >
+        FULLNAME = #{record.fullname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.password != null" >
+        PASSWORD = #{record.password,jdbcType=VARCHAR},
+      </if>
+      <if test="record.plainPassword != null" >
+        PLAIN_PASSWORD = #{record.plainPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="record.salt != null" >
+        SALT = #{record.salt,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sex != null" >
+        SEX = #{record.sex,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null" >
+        TYPE = #{record.type,jdbcType=INTEGER},
+      </if>
+      <if test="record.username != null" >
+        USERNAME = #{record.username,jdbcType=VARCHAR},
+      </if>
+      <if test="record.org != null" >
+        ORG = #{record.org,jdbcType=INTEGER},
+      </if>
+      <if test="record.createTime != null" >
+        CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.modifyTime != null" >
+        MODIFY_TIME = #{record.modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tbl_user
+    set ID = #{record.id,jdbcType=INTEGER},
+      ADDRESS = #{record.address,jdbcType=VARCHAR},
+      AGE = #{record.age,jdbcType=SMALLINT},
+      EMAIL = #{record.email,jdbcType=VARCHAR},
+      ENABLED = #{record.enabled,jdbcType=VARCHAR},
+      FULLNAME = #{record.fullname,jdbcType=VARCHAR},
+      PASSWORD = #{record.password,jdbcType=VARCHAR},
+      PLAIN_PASSWORD = #{record.plainPassword,jdbcType=VARCHAR},
+      SALT = #{record.salt,jdbcType=VARCHAR},
+      SEX = #{record.sex,jdbcType=VARCHAR},
+      TYPE = #{record.type,jdbcType=INTEGER},
+      USERNAME = #{record.username,jdbcType=VARCHAR},
+      ORG = #{record.org,jdbcType=INTEGER},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      MODIFY_TIME = #{record.modifyTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.eshutech.biz.entity.TblUser" >
+    update tbl_user
+    <set >
+      <if test="address != null" >
+        ADDRESS = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null" >
+        AGE = #{age,jdbcType=SMALLINT},
+      </if>
+      <if test="email != null" >
+        EMAIL = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="enabled != null" >
+        ENABLED = #{enabled,jdbcType=VARCHAR},
+      </if>
+      <if test="fullname != null" >
+        FULLNAME = #{fullname,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        PASSWORD = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="plainPassword != null" >
+        PLAIN_PASSWORD = #{plainPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="salt != null" >
+        SALT = #{salt,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        SEX = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        TYPE = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="username != null" >
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="org != null" >
+        ORG = #{org,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null" >
+        MODIFY_TIME = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.eshutech.biz.entity.TblUser" >
+    update tbl_user
+    set ADDRESS = #{address,jdbcType=VARCHAR},
+      AGE = #{age,jdbcType=SMALLINT},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      ENABLED = #{enabled,jdbcType=VARCHAR},
+      FULLNAME = #{fullname,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      PLAIN_PASSWORD = #{plainPassword,jdbcType=VARCHAR},
+      SALT = #{salt,jdbcType=VARCHAR},
+      SEX = #{sex,jdbcType=VARCHAR},
+      TYPE = #{type,jdbcType=INTEGER},
+      USERNAME = #{username,jdbcType=VARCHAR},
+      ORG = #{org,jdbcType=INTEGER},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      MODIFY_TIME = #{modifyTime,jdbcType=TIMESTAMP}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+
+  <sql id="Vo_Where_Clause" >
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+      AND D.uid = A.id
+      AND E.instance_id = D.instance_id
+    </where>
+  </sql>
+
+  <select id="selectUserVo" resultMap="UserVo" parameterType="com.eshutech.biz.entity.TblUserExample" >
+    SELECT
+    A.id,
+    A.USERNAME,
+    D.mobile,
+    D.ali_uid,
+    D.expired_on,
+    A.MODIFY_TIME,
+    E.sentiment_count,
+    E.weibo_analysis_count,
+    (
+    SELECT
+    count(*)
+    FROM
+    tbl_datav_keywords B,
+    tbl_datav_topics C
+    WHERE
+    B.topic_id = C.id
+    AND C.instance_id = D.instance_id
+    ) AS keywordCount,
+    (
+    SELECT
+    count(*)
+    FROM
+    tbl_datav_topics F
+    WHERE
+    F.instance_id = D.instance_id
+    ) AS topicCount
+    FROM
+    tbl_user A,
+    tbl_isv_instances D,
+    tbl_instance_profile E
+    <if test="_parameter != null" >
+      <include refid="Vo_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+
+  <select id="countVoByExample" parameterType="com.eshutech.biz.entity.TblUserExample" resultType="java.lang.Integer" >
+    SELECT
+    count(*)
+    FROM
+    tbl_user A,
+    tbl_isv_instances D,
+    tbl_instance_profile E
+    <if test="_parameter != null" >
+      <include refid="Vo_Where_Clause" />
+    </if>
+  </select>
+</mapper>

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>实时要闻传播分析</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/public.css">
+    <style>
+        #main{
+            box-sizing: border-box;
+            width: 1920px;
+            height: 1080px;
+            background: url('../img/背景.png');
+            padding-left: 38px;
+            padding-right: 38px;
+        }
+        #main .public-title{
+            font-size: 26px;
+            color: #6ad0c5;
+            margin-top: 14px;
+            margin-left: 40px;
+            width: 230px;
+            height: 37px;
+            line-height: 37px;
+        }
+        /*top*/
+        #main .top{
+            box-sizing: border-box;
+            height: 118px;
+            line-height: 118px;
+            text-align: center;
+            width: 100%;
+            font-size: 40px;
+            color: #6ad0c5;
+            background: url('../img/logo.png') 100% 50% no-repeat;
+        }
+        /*left*/
+        #main .left{
+            box-sizing: border-box;
+            width: 1314px;
+            height: 924px;
+            float: left;
+        }
+        /*left-left-top*/
+        #main .left .left-left-top{
+            width: 524px;
+            height: 504px;
+            float: left;
+            background: url('../img/实时要闻传播分析-微博信息.png') no-repeat;
+            margin-bottom: 16px;
+            position: relative;
+        }
+        #main .left-left-top-head{
+            margin-top: 25px;
+            margin-left: 70px;
+            height: 90px;
+        }
+        #main .left-left-top-head .headpic{
+            display: block;
+            float: left;
+            width: 90px;
+            height: 90px;
+            margin-right: 32px;
+        }
+        #main .top-head-l{
+            float: left;
+        }
+        #main .one-level{
+            color:#6ad0c5;
+            font-size: 16px;
+
+            margin-bottom: 10px;
+            margin-top: 13px;
+        }
+        #main .sec-level{
+            color:#6ad0c5;
+            font-size: 12px;
+        }
+        #main .left-left-top-words{
+            height: 65px;
+            overflow: hidden;
+            margin-top: 16px;
+            margin-right: 75px;
+            margin-left: 70px;
+            color:#6ad0c5;
+            font-size: 16px;
+        }
+        #main .left-left-top-bottom{
+            margin-left: 70px;
+            font-size: 16px;
+            color:#6ad0c5;
+        }
+        #main .left-left-top-bottom .bottom-word{
+            width: 180px;
+            position: absolute;
+            left: 80px;
+            top:300px;
+        }
+        #main .left-left-top-bottom .round-word{
+            float: left;
+            text-align: right;
+            margin-right: 20px;
+        }
+        #main .left-left-top-bottom .round-num{
+            float: left;
+        }
+        #main .round-word div{
+            margin-bottom: 5px;
+        }
+        #main .round-num div{
+            margin-bottom: 5px;
+        }
+        /*情感值*/
+        #main .emotion-index{
+            width: 208px;
+            height: 180px;
+            position: absolute;
+            top:270px;
+            left:288px;
+        }
+        /*left-right-top*/
+        #main .left .left-right-top{
+            width: 774px;
+            height: 504px;
+            float: right;
+            background: url('../img/实时要闻传播分析-传播路径拓扑图.png') no-repeat;
+            margin-bottom: 16px;
+        }
+        #main .dianlutu{
+            width: 776px;
+            height: 415px;
+            background: url('../img/传播路径.png');
+            margin-top: 10px;
+        }
+        /*left-left-bottom*/
+        #main .left .left-left-bottom{
+            width: 524px;
+            height: 404px;
+            float: left;
+            background: url('../img/实时要闻传播分析-关键传播账号.png') no-repeat;
+        }
+        .machine-table table{
+            border-collapse: collapse;
+            margin: 30px 30px;
+            color: #6ad0c5;
+        }
+        .machine-table thead{
+            font-size: 12px;
+            background: transparent;
+        }
+        .machine-table thead tr{
+            height: 50px;
+        }
+        .machine-table tbody{
+            font-size: 12px;
+        }
+        .machine-table tbody tr:nth-child(2n){
+            background: transparent;
+        }
+        .machine-table tr{
+            height: 24px;
+            text-align: left;
+        }
+        .machine-table td{
+            text-align: left;
+            word-break:keep-all;
+            white-space:nowrap;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        /*left-right-bottom*/
+        #main .left .left-right-bottom{
+            width: 774px;
+            height: 404px;
+            float: right;
+            background: url('../img/实时要闻传播分析-72小时内转发曲线.png') no-repeat;
+        }
+        #main .chart72h{
+            width: 715px;
+            height: 325px;
+            margin-left: 28px;
+            margin-top: 5px;
+        }
+        /*right*/
+        #main .right{
+            box-sizing: border-box;
+            width: 514px;
+            height: 924px;
+            float: right;
+            background: url('../img/实时要闻传播分析-用户特征.png');
+            position: relative;
+        }
+        #main .right-chart{
+            position: absolute;
+            width: 170px;
+            height: 170px;
+        }
+        /*top*/
+        #main .right-top-chart{
+            top: 88px;
+            left: 50px;
+        }
+        #main .right-top-center{
+            box-sizing: border-box;
+            position: absolute;
+            top:116px;
+            left: 245px;
+            width: 200px;
+            height: 120px;
+            padding-top: 5px;
+        }
+        #main .hot-ul{
+            font-size: 12px;
+            color: #6ad0c5;
+        }
+        #main .hot-ul .hot-li{
+            margin-bottom: 16px;
+        }
+        .hot-title,.hot-strip,.hot-num{
+            float: left;
+        }
+        .hot-num{
+            float: right;
+        }
+        #main .hot-li .hot-title{
+            text-align: end;
+            margin-right: 15px;
+        }
+        #main .hot-li .hot-strip{
+            height: 4px;
+            width: 80px;
+            background: #42cdc1;
+            /*margin-right: 20px;*/
+            margin-top: 6px;
+            -webkit-transform:skewX(45deg);
+        }
+        /*middle*/
+        #main .right-middle-chart{
+            top: 263px;
+            left: 285px;
+        }
+        #main .right-middle-center{
+            box-sizing: border-box;
+            position: absolute;
+            top:320px;
+            left: 75px;
+            width: 194px;
+            padding-top: 7px;
+            padding-left: 16px;
+        }
+        #main .right-middle-center .hot-li .hot-title{
+            margin-right: 26px;
+        }
+        /*bottom*/
+        #main .right-bottom-chart{
+            top: 435px;
+            left: 50px;
+        }
+        #main .right-bottom-center{
+            box-sizing: border-box;
+            position: absolute;
+            top:495px;
+            left: 245px;
+            width: 205px;
+            padding-top: 5px;
+        }
+        #main .right-bottom-center .hot-li:last-child{
+            padding-left: 12px;
+        }
+        #main .right-bottom-center .hot-li:last-child .hot-title{
+            margin-right: 26px;
+        }
+        /*map*/
+        #main .map-chart{
+            position: absolute;
+            width: 320px;
+            height: 290px;
+            top: 610px;
+            left: 20px;
+        }
+        #main .map-info{
+            position:absolute;
+            top: 630px;
+            left: 370px;
+            width: 120px;
+            height: 200px;
+        }
+        #main .map-info .map-info-title{
+            font-size: 16px;
+            color:#6ad0c5;
+            margin-bottom: 26px;
+        }
+        #main .map-info .map-info-center{
+            color:#6ad0c5;
+            font-size: 12px;
+        }
+        #main .map-info-center>div div {
+            float: left;
+            margin-top: 10px;
+            vertical-align: middle;
+        }
+        #main .map-info-center .color{
+            width:12px;
+            height: 12px;
+            margin-right: 20px;
+            margin-top: 12px;
+        }
+        #main .map-info-center .dark-color{
+            background: #08475a;
+        }
+        #main .map-info-center .medium-color{
+            background: #19647b;
+        }
+        #main .map-info-center .tint-color{
+            background: #368097;
+        }
+        /*消除vue渲染时，出现的鬼影*/
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="main" class="clearfix">
+        <div class="top">实时要闻传播分析</div>
+        <div class="left clearfix">
+            <div class="left-left-top">
+                <div class="public-title">微博信息</div>
+                <div class="left-left-top-head clearfix">
+                    <img class="headpic" v-bind:src="profileImageURL">
+                    <div class="top-head-l" v-cloak>
+                        <div class="one-level">{{name}}</div>
+                        <div class="sec-level">{{verifiedReason}}</div>
+                    </div>
+                </div>
+                <div class="left-left-top-words" v-cloak>{{description}}</div>
+                <div class="left-left-top-bottom clearfix">
+                    <div class="bottom-word">
+                        <div class="round-word">
+                            <div class="round-word-li">新闻曝光量</div>
+                            <div class="round-word-li">新闻转发量</div>
+                            <div class="round-word-li">一转</div>
+                            <div class="round-word-li">二转</div>
+                            <div class="round-word-li">三转</div>
+                        </div>
+                        <div class="round-num" v-cloak>
+                            <div class="round-num-li">{{newExp}}</div>
+                            <div class="round-num-li">{{newForward}}</div>
+                            <div class="round-num-li">{{newOneF}}</div>
+                            <div class="round-num-li">{{newTwoF}}</div>
+                            <div class="round-num-li">{{newThreeF}}</div>
+                        </div>
+                    </div>
+                    <div class="emotion-index" id="emotion-index-chart"></div>
+                </div>
+            </div>
+            <div class="left-right-top">
+                <div class="public-title">传播路径拓扑图</div>
+                <div class="dianlutu" id="dianlutu"></div>
+            </div>
+            <div class="left-left-bottom">
+                <div class="public-title">关键传播账号</div>
+                <div class="machine-table">
+                    <table>
+                        <thead>
+                        <tr>
+                            <td>关键传播账号</td>
+                            <td>粉丝</td>
+                            <td>用户类型</td>
+                            <td>时间</td>
+                            <td>二次转发</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr v-for="item in keyArr">
+                            <td>{{item.screenName}}</td>
+                            <td>{{item.followersCount}}</td>
+                            <td>{{item.verifiedType}}</td>
+                            <td>{{new Date(item.postTime).getFullYear()}}/{{new Date(item.postTime).getMonth()+1}}/{{new Date(item.postTime).getDate()}} {{new Date(item.postTime).getHours()}}:{{new Date(item.postTime).getMinutes()}}</td>
+                            <td class="last-td">{{item.repostCount}}</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="left-right-bottom">
+                <div class="public-title">72小时内转发曲线</div>
+                <div class="chart72h" id="chart72h"></div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="public-title">用户特征</div>
+            <div class="right-chart right-top-chart" id="right-top-chart"></div>
+            <div class="right-top-center">
+                <div class="follow-chart">
+                    <ul class="hot-ul">
+                        <li class="hot-li clearfix">
+                            <div class="hot-title">个人认证</div>
+                            <div class="hot-strip"></div>
+                            <div class="hot-num"></div>
+                        </li>
+                        <li class="hot-li clearfix">
+                            <div class="hot-title">企业认证</div>
+                            <div class="hot-strip"></div>
+                            <div class="hot-num"></div>
+                        </li>
+                        <li class="hot-li clearfix">
+                            <div class="hot-title">微博达人</div>
+                            <div class="hot-strip"></div>
+                            <div class="hot-num"></div>
+                        </li>
+                        <li class="hot-li clearfix">
+                            <div class="hot-title">普通用户</div>
+                            <div class="hot-strip"></div>
+                            <div class="hot-num"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right-chart right-middle-chart" id="right-middle-chart"></div>
+            <div class="right-middle-center">
+                <div class="follow-chart">
+                    <ul class="hot-ul">
+                        <li class="hot-li clearfix">
+                            <div class="hot-title">男</div>
+                            <div class="hot-strip"></div>
+                            <div class="hot-num"></div>
+                        </li>
+                        <li class="hot-li clearfix">
+                            <div class="hot-title">女</div>
+                            <div class="hot-strip"></div>
+                            <div class="hot-num"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right-chart right-bottom-chart" id="right-bottom-chart"></div>
+            <div class="right-bottom-center">
+                <div class="follow-chart">
+                    <ul class="hot-ul">
+                        <li class="hot-li clearfix">
+                            <div class="hot-title">普通用户</div>
+                            <div class="hot-strip"></div>
+                            <div class="hot-num"></div>
+                        </li>
+                        <li class="hot-li clearfix">
+                            <div class="hot-title">水军</div>
+                            <div class="hot-strip"></div>
+                            <div class="hot-num"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="map-chart" id="map-chart"></div>
+            <div class="map-info">
+                <div class="map-info-title">用户城市分布</div>
+                <div class="map-info-center">
+                    <div class="dark clearfix" v-for="item in items"  v-cloak>
+                        <div class="color" v-bind:class="{ 'dark-color': item.isA, 'medium-color': item.isB, 'tint-color': item.isC}"></div>
+                        <div class="wenzi dark-wenzi">{{item.key}}&nbsp;&nbsp;&nbsp;{{item.value}}</div>
+                    </div>
+                    <!--<div class="medium clearfix">-->
+                        <!--<div class="color medium-color"></div>-->
+                        <!--<div class="wenzi medium-wenzi">安徽&nbsp;&nbsp;&nbsp;14.3%</div>-->
+                    <!--</div>-->
+                    <!--<div class="tint clearfix">-->
+                        <!--<div class="color tint-color"></div>-->
+                        <!--<div class="wenzi tint-wenzi">其他&nbsp;&nbsp;&nbsp;7.1%</div>-->
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <script src="../js/vue.js"></script>
+    <script src="../js/echarts.js"></script>
+    <script src="../js/china.js"></script>
+    <!--<script src="../js/d3.min.js"></script>-->
+    <!--<script src="../js/d3Index.js"></script>-->
+    <script src="../js/twaver.js"></script>
+    <script src="../js/demo.js"></script>
+    <script src="../js/BundleDemo.js"></script>
+    <!--<script src="../js/twaverIndex.js"></script>-->
+    <script src="../js/实时要闻传播分析.js"></script>
+    <script src="../js/ajax.js"></script>
+</body>
+</html>

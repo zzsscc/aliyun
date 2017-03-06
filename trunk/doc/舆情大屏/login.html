@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>登录</title>
+    <link rel="stylesheet" href="css/login.css">
+    <style>
+        body{
+            box-sizing: border-box;
+            width: 100%;
+            height:958px;
+            border: 1px solid #000;
+            background: url('img/background.png');
+            position: relative;
+        }
+        a{
+            text-decoration: none;
+            color:#666;
+        }
+        .log-in{
+            width: 460px;
+            height: 360px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -180px;
+            margin-left: -230px;
+            background: url('img/log-in.png');
+        }
+        input.usename,input.password{
+            box-sizing: border-box;
+            border: 1px solid #b3b3b3;
+            border-radius: 4px;
+            display: block;
+            margin: auto;
+            margin-top: 107px;
+            width: 350px;
+            height: 50px;
+            padding: 0 18px;
+        }
+        input.usename:focus,input.password:focus{
+            border-color: #00c199;
+        }
+        input.usename{
+            background: #fff  url('img/usename.png') 310px 50% no-repeat;
+        }
+        input.password{
+            margin-top: 20px;
+            background: #fff  url('img/password.png') 310px 50% no-repeat;
+        }
+        .fig{
+            font-size: 14px;
+            margin:20px 0 20px 56px;
+            border-bottom: 1px solid #666;
+            color: #666;
+            width: 70px;
+        }
+        .button{
+            border-radius: 4px;
+            margin: auto;
+            width: 350px;
+            height: 50px;
+            background: #00c199;
+        }
+        .button a{
+            display: block;
+            width: 350px;
+            height: 50px;
+            color: #fff;
+            font-size: 18px;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="log-in">
+        <input type="text" class="usename" placeholder="用户名 | 账号" autofocus required/>
+        <input type="password" class="password" placeholder="密码" required/>
+        <div class="fig"><a href="#">忘记密码？</a></div>
+        <div class="button"><a class="denglu" href="#">登 录</a></div>
+    </div>
+    <script src="js/lib/jquery-1.8.3.min.js"></script>
+    <script>
+       $('.button').on('click',function(){
+           var useName = $('.usename').val();
+           var passWord = $('.password').val();
+           if(useName === 'admin'){
+               if(passWord === '123456'){
+                   $('.denglu').attr('href','../control/control.html');
+               }
+           }
+       });
+    </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>传播分析设置</title>
+    <link rel="stylesheet" href="./css/ctrlcss/pas.css">
+</head>
+<body>
+<div id="header">
+    <div class="container clearfix">
+        <div class="container clearfix">
+            <div class="logo-wrap clearfix">
+                <div class="logo"></div>
+                <div class="title">品牌舆情控制台</div>
+            </div>
+            <ul class="nav clearfix">
+                <li><a href="#">可视化大屏</a></li>
+                <li><a href="#">舆情盒子</a></li>
+                <li><a href="#" class="active">设置</a></li>
+            </ul>
+            <div class="user-inf">欢迎您，<span>admin</span> | <span>退出</span></div>
+        </div>
+    </div>
+</div>
+<div id="main">
+    <div class="container">
+        <div class="sec-nav clearfix">
+            <ul class="sec-ul clearfix">
+                <li><a href="keyword-set.html">品牌设置</a></li>
+                <li><a href="#"  class="active">传播分析设置</a></li>
+                <li><a href="product-set.html">关注品牌设置</a></li>
+            </ul>
+            <span>当前位置：设置 > 传播分析设置</span>
+        </div>
+        <!--列表部分-->
+        <div class="l-wrap">
+            <div class="list-title"><span class="keyword">分析历史</span><span class="control">操作</span></div>
+            <ul class="list">
+            </ul>
+            <div class="list-end clearfix">
+                <div class="item-checkbox2"><input type="checkbox" class="del-input"></div>
+                <div class="end-ctrl clearfix">
+                    <div class="del-all">批量删除</div>
+                    <div class="add-keyword">添加新微博</div>
+                </div>
+                <!--分页-->
+                <ul class="page-wrap clearfix">
+                    <li><</li>
+                    <li class="active">1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--添加新微博的对话框-->
+<div class="dialog-wrap addWb">
+    <div class="dialog">
+        <div class="dialog-content">
+            <div class="d-title clearfix">
+                <div class="d-name">添加新微博</div>
+                <div class="d-close">×</div>
+            </div>
+            <!--对话框主要内容展示1-->
+            <div class="d-m">
+                <!--<div class="bz clearfix">-->
+                    <!--<div class="d-m-left">博主名称*</div>-->
+                    <!--<div class="d-m-right d-m-name"><input type="text" name="" placeholder="站点命名规范：网站名_板块名，例如：新浪网_新闻_国内。"></div>-->
+                <!--</div>-->
+                <!--<div class="introduce clearfix">-->
+                    <!--<div class="d-m-left">简要说明*</div>-->
+                    <!--<div class="d-m-right"><textarea name=""  cols="30" rows="10" placeholder="简要描述站点"></textarea></div>-->
+                <!--</div>-->
+                <div class="wb-link clearfix">
+                    <div class="d-m-left">微博链接*</div>
+                    <div class="d-m-right d-m-link"><input type="text" name="" placeholder="提供站点需精细到子版块，并且是列表页，列表页中必须包含标题和发布时间。"></div>
+                </div>
+            </div >
+            <div class="d-footer clearfix">
+                <div class="d-button save active">保存</div>
+                <div class="d-button cancel">取消</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--编辑微博的对话框-->
+<div class="dialog-wrap editWb">
+    <div class="dialog">
+        <div class="dialog-content">
+            <div class="d-title clearfix">
+                <div class="d-name">结果分析</div>
+                <div class="d-close">×</div>
+            </div>
+            <!--对话框主要内容展示1-->
+            <div class="d-m">
+               <div class="editTitle">结果分析中......</div>
+                <div class="editProgress">
+                    <div class="editBar"></div>
+                </div>
+            </div >
+            <div class="d-footer clearfix">
+                <div class="d-button cancel">取消</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--删除微博的对话框-->
+<div class="dialog-wrap delWb">
+    <div class="dialog">
+        <div class="dialog-content">
+            <div class="d-title clearfix">
+                <div class="d-name">删除微博</div>
+                <div class="d-close">×</div>
+            </div>
+            <!--对话框主要内容展示1-->
+            <div class="d-m">
+                <p>确定删除此微博吗？</p>
+            </div >
+            <div class="d-footer clearfix">
+                <div class="d-button save active">保存</div>
+                <div class="d-button cancel">取消</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--批量删除微博的对话框-->
+<div class="dialog-wrap delAllWb">
+    <div class="dialog">
+        <div class="dialog-content">
+            <div class="d-title clearfix">
+                <div class="d-name">批量删除微博</div>
+                <div class="d-close">×</div>
+            </div>
+            <!--对话框主要内容展示1-->
+            <div class="d-m">
+                <p>确定删除这些已勾选的微博吗？</p>
+            </div >
+            <div class="d-footer clearfix">
+                <div class="d-button save active">保存</div>
+                <div class="d-button cancel">取消</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/lib/jquery-2.2.3.min.js"></script>
+
+<script src="./js/ctrljs/pas.js"></script>
+
+</body>
+</html>

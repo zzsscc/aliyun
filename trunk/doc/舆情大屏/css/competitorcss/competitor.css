@@ -1,0 +1,351 @@
+/*通用样式*/
+html,body,ul,li{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family:'Microsoft Yahei';
+    color:#6ad0c5;
+    background: #02020d;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.clearfix:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.content{
+    width: 1840px;
+    margin: 0 auto;
+}
+body{
+    background: url("../../img/competitor-img/background.png");
+}
+.sub-title{
+    margin-left: 40px;
+    font-size: 26px;
+    color:#6ad0c5;
+}
+.ie-box{
+    box-sizing: border-box;
+    padding-top: 20px;
+}
+/*图标样式*/
+@font-face {
+    font-family: 'iconfont';
+    src: url('http://at.alicdn.com/t/font_1473761822_777503.eot'); /* IE9*/
+    src: url('http://at.alicdn.com/t/font_1473761822_777503.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('http://at.alicdn.com/t/font_1473761822_777503.woff') format('woff'), /* chrome、firefox */
+    url('http://at.alicdn.com/t/font_1473761822_777503.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('http://at.alicdn.com/t/font_1473761822_777503.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family:'iconfont';
+    font-style:normal;
+    font-size:16px;
+}
+/*头部*/
+#header{
+    height: 120px;
+    line-height: 120px;
+    text-align: center;
+    color:#6ad0c5;
+}
+#header .content{
+    position:relative;
+}
+.h-title{
+    font-size:40px;
+}
+.logo{
+    height: 60px;
+    width: 153px;
+    position:absolute;
+    right:0;
+    top:30px;
+    background: url("../../img/competitor-img/logo.png");
+}
+/*main*/
+/*左边*/
+.left{
+    float: left;
+    height: 924px;
+    width: 524px;
+    position:relative;
+    background: url("../../img/competitor-img/left.png");
+}
+
+.bg{
+    width: 524px;
+    height: 924px;
+    position:absolute;
+    top:0;
+    left:0;
+    color:#6ad0c5;
+}
+.bg .product{
+    position:absolute;
+}
+.bg .product:hover{
+    cursor:pointer;
+}
+.bg img{
+    position:absolute;
+}
+.bg img:hover{
+    cursor: pointer;
+}
+
+/*专题*/
+.ps-topic{
+    position:absolute;
+    width: 175px;
+    height: 175px;
+    top:375px;
+    left:70px;
+    border-radius: 50%;
+    /*background: url("http://img.sootuu.com/Exchange/2009-11/200911248027102.jpg");*/
+    background-size:175px 175px;
+}
+.ps-topic:hover{
+    cursor:pointer;
+}
+/*主竞品*/
+.m-product-one{
+    width: 100px;
+    height: 100px;
+    top:122px;
+    left:72px;
+    border-radius: 50%;
+}
+.m-product-two{
+    width: 100px;
+    height: 100px;
+    top: 597px;
+    left: 379px;
+    border-radius: 50%;
+}
+.m-product-three{
+    width: 100px;
+    height: 100px;
+    top:705px;
+    left:105px;
+    border-radius: 50%;
+}
+
+/*关联竞品*/
+.s-product{
+    position:absolute;
+}
+.s-product-one{
+    width: 40px;
+    height: 40px;
+    top: 213px;
+    left: 238px;
+    border-radius: 50%;
+}
+.s-product-two{
+    width: 40px;
+    height: 40px;
+    top: 273px;
+    left: 329px;
+    border-radius: 50%;
+}
+.s-product-three{
+    width: 40px;
+    height: 40px;
+    top: 579px;
+    left: 52px;
+    border-radius: 50%;
+}
+.s-product-four{
+    width: 40px;
+    height: 40px;
+    top: 627px;
+    left: 265px;
+    border-radius: 50%;
+}
+
+/*文字*/
+.island{
+    width: 179px;
+    height: 80px;
+    font-size: 16px;
+}
+.island i{
+    margin-left: 5px;
+}
+.island1{
+    position:absolute;
+    top:76px;
+    left:197px;
+
+}
+.island2{
+    position:absolute;
+    top:422px;
+    left:277px;
+}
+.island3{
+    position:absolute;
+    top:719px;
+    left:329px;
+}
+.island4{
+    position:absolute;
+    top:817px;
+    left:156px;
+}
+.i-title{
+    margin-top:15px;
+    margin-left:20px;
+    margin-bottom: 10px;
+    font-size:16px;
+}
+.score{
+    margin-left:15px;
+}
+.score-num{
+    margin-left: 8px;
+}
+
+.port{
+    position: absolute;
+    font-size: 16px;
+}
+.port1{
+    left: 288px;
+    top:222px;
+}
+.port2{
+    left:380px;
+    top:280px;
+}
+.port3{
+    left: 5px;
+    top:633px;
+}
+.port4{
+    left: 260px;
+    top:682px;
+}
+
+
+
+/*中间*/
+.center{
+    float: left;
+    width: 964px;
+    margin-left: 14px;
+
+}
+/*竞品动态*/
+.dynamic-state{
+    height: 444px;
+    background: url("../../img/competitor-img/middle-top.png");
+}
+.activity-wrap{
+    margin-top:10px;
+    margin-bottom: 50px;
+    font-size:16px;
+}
+.activity{
+    float: right;
+    margin-right:48px;
+}
+.list{
+    margin-left:48px;
+    margin-right:48px;
+    font-size:12px;
+}
+.list-p{
+
+}
+.list-ul{
+    margin-left:-45px;
+}
+.list li{
+    float:left;
+    margin-left:45px;
+    margin-bottom: 25px;
+}
+.list .last-li{
+    margin-bottom:0;
+}
+.list li>div{
+    float:left;
+}
+
+/*列表细节*/
+.list-num{
+    width:15px;
+    margin-right: 15px;
+}
+.list-text{
+    width: 269px;
+    margin-right: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.list-date{
+    width: 24px;
+    margin-right:15px;
+}
+.channel{
+    width: 48px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+/*竞品舆情指数*/
+.ps-num{
+    height: 464px;
+    margin-top: 16px;
+    background:url("../../img/competitor-img/middle-bottom.png")
+}
+#ps-map{
+    width: 880px;
+    height: 380px;
+    margin:0 auto;
+}
+/*右边*/
+.right{
+    float: left;
+    height: 924px;
+    width: 324px;
+    margin-left: 14px;
+    background: url("../../img/competitor-img/right.png");
+}
+.em{
+    height: 210px;
+    position: relative;
+}
+
+.emh{
+    height:190px;
+}
+.total{
+    width: 188px;
+    height:20px;
+    margin: 0 auto;
+    line-height: 20px;
+    font-size:12px;
+}
+.total-l{
+    float:left;
+}
+.total-r{
+    float:right;
+}
+
+/*底部*/
+#footer{
+    height: 40px;
+}

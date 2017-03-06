@@ -1,0 +1,217 @@
+.headline {
+    text-align: center;
+    width: 100%;
+    height: 120px;
+}
+
+#bigtitle {
+    font-size: 40px;
+    float: left;
+    margin-top: 30px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    color: rgb(106, 208, 197);
+}
+
+.smalltitle {
+    margin-left: 7%;
+    margin-top: 3%;
+    font-size: 25px;
+    color: rgb(106, 208, 197);
+}
+
+#logoimg {
+    height:60px;
+    width: 153px;
+    float: right;
+    margin-top: 30px;
+    margin-right: 1%;
+}
+
+.secondline {
+    width: 100%;
+    height: 42%;
+}
+
+.thirdline {
+    width: 100%;
+    height: 42%;
+    margin-top: 1%;
+}
+
+#secondline-firstcol {
+    height: 100%;
+    float: left;
+    width: 35%;
+    /*background-image: url('img/天台山舆情-热门事件.png');*/
+    background: url("../img/天台山舆情-热门事件.png") no-repeat;
+    margin-left: 1%;
+}
+
+#secondline-secondcol {
+    float: left;
+    width: 20%;
+    height: 100%;
+    margin-left: 1%;
+    background: url("../img/天台山舆情-情感分析、舆情指数.png") no-repeat;
+    background-position: 0 0;
+}
+
+#secondline-thirdcol {
+    float: left;
+    width: 42%;
+    height: 100%;
+    margin-left: 1%;
+    background: url("../img/天台山舆情-情感趋势.png") no-repeat;
+}
+
+#thirdline-firstcol {
+    height: 100%;
+    float: left;
+    width: 17%;
+    margin-left: 1%;
+    background: url("../img/天台山舆情-热搜媒体、热词搜索.png") no-repeat;
+}
+
+#thirdline-secondcol {
+    height: 100%;
+    float: left;
+    width: 17%;
+    margin-left: 1%;
+    background: url("../img/天台山舆情-热搜媒体、热词搜索.png") no-repeat;
+}
+
+#thirdline-thirdcol {
+    height: 100%;
+    float: left;
+    width: 20%;
+    margin-left: 1%;
+    background: url("../img/天台山舆情-舆情指数.png") no-repeat;
+}
+
+#thirdline-fourthcol {
+    height: 100%;
+    float: left;
+    width: 42%;
+    margin-left: 1%;
+    background: url("../img/天台山舆情-舆情指数走势.png") no-repeat;
+}
+
+.events {
+    height: 90%;
+    margin-top: 5%;
+}
+
+.lefttextbox {
+    float: left;
+    width: 40%;
+    color: rgb(106, 208, 197);
+}
+
+.lefttext {
+    text-align: right;
+    margin-top: 8%;
+    height: 24px;
+}
+
+.righttext {
+    text-align: right;
+    color: rgb(106, 208, 197);
+}
+
+#rectangle {
+    float: left;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.rightline {
+    margin-top: 6.4%;
+}
+
+.rightlinebox {
+    float: left;
+    width: 50%;
+    margin-top: -1%;
+}
+
+.line {
+    /*box-sizing: border-box;*/
+    height: 3px;
+    background-color: greenyellow;
+}
+
+#chart1 {
+    width: 75%;
+    height: 65%;
+    /*margin-top: 3%;*/
+    margin-left: 15%;
+}
+
+#chart2 {
+    width: 95%;
+    height: 90%;
+    margin-left: 3%;
+}
+
+#chart3 {
+    width: 740px;
+    height: 300px;
+    margin-top:50px;
+    margin-left:20px;
+}
+
+.contents {
+    margin-top: 20%;
+    margin-left: 12%;
+    width: 100%;
+}
+
+.rank {
+    width: 20%;
+    float: left;
+}
+
+.media {
+    width: 35%;
+    float: left;
+}
+
+.consensus {
+    width: 35%;
+    float: left;
+}
+
+.textstyle {
+    margin-top: 15%;
+}
+
+#centernumber {
+    font-size: 50px;
+    width: 50%;
+    margin-top: 33%;
+    margin-left: 30%;
+}
+
+#textbox {
+    margin-left: 32%;
+    margin-top: 20%;
+}
+
+.onelinetext {
+    margin-top: 2%;
+}
+
+#trueconsensus {
+    margin-left: 18%;
+    float: left;
+    width: 40%;
+    color: rgb(106, 208, 197);
+}
+
+#falseconsensus {
+    width: 40%;
+    float: left;
+    color: rgb(106, 208, 197);
+}

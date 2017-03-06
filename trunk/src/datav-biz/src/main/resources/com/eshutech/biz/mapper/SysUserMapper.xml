@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.eshutech.biz.mapper.SysUserMapper" >
+  <resultMap id="BaseResultMap" type="com.eshutech.biz.entity.SysUser" >
+    <id column="ID" property="id" jdbcType="INTEGER" />
+    <id column="USERNAME" property="username" jdbcType="VARCHAR" />
+    <result column="ADDRESS" property="address" jdbcType="VARCHAR" />
+    <result column="AGE" property="age" jdbcType="SMALLINT" />
+    <result column="EMAIL" property="email" jdbcType="VARCHAR" />
+    <result column="ENABLED" property="enabled" jdbcType="VARCHAR" />
+    <result column="FULLNAME" property="fullname" jdbcType="VARCHAR" />
+    <result column="PASSWORD" property="password" jdbcType="VARCHAR" />
+    <result column="PLAIN_PASSWORD" property="plainPassword" jdbcType="VARCHAR" />
+    <result column="SALT" property="salt" jdbcType="VARCHAR" />
+    <result column="SEX" property="sex" jdbcType="VARCHAR" />
+    <result column="TYPE" property="type" jdbcType="INTEGER" />
+    <result column="ORG" property="org" jdbcType="INTEGER" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="MODIFY_TIME" property="modifyTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, USERNAME, ADDRESS, AGE, EMAIL, ENABLED, FULLNAME, PASSWORD, PLAIN_PASSWORD, SALT, 
+    SEX, TYPE, ORG, CREATE_TIME, MODIFY_TIME
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.eshutech.biz.entity.SysUserExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from sys_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.eshutech.biz.entity.SysUserKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from sys_user
+    where ID = #{id,jdbcType=INTEGER}
+      and USERNAME = #{username,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.eshutech.biz.entity.SysUserKey" >
+    delete from sys_user
+    where ID = #{id,jdbcType=INTEGER}
+      and USERNAME = #{username,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.eshutech.biz.entity.SysUserExample" >
+    delete from sys_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.eshutech.biz.entity.SysUser" >
+    insert into sys_user (ID, USERNAME, ADDRESS, 
+      AGE, EMAIL, ENABLED, 
+      FULLNAME, PASSWORD, PLAIN_PASSWORD, 
+      SALT, SEX, TYPE, ORG, 
+      CREATE_TIME, MODIFY_TIME)
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{age,jdbcType=SMALLINT}, #{email,jdbcType=VARCHAR}, #{enabled,jdbcType=VARCHAR}, 
+      #{fullname,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{plainPassword,jdbcType=VARCHAR}, 
+      #{salt,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}, #{org,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.eshutech.biz.entity.SysUser" >
+    insert into sys_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="username != null" >
+        USERNAME,
+      </if>
+      <if test="address != null" >
+        ADDRESS,
+      </if>
+      <if test="age != null" >
+        AGE,
+      </if>
+      <if test="email != null" >
+        EMAIL,
+      </if>
+      <if test="enabled != null" >
+        ENABLED,
+      </if>
+      <if test="fullname != null" >
+        FULLNAME,
+      </if>
+      <if test="password != null" >
+        PASSWORD,
+      </if>
+      <if test="plainPassword != null" >
+        PLAIN_PASSWORD,
+      </if>
+      <if test="salt != null" >
+        SALT,
+      </if>
+      <if test="sex != null" >
+        SEX,
+      </if>
+      <if test="type != null" >
+        TYPE,
+      </if>
+      <if test="org != null" >
+        ORG,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="modifyTime != null" >
+        MODIFY_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null" >
+        #{age,jdbcType=SMALLINT},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="enabled != null" >
+        #{enabled,jdbcType=VARCHAR},
+      </if>
+      <if test="fullname != null" >
+        #{fullname,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="plainPassword != null" >
+        #{plainPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="salt != null" >
+        #{salt,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="org != null" >
+        #{org,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.eshutech.biz.entity.SysUserExample" resultType="java.lang.Integer" >
+    select count(*) from sys_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update sys_user
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.username != null" >
+        USERNAME = #{record.username,jdbcType=VARCHAR},
+      </if>
+      <if test="record.address != null" >
+        ADDRESS = #{record.address,jdbcType=VARCHAR},
+      </if>
+      <if test="record.age != null" >
+        AGE = #{record.age,jdbcType=SMALLINT},
+      </if>
+      <if test="record.email != null" >
+        EMAIL = #{record.email,jdbcType=VARCHAR},
+      </if>
+      <if test="record.enabled != null" >
+        ENABLED = #{record.enabled,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fullname != null" >
+        FULLNAME = #{record.fullname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.password != null" >
+        PASSWORD = #{record.password,jdbcType=VARCHAR},
+      </if>
+      <if test="record.plainPassword != null" >
+        PLAIN_PASSWORD = #{record.plainPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="record.salt != null" >
+        SALT = #{record.salt,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sex != null" >
+        SEX = #{record.sex,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null" >
+        TYPE = #{record.type,jdbcType=INTEGER},
+      </if>
+      <if test="record.org != null" >
+        ORG = #{record.org,jdbcType=INTEGER},
+      </if>
+      <if test="record.createTime != null" >
+        CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.modifyTime != null" >
+        MODIFY_TIME = #{record.modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update sys_user
+    set ID = #{record.id,jdbcType=INTEGER},
+      USERNAME = #{record.username,jdbcType=VARCHAR},
+      ADDRESS = #{record.address,jdbcType=VARCHAR},
+      AGE = #{record.age,jdbcType=SMALLINT},
+      EMAIL = #{record.email,jdbcType=VARCHAR},
+      ENABLED = #{record.enabled,jdbcType=VARCHAR},
+      FULLNAME = #{record.fullname,jdbcType=VARCHAR},
+      PASSWORD = #{record.password,jdbcType=VARCHAR},
+      PLAIN_PASSWORD = #{record.plainPassword,jdbcType=VARCHAR},
+      SALT = #{record.salt,jdbcType=VARCHAR},
+      SEX = #{record.sex,jdbcType=VARCHAR},
+      TYPE = #{record.type,jdbcType=INTEGER},
+      ORG = #{record.org,jdbcType=INTEGER},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      MODIFY_TIME = #{record.modifyTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.eshutech.biz.entity.SysUser" >
+    update sys_user
+    <set >
+      <if test="address != null" >
+        ADDRESS = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null" >
+        AGE = #{age,jdbcType=SMALLINT},
+      </if>
+      <if test="email != null" >
+        EMAIL = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="enabled != null" >
+        ENABLED = #{enabled,jdbcType=VARCHAR},
+      </if>
+      <if test="fullname != null" >
+        FULLNAME = #{fullname,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        PASSWORD = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="plainPassword != null" >
+        PLAIN_PASSWORD = #{plainPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="salt != null" >
+        SALT = #{salt,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        SEX = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        TYPE = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="org != null" >
+        ORG = #{org,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null" >
+        MODIFY_TIME = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+      and USERNAME = #{username,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.eshutech.biz.entity.SysUser" >
+    update sys_user
+    set ADDRESS = #{address,jdbcType=VARCHAR},
+      AGE = #{age,jdbcType=SMALLINT},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      ENABLED = #{enabled,jdbcType=VARCHAR},
+      FULLNAME = #{fullname,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      PLAIN_PASSWORD = #{plainPassword,jdbcType=VARCHAR},
+      SALT = #{salt,jdbcType=VARCHAR},
+      SEX = #{sex,jdbcType=VARCHAR},
+      TYPE = #{type,jdbcType=INTEGER},
+      ORG = #{org,jdbcType=INTEGER},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      MODIFY_TIME = #{modifyTime,jdbcType=TIMESTAMP}
+    where ID = #{id,jdbcType=INTEGER}
+      and USERNAME = #{username,jdbcType=VARCHAR}
+  </update>
+</mapper>

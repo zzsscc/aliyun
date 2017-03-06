@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>竞品设置</title>
+    <link rel="stylesheet" href="./css/ctrlcss/product-set.css">
+</head>
+<body>
+<div id="header">
+    <div class="container clearfix">
+        <div class="container clearfix">
+            <div class="logo-wrap clearfix">
+                <div class="logo"></div>
+                <div class="title">品牌舆情控制台</div>
+            </div>
+            <ul class="nav clearfix">
+                <li><a href="#">可视化大屏</a></li>
+                <li><a href="#">舆情盒子</a></li>
+                <li><a href="#" class="active">设置</a></li>
+            </ul>
+            <div class="user-inf">欢迎您，<span>admin</span> | <span>退出</span></div>
+        </div>
+    </div>
+</div>
+
+<div id="main">
+    <div class="container">
+        <!--二级导航栏-->
+        <div class="sec-nav clearfix">
+            <ul class="sec-ul clearfix">
+                <li><a href="keyword-set.html">品牌设置</a></li>
+                <li><a href="#"  class="active">传播分析设置</a></li>
+                <li><a href="product-set.html">关注品牌设置</a></li>
+            </ul>
+            <span>当前位置：设置 > 传播分析设置</span>
+        </div>
+
+        <!--固定图片-->
+            <div class="bg">
+                <!--专题-->
+                <div class="ps-topic"></div>
+                <!--主竞品-->
+                <!--没用的img-ct，只是为了方便js查找dom元素-->
+                <div class="img-ct">
+                    <div class="product m-product-one"></div>
+                    <div class="product s-product-one"></div>
+                    <div class="product s-product-two"></div>
+                    <div class="product s-product-three"></div>
+                    <div class="product m-product-two"></div>
+                    <div class="product s-product-four"></div>
+                    <div class="product m-product-three"></div>
+                </div>
+                <!--文字-->
+                <div class="island island1">
+                    <div class="i-title"></div>
+                    <!--<div class="score"><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe602</i><span class="score-num">9.0分</span></div>-->
+                </div>
+                <!--大陈岛-->
+                <div class="island island2">
+                    <div class="i-title"></div>
+                    <!--<div class="score"><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><span class="score-num">10.0分</span></div>-->
+                </div>
+                <!--大沙岱-->
+                <div class="island island3">
+                    <div class="i-title"></div>
+                    <!--<div class="score"><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe602</i><span class="score-num">9.0分</span></div>-->
+                </div>
+                <!--东引岛-->
+                <div class="island island4">
+                    <div class="i-title"></div>
+                    <!--<div class="score"><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><i class="iconfont">&#xe605</i><span class="score-num">9.5分</span></div>-->
+                </div>
+                <!--地点-->
+                <div class="port port1"></div>
+                <div class="port port2"></div>
+                <div class="port port3"></div>
+                <div class="port port4"></div>
+            </div>
+    </div>
+</div>
+
+<!--专题对话框-->
+<div class="dialog-wrap topic-dialog">
+    <div class="dialog">
+        <div class="dialog-content">
+            <div class="d-title clearfix">
+                <div class="d-name">设置</div>
+                <div class="d-close">×</div>
+            </div>
+            <!--对话框主要内容展示1-->
+            <div class="d-m clearfix">
+                <div class="d-m-left">
+                    <img src="" alt="" class="d-m-img">
+                </div>
+                <div class="d-m-right">
+                    <div class="d-m-select"></div>
+                    <input type="text" placeholder="图片url" id="d-img-url">
+                </div>
+            </div >
+            <div class="d-footer clearfix">
+                <div class="d-button ok">确定</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--竞品对话框-->
+<div class="dialog-wrap product-dialog">
+    <div class="dialog">
+        <div class="dialog-content">
+            <div class="d-title clearfix">
+                <div class="d-name">设置</div>
+                <div class="d-close">×</div>
+            </div>
+            <!--对话框主要内容展示1-->
+            <div class="d-m clearfix">
+                <div class="d-m-left">
+                    <img src="" alt="" class="d-m-img">
+                </div>
+                <div class="d-m-right">
+                    <div class="d-m-select">
+                        <div class="drap"><span class="drap-name">选择竞品</span><span class="triangle"></span>
+                            <!--下拉框-->
+                            <ul class="d-m-drapDown">
+
+                            </ul>
+                        </div>
+
+                    </div>
+                    <input type="text" placeholder="图片url" id="d-img2-url">
+                </div>
+            </div >
+            <div class="d-footer clearfix">
+                <div class="d-button ok">确定</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/lib/jquery-2.2.3.min.js"></script>
+<script src="./js/ctrljs/product-set.js"></script>
+</body>
+</html>

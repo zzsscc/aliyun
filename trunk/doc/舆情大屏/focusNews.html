@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>实时要闻传播分析</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/focusNewscss/public.css">
+</head>
+<body>
+    <div id="main" class="clearfix">
+        <div class="top">实时要闻传播分析</div>
+        <div class="left clearfix">
+            <div class="left-left-top">
+                <div class="public-title">微博信息</div>
+                <div class="left-left-top-head clearfix">
+                    <img class="headpic" v-bind:src="profileImageURL" />
+                    <div class="top-head-l" v-cloak>
+                        <div class="one-level">{{name}}</div>
+                        <div class="sec-level">{{verifiedReason}}</div>
+                    </div>
+                </div>
+                <div class="left-left-top-words" v-cloak>{{description}}</div>
+                <div class="left-left-top-bottom clearfix">
+                    <div class="bottom-word">
+                        <div class="round-word">
+                            <div class="round-word-li">新闻曝光量</div>
+                            <div class="round-word-li">新闻转发量</div>
+                            <div class="round-word-li">一转</div>
+                            <div class="round-word-li">二转</div>
+                            <div class="round-word-li">三转</div>
+                        </div>
+                        <div class="round-num" v-cloak>
+                            <div class="round-num-li">{{newExp}}</div>
+                            <div class="round-num-li">{{newForward}}</div>
+                            <div class="round-num-li">{{newOneF}}</div>
+                            <div class="round-num-li">{{newTwoF}}</div>
+                            <div class="round-num-li">{{newThreeF}}</div>
+                        </div>
+                    </div>
+                    <div class="emotion-index" id="emotion-index-chart"></div>
+                </div>
+            </div>
+            <div class="left-right-top">
+                <div class="public-title">传播路径拓扑图</div>
+                <div class="dianlutu" id="dianlutu"></div>
+            </div>
+            <div class="left-left-bottom">
+                <div class="public-title">关键传播账号</div>
+                <div class="machine-table">
+                    <div class="tou clearfix">
+                        <div class="td-name">关键传播账号</div>
+                        <div class="td-fen">粉丝</div>
+                        <div class="td-user-type">用户类型</div>
+                        <div class="td-time">时间</div>
+                        <div class="td-two">二次转发</div>
+                    </div>
+                   <ul class="lgg-ul">
+                       <li v-for="item in keyArr" class="lgg-li clearfix">
+                           <div class="td-name">{{item.screenName}}</div>
+                           <div class="td-fen">{{item.followersCount}}</div>
+                           <div class="td-user-type">{{item.verifiedType}}</div>
+                           <div class="td-time">{{new Date(item.postTime).getFullYear()}}/{{new Date(item.postTime).getMonth()+1}}/{{new Date(item.postTime).getDate()}} {{new Date(item.postTime).getHours()}}:{{new Date(item.postTime).getMinutes()}}</div>
+                           <div class="td-two last-td">{{item.repostCount}}</div>
+                       </li>
+                   </ul>
+
+                </div>
+            </div>
+            <div class="left-right-bottom">
+                <div class="public-title">72小时内转发曲线</div>
+                <div class="chart72h" id="chart72h"></div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="public-title">用户特征</div>
+            <div class="right-chart right-top-chart" id="right-top-chart"></div>
+            <div class="right-top-center">
+                <div class="follow-chart">
+                    <ul class="hot-ul">
+                        <li class="hot-li clearfix">
+                            <div class="hot-title">个人认证</div>
+                            <div class="hot-strip"></div>
+                            <div class="hot-num"></div>
+                        </li>
+                        <li class="hot-li clearfix">
+                            <div class="hot-title">企业认证</div>
+                            <div class="hot-strip"></div>
+                            <div class="hot-num"></div>
+                        </li>
+                        <li class="hot-li clearfix">
+                            <div class="hot-title">微博达人</div>
+                            <div class="hot-strip"></div>
+                            <div class="hot-num"></div>
+                        </li>
+                        <li class="hot-li clearfix">
+                            <div class="hot-title">普通用户</div>
+                            <div class="hot-strip"></div>
+                            <div class="hot-num"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right-chart right-middle-chart" id="right-middle-chart"></div>
+            <div class="right-middle-center">
+                <div class="follow-chart">
+                    <ul class="hot-ul">
+                        <li class="hot-li clearfix">
+                            <div class="hot-title">男</div>
+                            <div class="hot-strip"></div>
+                            <div class="hot-num"></div>
+                        </li>
+                        <li class="hot-li clearfix">
+                            <div class="hot-title">女</div>
+                            <div class="hot-strip"></div>
+                            <div class="hot-num"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right-chart right-bottom-chart" id="right-bottom-chart"></div>
+            <div class="right-bottom-center">
+                <div class="follow-chart">
+                    <ul class="hot-ul">
+                        <li class="hot-li clearfix">
+                            <div class="hot-title">普通用户</div>
+                            <div class="hot-strip"></div>
+                            <div class="hot-num"></div>
+                        </li>
+                        <li class="hot-li clearfix">
+                            <div class="hot-title">水军</div>
+                            <div class="hot-strip"></div>
+                            <div class="hot-num"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="map-chart" id="map-chart"></div>
+            <div class="map-info">
+                <div class="map-info-title">用户城市分布</div>
+                <div class="map-info-center">
+                    <div class="dark clearfix" v-for="item in items"  v-cloak>
+                        <div class="color" v-bind:class="{ 'dark-color': item.isA, 'medium-color': item.isB, 'tint-color': item.isC}"></div>
+                        <div class="wenzi dark-wenzi">{{item.key}}&nbsp;&nbsp;&nbsp;{{item.value}}</div>
+                    </div>
+                    <!--<div class="medium clearfix">-->
+                        <!--<div class="color medium-color"></div>-->
+                        <!--<div class="wenzi medium-wenzi">安徽&nbsp;&nbsp;&nbsp;14.3%</div>-->
+                    <!--</div>-->
+                    <!--<div class="tint clearfix">-->
+                        <!--<div class="color tint-color"></div>-->
+                        <!--<div class="wenzi tint-wenzi">其他&nbsp;&nbsp;&nbsp;7.1%</div>-->
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/lib/jquery-1.8.3.min.js"></script>
+    <script src="js/lib/vue.js"></script>
+    <script src="js/lib/echarts.js"></script>
+    <script src="js/focusNewsjs/china.js"></script>
+    <!--<script src="../js/d3.min.js"></script>-->
+    <!--<script src="../js/d3Index.js"></script>-->
+    <script src="js/focusNewsjs/twaver.js"></script>
+    <!--<script src="../js/demo.js"></script>-->
+    <!--<script src="../js/BundleDemo.js"></script>-->
+    <!--<script src="../js/twaverIndex.js"></script>-->
+    <script src="js/focusNewsjs/focusNews.js"></script>
+    <script src="js/focusNewsjs/ajax3.js"></script>
+</body>
+</html>

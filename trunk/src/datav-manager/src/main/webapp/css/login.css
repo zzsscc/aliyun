@@ -1,0 +1,173 @@
+body{
+  margin:0;
+  font-family: 'Microsoft YaHei';
+  margin-bottom: 0;
+}
+
+.wrap{
+    min-height:100%;
+    width:100%;
+    /*position: relative;*/
+}
+
+#footer{
+    height:65px;
+    clear:both;
+    text-align: center;
+    line-height: 65px;
+    color:#fff;
+    background-color: rgb(245,245,245);
+    /*min-width: 1200px;*/
+    width:100%;
+    font-size: 14px;
+    color:rgb(153,153,153);
+    position:fixed;
+    bottom:0px;
+    left:0px;
+}
+
+#main{
+  background-color: white;
+  width:100%;
+}
+
+
+.nav1{
+  width:1200px;
+  padding-left:50px;
+  /*float:left;*/
+  padding-top:40px;
+  margin:0 auto;
+}
+
+.container1{
+  width:1200px;
+  /*float:left;*/
+  margin:0 auto;
+  margin-top:30px;
+  margin-bottom:60px;
+  /*margin-left:30px;*/
+}
+
+.logo{
+  float:left;
+}
+.logotext{
+  float:left;
+  font-size: 18px;
+  padding-left:15px;
+  padding-top:11px;
+  color: rgb(41, 48, 56);
+  /*color:red;*/
+}
+
+
+
+
+
+
+.ct-right{
+  float:left;
+  width:400px;
+  border:1px solid rgb(204, 204, 204);
+  height:470px;
+}
+
+.ct-left{
+  float:left;
+}
+
+.loginform{
+    width:300px;
+    margin-left:50px;
+    margin:0 auto;
+
+}
+
+input{
+  /*text-decoration: none;*/
+  font-size:12px;
+  padding-left:20px;
+
+}
+
+.username{
+  width:100%;
+  height:40px;
+
+  border:1px solid rgb(204, 204, 204);
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+
+}
+
+.password{
+  width:100%;
+  height:40px;
+  border:1px solid rgb(204, 204, 204);
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  margin-top:30px;
+}
+
+.submit{
+  width:100%;
+  height:40px;
+  /*border:1px solid gray;*/
+  text-decoration: none;
+
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+
+  background-color: rgb(101, 191, 255);
+  margin-top:40px;
+
+  color:white;
+  border:0px;
+  font-size:16px;
+}
+
+.bigtitle{
+  font-size:20px;
+  width:300px;
+  margin:0 auto;
+  margin-top:20px;
+  padding-left:15px;
+  color:rgb(51, 51, 51);
+
+}
+
+.smalltitle{
+  font-size:12px;
+  width:300px;
+  margin:0 auto;
+  margin-top:60px;
+  padding-left:15px;
+  color:rgb(51, 51, 51);
+
+}
+
+.inner-container{
+    margin: 0 auto;
+    width:1114px;
+}
+
+.blueline{
+  width:300px;
+  height:2px;
+  margin:0 auto;
+  margin-top:8px;
+  margin-bottom:20px;
+  background-color:  rgb(101, 191, 255);
+}
+
+/*轮播*/
+.carousel-control{
+  display: none;
+}

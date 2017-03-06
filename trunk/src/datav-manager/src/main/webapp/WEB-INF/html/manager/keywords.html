@@ -1,0 +1,422 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>品牌舆情控制台</title>
+    <link rel="icon" type="image/ico" href="/assets/images/favicon.ico"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" href="/assets/css/vendor/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/assets/css/vendor/animate.css"/>
+    <link rel="stylesheet" href="/assets/css/vendor/font-awesome.min.css"/>
+    <link rel="stylesheet" href="/assets/js/vendor/animsition/css/animsition.min.css"/>
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+
+    <!--<link rel="stylesheet" href="/assets/css/introjs.cs"/>-->
+    <script src="/assets/js/vendor/modernizr/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <style>
+        * {
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        a {
+            color: #555;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #555;
+            text-decoration: none;
+        }
+
+        a:link {
+            color: #555;
+            text-decoration: none;
+        }
+
+        .card-container .card {
+            cursor: default;
+        }
+
+        .floatr {
+            float: right;
+            color: #00aced
+        }
+
+        .pro-cg {
+            -webkit-transform: skewX(45deg) !important;
+            -moz-transform: skewX(45deg) !important;
+            -o-transform: skewX(45deg) !important;
+        }
+
+        .showzy {
+            cursor: pointer;
+        }
+
+
+        /*轮播图结束*/
+        /*跳动数字*/
+        .tiaodong {
+            overflow: hidden;
+            height: 34px;
+        }
+
+        .tiaodong span {
+            display: block;
+            /*-webkit-transform:translateY(-34px) !important;*/
+            -webkit-transition: 1s !important;
+            /*-moz-transform:translateY(-34px) !important;*/
+            -moz-transition: 1s !important;
+            /*-o-transform:translateY(-34px) !important;*/
+            -o-transition: 1s !important;
+            /*-ms-transform:translateY(-34px) !important;*/
+            -ms-transition: 1s !important;
+        }
+    </style>
+    <!--<link rel="stylesheet" href="/assets/js/vendor/datatables/css/jquery.dataTables.min.css"/>-->
+    <link rel="stylesheet" href="/assets/js/vendor/datatables/datatables.bootstrap.min.css"/>
+    <!--<link rel="stylesheet" href="/assets/js/vendor/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css"/>-->
+    <link rel="stylesheet" href="/assets/js/vendor/datatables/extensions/Responsive/css/dataTables.responsive.css"/>
+    <!--<link rel="stylesheet" href="/assets/js/vendor/datatables/extensions/ColVis/css/dataTables.colVis.min.css"/>-->
+    <!--<link rel="stylesheet" href="/assets/js/vendor/datatables/extensions/TableTools/css/dataTables.tableTools.min.css"/>-->
+</head>
+<body id="pixel" class="appWrapper cyan-scheme-color">
+
+<!--  Application Content  -->
+<div id="wrap" class="animsition">
+
+    <!--  HEADER Content -->
+    <!-- HEADER Content -->
+    <section id="header">
+        <header class="clearfix">
+            <!-- Branding -->
+            <div class="branding scheme-cyan"><a class="brand" href="index"><span><strong>品牌舆情</strong></span></a> <a
+                    role="button" tabindex="0" class="offcanvas-toggle visible-xs-inline"><i class="fa fa-bars"></i></a>
+            </div>
+            <!-- Branding end -->
+            <!-- Left-side navigation -->
+            <ul class="nav-left pull-left list-unstyled list-inline">
+                <li class="sidebar-collapse"><a role="button" tabindex="0" class="collapse-sidebar"><i class="fa fa-outdent"></i></a></li></ul>
+            <!-- Left-side navigation end -->
+
+            <!-- Search -->
+            <!-- <div class="search" id="main-search">
+              <input type="text" class="form-control underline-input" placeholder="Search...">
+            </div> -->
+            <!-- Search end -->
+
+            <!-- Right-side navigation -->
+            <ul class="nav-right pull-right list-inline">
+                <li class="dropdown nav-profile">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="/assets/images/profile-photo.jpg" alt="" class="br-5 size-30x30"/>
+                        <span><span th:inline="text">[[${session.username}]]</span> <i
+                                class="fa fa-angle-down"></i></span>
+                    </a>
+                    <ul class="dropdown-menu animated littleFadeInDown br-5" role="menu">
+
+
+                        <li><a role="button" tabindex="0" href="/logout"><i class="fa fa-sign-out"></i>退出</a></li>
+                    </ul>
+                <li class="users">
+                    <a class="showzy"> <i class="fa fa-hand-o-right"></i> <span id="step6"> 操作指引</span></a>
+                    <a href="/img/guide.pdf" target="_blank"> <i class="fa fa-question-circle"></i> <span
+                            id="step5"> 帮助</span></a>
+                </li>
+                </li>
+            </ul>
+            <!-- Right-side navigation end -->
+        </header>
+    </section>
+    <!--/ HEADER Content  -->
+
+    <!--  CONTROLS Content  -->
+    <div id="controls">
+        <!--SIDEBAR Content -->
+        <aside id="sidebar">
+            <div id="sidebar-wrap">
+                <div class="panel-group slim-scroll" role="tablist">
+                    <div class="panel panel-default">
+                        <div id="sidebarNav" class="panel-collapse collapse in" role="tabpanel">
+                            <div class="panel-body">
+                                <!--  NAVIGATION Content -->
+                                <ul id="navigation">
+                                    <li><a href="index"><i class="fa fa-dashboard"></i> <span>主控制台</span></a></li>
+                                    <li class="active open"><a role="button" tabindex="0"><i class="fa fa-envelope"></i>
+                                        <span>平台管理</span></a>
+                                        <ul>
+                                            <li ><a href="users"><i class="fa fa-angle-right"></i> 用户 </a>
+                                            </li>
+                                            <li><a href="topics"><i class="fa fa-angle-right"></i> 专题 </a></li>
+                                            <li class="active"><a href="keywords"><i class="fa fa-angle-right"></i> 关键字 </a></li>
+                                            <li><a href="analysis"><i class="fa fa-angle-right"></i> 传播分析 </a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a role="button" tabindex="0"><i class="fa fa-list"></i> <span>云端管理</span></a>
+                                        <ul>
+                                            <li><a href="aliTopic"><i class="fa fa-angle-right"></i> 专题</a></li>
+                                            <li><a href="aliKeyword"><i class="fa fa-angle-right"></i> 关键字</a></li>
+                                            <li><a href="competitionV2"><i class="fa fa-angle-right"></i> 传播分析</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a role="button" tabindex="0"><i class="fa fa-pencil"></i> <span>传播分析</span></a>
+                                        <ul>
+                                            <li><a href="analysisV2"><i class="fa fa-angle-right"></i> 微博传播分析</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <!--/ NAVIGATION Content -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!--/ SIDEBAR Content -->
+    </div>
+    <!--/ CONTROLS Content -->
+
+    <!-- CONTENT -->
+    <section id="content">
+        <div class="page page-tables-bootstrap">
+            <section class="tile">
+
+                <div class="tile-body">
+                    <form class="form-inline" role="form">
+                        <div class="form-group">
+                            <label class="sr-only" for="topicId">所属专题</label>
+                            <input type="text" class="form-control" id="topicId" name="topicId" placeholder="所属专题" th:if="${topicId != null}" th:value="${topicId}"/>
+                            <input type="text" class="form-control" id="topicId" name="topicId" placeholder="所属专题" th:if="${topicId == null}" />
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="keyword">关键字</label>
+                            <input type="text" class="form-control" id="keyword" name="keyword" placeholder="关键字" th:if="${keyword != null}" th:value="${keyword}"/>
+                            <input type="text" class="form-control" id="keyword" name="keyword" placeholder="关键字" th:if="${keyword == null}"/>
+                        </div>
+                        <button type="submit" class="btn btn-default" onclick="search();">查询</button>
+                    </form>
+                </div>
+            </section>
+            <section class="tile">
+
+                <div class="tile-body">
+                    <table class="table table-custom dt-responsive" id="responsive-usage" width="100%">
+                        <thead>
+                        </thead>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </section>
+    <!--/ CONTENT -->
+
+</div>
+
+<div class="spinner" style="display:none">
+    <div class="spinner-container container1">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+    </div>
+    <div class="spinner-container container2">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+    </div>
+    <div class="spinner-container container3">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+    </div>
+</div>
+<div class="overlay"></div>
+
+<script type="text/javascript" src="/assets/js/vendor/jquery/jquery-1.11.2.min.js"></script>
+<script src="/assets/js/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="/assets/js/vendor/jRespond/jRespond.min.js"></script>
+<script src="/assets/js/vendor/sparkline/jquery.sparkline.min.js"></script>
+<script src="/assets/js/vendor/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="/assets/js/vendor/animsition/js/jquery.animsition.min.js"></script>
+<script src="/assets/js/vendor/screenfull/screenfull.min.js"></script>
+<script src="/assets/js/vendor/datatables/js/jquery.dataTables.min.js"></script>
+<script src="/assets/js/vendor/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js"></script>
+<script src="/assets/js/vendor/datatables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
+<script src="/assets/js/vendor/datatables/extensions/ColVis/js/dataTables.colVis.min.js"></script>
+<script src="/assets/js/vendor/datatables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
+<script src="/assets/js/vendor/datatables/extensions/dataTables.bootstrap.js"></script>
+
+<!--<script src="/assets/js/vendor/d3/d3.min.js"></script>-->
+<!--<script src="/assets/js/vendor/d3/d3.layout.min.js"></script>-->
+<!--<script src="/assets/js/vendor/rickshaw/rickshaw.min.js"></script>-->
+<!--<script src="/assets/js/vendor/rickshaw/Rickshaw.Fixtures.Time.js"></script>-->
+<!--<script src="/assets/js/vendor/rickshaw/Rickshaw.Fixtures.Time.Local.js"></script>-->
+<!--<script src="/assets/js/index_cph.js"></script>-->
+
+<!--/ vendor javascripts -->
+
+<!-- Custom JavaScripts -->
+<script src="/assets/js/main.js"></script>
+<script src="/js/public.js"></script>
+<script th:inline="text">
+    /*<![CDATA[*/
+    $(function () {
+        var idx = 0;
+        var displayLength = 20;
+        var topicId = [[${topicId}]];
+        var keyword = '[[${keyword}]]';
+        var url ;
+        if(topicId != null && topicId != undefined)
+        {
+            url = "/keyword/list?topicId="+topicId;
+            if(keyword!=null && keyword != undefined)
+            {
+                url = "/keyword/list?topicId="+topicId+"&keyword="+keyword;
+            }
+        }
+        else {
+            url = "/keyword/list";
+            if(keyword!='null' && keyword != undefined)
+            {
+                url = "/keyword/list?keyword="+keyword;
+            }
+        }
+
+        var oTable = $('#responsive-usage').DataTable({
+            "aoColumns" : [
+                {
+                    "sTitle" : "序号",
+                    "mData" : "id"
+                },
+                {
+                    "sTitle" : "关键字",
+                    "mData" : "keyword"
+                },
+                {
+                    "sTitle" : "所属专题",
+                    "mData" : "topicId"
+                }
+                ,
+                {
+                    "sTitle" : "状态",
+                    "mData" : "status"
+                },
+                {
+                    "sTitle" : "创建时间",
+                    "mData" : "modifyTime"
+                },
+                {
+                    "sTitle" : "操作",
+                    "mData" : "id"
+                }
+            ],
+            "aoColumnDefs" : [
+                {
+                    "aTargets" : [0],
+                    "mData" : "id",
+                    "mRender" : function(index) {
+                        idx = (idx)%displayLength;
+                        idx++;
+                        var page = 0;
+                        if(oTable.page != undefined)
+                        {
+                            page = oTable.page.info().page;
+                        }
+                        idx = page*displayLength+idx;
+                        return idx;
+                    }
+                },
+                {
+                    "aTargets" : [1],
+                    "mData" : "username",
+                    "mRender" : function(data, type, full) {
+                        return data;
+                    }
+                },
+                {
+                    "aTargets" : [2],
+                    "mData" : "topicId",
+                    "mRender" : function(data, type, full) {
+                        var op = data;
+                        if(data == null)
+                        {
+                            op = "/";
+                        }
+                        return op;
+                    }
+                },
+                {
+                    "aTargets" : [3],
+                    "mData" : "status",
+                    "mRender" : function(data, type, full) {
+                        var op;
+                        if(data == 1)
+                        {
+                            op = "启用";
+                        }
+                        else {
+                            op = "已删除";
+                        }
+                        return op;
+                    }
+                },{
+                    "aTargets" : [4],
+                    "mData" : "modifyTime",
+                    "mRender" : function(data, type, full) {
+                        var op;
+                        if(data == null)
+                        {
+                            op = "/";
+                        }
+                        else
+                        {
+                            op = formatCSTDate(data,"yyyy-MM-dd hh:mm:ss");
+                        }
+                        return op;
+                    }
+                },{
+                    "aTargets" : [5],
+                    "mData" : "id",
+                    "mRender" : function(data, type, full) {
+                        var op='<a class="btn btn-cyan btn-sm">详情</a>';
+                        return op;
+                    }
+                }
+            ],
+            "sPaginationType" : "full_numbers",
+            "bProcessing": true,
+            "bServerSide": true,
+            "bLengthChange": false, //改变每页显示数据数量
+            "bFilter": false, //过滤功能
+            "bSort": false, //排序功能
+            "bInfo": false,//页脚信息
+            "iDisplayLength" : displayLength,
+            "bAutoWidth" : false,
+            "sAjaxSource": url,
+            "oLanguage" : {
+                "sUrl":"/css/cn.txt"
+            }
+        });
+
+    });
+
+    function search()
+    {
+        return;
+    }
+    /*]]>*/
+</script>
+</body>
+</html>

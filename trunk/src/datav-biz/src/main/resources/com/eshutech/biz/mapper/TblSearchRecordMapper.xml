@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.eshutech.biz.mapper.TblSearchRecordMapper" >
+  <resultMap id="BaseResultMap" type="com.eshutech.biz.entity.TblSearchRecord" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="product_id" property="productId" jdbcType="BIGINT" />
+    <result column="spider_topic_id" property="spiderTopicId" jdbcType="BIGINT" />
+    <result column="monitor_keyword_id" property="monitorKeywordId" jdbcType="BIGINT" />
+    <result column="monitor_keywords" property="monitorKeywords" jdbcType="VARCHAR" />
+    <result column="monitor_topic_id" property="monitorTopicId" jdbcType="BIGINT" />
+    <result column="record_from" property="from" jdbcType="VARCHAR" />
+    <result column="url" property="url" jdbcType="VARCHAR" />
+    <result column="filter_status" property="filterStatus" jdbcType="INTEGER" />
+    <result column="created_at" property="createdAt" jdbcType="TIMESTAMP" />
+    <result column="pub_time" property="pubTime" jdbcType="TIMESTAMP" />
+    <result column="wb_id" property="wbId" jdbcType="BIGINT" />
+    <result column="wb_user_id" property="wbUserId" jdbcType="BIGINT" />
+    <result column="wb_fans_count" property="wbFansCount" jdbcType="INTEGER" />
+    <result column="wb_repost_count" property="wbRepostCount" jdbcType="INTEGER" />
+    <result column="wb_comment_count" property="wbCommentCount" jdbcType="INTEGER" />
+    <result column="wb_like_count" property="wbLikeCount" jdbcType="INTEGER" />
+    <result column="wb_verified_type" property="wbVerifiedType" jdbcType="INTEGER" />
+    <result column="wb_type" property="wbType" jdbcType="INTEGER" />
+    <result column="emotion_tendency" property="emotionTendency" jdbcType="INTEGER" />
+    <result column="emotion_score" property="emotionScore" jdbcType="INTEGER" />
+    <result column="url_m_d5" property="urlMD5" jdbcType="VARCHAR" />
+    <result column="tags" property="tags" jdbcType="VARCHAR" />
+    <result column="lang_type" property="langType" jdbcType="VARCHAR" />
+    <result column="record_subject" property="subject" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="translate_subject" property="translateSubject" jdbcType="VARCHAR" />
+    <result column="translate_description" property="translateDescription" jdbcType="VARCHAR" />
+    <result column="cluster_id" property="clusterId" jdbcType="INTEGER" />
+    <result column="priority" property="priority" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, product_id, spider_topic_id, monitor_keyword_id, monitor_keywords, monitor_topic_id, 
+    record_from, url, filter_status, created_at, pub_time, wb_id, wb_user_id, wb_fans_count,
+    wb_repost_count, wb_comment_count, wb_like_count, wb_verified_type, wb_type, emotion_tendency, 
+    emotion_score, url_m_d5, tags, lang_type, record_subject, description, translate_subject,
+    translate_description, cluster_id, priority
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.eshutech.biz.entity.TblSearchRecordExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tbl_search_record
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_search_record
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from tbl_search_record
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.eshutech.biz.entity.TblSearchRecordExample" >
+    delete from tbl_search_record
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.eshutech.biz.entity.TblSearchRecord" >
+    insert into tbl_search_record (id, product_id, spider_topic_id, 
+      monitor_keyword_id, monitor_keywords, monitor_topic_id, 
+      record_from, url, filter_status,
+      created_at, pub_time, wb_id, 
+      wb_user_id, wb_fans_count, wb_repost_count, 
+      wb_comment_count, wb_like_count, wb_verified_type, 
+      wb_type, emotion_tendency, emotion_score, 
+      url_m_d5, tags, lang_type, 
+      record_subject, description, translate_subject,
+      translate_description, cluster_id, priority
+      )
+    values (#{id,jdbcType=BIGINT}, #{productId,jdbcType=BIGINT}, #{spiderTopicId,jdbcType=BIGINT}, 
+      #{monitorKeywordId,jdbcType=BIGINT}, #{monitorKeywords,jdbcType=VARCHAR}, #{monitorTopicId,jdbcType=BIGINT}, 
+      #{from,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, #{filterStatus,jdbcType=INTEGER}, 
+      #{createdAt,jdbcType=TIMESTAMP}, #{pubTime,jdbcType=TIMESTAMP}, #{wbId,jdbcType=BIGINT}, 
+      #{wbUserId,jdbcType=BIGINT}, #{wbFansCount,jdbcType=INTEGER}, #{wbRepostCount,jdbcType=INTEGER}, 
+      #{wbCommentCount,jdbcType=INTEGER}, #{wbLikeCount,jdbcType=INTEGER}, #{wbVerifiedType,jdbcType=INTEGER}, 
+      #{wbType,jdbcType=INTEGER}, #{emotionTendency,jdbcType=INTEGER}, #{emotionScore,jdbcType=INTEGER}, 
+      #{urlMD5,jdbcType=VARCHAR}, #{tags,jdbcType=VARCHAR}, #{langType,jdbcType=VARCHAR}, 
+      #{subject,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, #{translateSubject,jdbcType=VARCHAR}, 
+      #{translateDescription,jdbcType=VARCHAR}, #{clusterId,jdbcType=INTEGER}, #{priority,jdbcType=INTEGER}
+      )
+  </insert>
+
+
+  <insert id="batchInsert" parameterType="java.util.List" >
+    insert into tbl_search_record (id, product_id, spider_topic_id,
+    monitor_keyword_id, monitor_keywords, monitor_topic_id,
+    record_from, url, filter_status,
+    created_at, pub_time, wb_id,
+    wb_user_id, wb_fans_count, wb_repost_count,
+    wb_comment_count, wb_like_count, wb_verified_type,
+    wb_type, emotion_tendency, emotion_score,
+    url_m_d5, tags, lang_type,
+    record_subject, description, translate_subject,
+    translate_description, cluster_id, priority
+    )
+    values
+    <foreach collection="list" separator="," item="record">
+     (#{record.id,jdbcType=BIGINT}, #{record.productId,jdbcType=BIGINT}, #{record.spiderTopicId,jdbcType=BIGINT},
+    #{record.monitorKeywordId,jdbcType=BIGINT}, #{record.monitorKeywords,jdbcType=VARCHAR}, #{record.monitorTopicId,jdbcType=BIGINT},
+    #{record.from,jdbcType=VARCHAR}, #{record.url,jdbcType=VARCHAR}, #{record.filterStatus,jdbcType=INTEGER},
+    #{record.createdAt,jdbcType=TIMESTAMP}, #{record.pubTime,jdbcType=TIMESTAMP}, #{record.wbId,jdbcType=BIGINT},
+    #{record.wbUserId,jdbcType=BIGINT}, #{record.wbFansCount,jdbcType=INTEGER}, #{record.wbRepostCount,jdbcType=INTEGER},
+    #{record.wbCommentCount,jdbcType=INTEGER}, #{record.wbLikeCount,jdbcType=INTEGER}, #{record.wbVerifiedType,jdbcType=INTEGER},
+    #{record.wbType,jdbcType=INTEGER}, #{record.emotionTendency,jdbcType=INTEGER}, #{record.emotionScore,jdbcType=INTEGER},
+    #{record.urlMD5,jdbcType=VARCHAR}, #{record.tags,jdbcType=VARCHAR}, #{record.langType,jdbcType=VARCHAR},
+    #{record.subject,jdbcType=VARCHAR}, #{record.description,jdbcType=VARCHAR}, #{record.translateSubject,jdbcType=VARCHAR},
+    #{record.translateDescription,jdbcType=VARCHAR}, #{record.clusterId,jdbcType=INTEGER}, #{record.priority,jdbcType=INTEGER}
+    )
+    </foreach>
+  </insert>
+
+
+  <insert id="insertSelective" parameterType="com.eshutech.biz.entity.TblSearchRecord" >
+    insert into tbl_search_record
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="productId != null" >
+        product_id,
+      </if>
+      <if test="spiderTopicId != null" >
+        spider_topic_id,
+      </if>
+      <if test="monitorKeywordId != null" >
+        monitor_keyword_id,
+      </if>
+      <if test="monitorKeywords != null" >
+        monitor_keywords,
+      </if>
+      <if test="monitorTopicId != null" >
+        monitor_topic_id,
+      </if>
+      <if test="from != null" >
+        record_from,
+      </if>
+      <if test="url != null" >
+        url,
+      </if>
+      <if test="filterStatus != null" >
+        filter_status,
+      </if>
+      <if test="createdAt != null" >
+        created_at,
+      </if>
+      <if test="pubTime != null" >
+        pub_time,
+      </if>
+      <if test="wbId != null" >
+        wb_id,
+      </if>
+      <if test="wbUserId != null" >
+        wb_user_id,
+      </if>
+      <if test="wbFansCount != null" >
+        wb_fans_count,
+      </if>
+      <if test="wbRepostCount != null" >
+        wb_repost_count,
+      </if>
+      <if test="wbCommentCount != null" >
+        wb_comment_count,
+      </if>
+      <if test="wbLikeCount != null" >
+        wb_like_count,
+      </if>
+      <if test="wbVerifiedType != null" >
+        wb_verified_type,
+      </if>
+      <if test="wbType != null" >
+        wb_type,
+      </if>
+      <if test="emotionTendency != null" >
+        emotion_tendency,
+      </if>
+      <if test="emotionScore != null" >
+        emotion_score,
+      </if>
+      <if test="urlMD5 != null" >
+        url_m_d5,
+      </if>
+      <if test="tags != null" >
+        tags,
+      </if>
+      <if test="langType != null" >
+        lang_type,
+      </if>
+      <if test="subject != null" >
+        record_subject,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+      <if test="translateSubject != null" >
+        translate_subject,
+      </if>
+      <if test="translateDescription != null" >
+        translate_description,
+      </if>
+      <if test="clusterId != null" >
+        cluster_id,
+      </if>
+      <if test="priority != null" >
+        priority,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="productId != null" >
+        #{productId,jdbcType=BIGINT},
+      </if>
+      <if test="spiderTopicId != null" >
+        #{spiderTopicId,jdbcType=BIGINT},
+      </if>
+      <if test="monitorKeywordId != null" >
+        #{monitorKeywordId,jdbcType=BIGINT},
+      </if>
+      <if test="monitorKeywords != null" >
+        #{monitorKeywords,jdbcType=VARCHAR},
+      </if>
+      <if test="monitorTopicId != null" >
+        #{monitorTopicId,jdbcType=BIGINT},
+      </if>
+      <if test="from != null" >
+        #{from,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="filterStatus != null" >
+        #{filterStatus,jdbcType=INTEGER},
+      </if>
+      <if test="createdAt != null" >
+        #{createdAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pubTime != null" >
+        #{pubTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="wbId != null" >
+        #{wbId,jdbcType=BIGINT},
+      </if>
+      <if test="wbUserId != null" >
+        #{wbUserId,jdbcType=BIGINT},
+      </if>
+      <if test="wbFansCount != null" >
+        #{wbFansCount,jdbcType=INTEGER},
+      </if>
+      <if test="wbRepostCount != null" >
+        #{wbRepostCount,jdbcType=INTEGER},
+      </if>
+      <if test="wbCommentCount != null" >
+        #{wbCommentCount,jdbcType=INTEGER},
+      </if>
+      <if test="wbLikeCount != null" >
+        #{wbLikeCount,jdbcType=INTEGER},
+      </if>
+      <if test="wbVerifiedType != null" >
+        #{wbVerifiedType,jdbcType=INTEGER},
+      </if>
+      <if test="wbType != null" >
+        #{wbType,jdbcType=INTEGER},
+      </if>
+      <if test="emotionTendency != null" >
+        #{emotionTendency,jdbcType=INTEGER},
+      </if>
+      <if test="emotionScore != null" >
+        #{emotionScore,jdbcType=INTEGER},
+      </if>
+      <if test="urlMD5 != null" >
+        #{urlMD5,jdbcType=VARCHAR},
+      </if>
+      <if test="tags != null" >
+        #{tags,jdbcType=VARCHAR},
+      </if>
+      <if test="langType != null" >
+        #{langType,jdbcType=VARCHAR},
+      </if>
+      <if test="subject != null" >
+        #{subject,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="translateSubject != null" >
+        #{translateSubject,jdbcType=VARCHAR},
+      </if>
+      <if test="translateDescription != null" >
+        #{translateDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="clusterId != null" >
+        #{clusterId,jdbcType=INTEGER},
+      </if>
+      <if test="priority != null" >
+        #{priority,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.eshutech.biz.entity.TblSearchRecordExample" resultType="java.lang.Integer" >
+    select count(*) from tbl_search_record
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tbl_search_record
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.productId != null" >
+        product_id = #{record.productId,jdbcType=BIGINT},
+      </if>
+      <if test="record.spiderTopicId != null" >
+        spider_topic_id = #{record.spiderTopicId,jdbcType=BIGINT},
+      </if>
+      <if test="record.monitorKeywordId != null" >
+        monitor_keyword_id = #{record.monitorKeywordId,jdbcType=BIGINT},
+      </if>
+      <if test="record.monitorKeywords != null" >
+        monitor_keywords = #{record.monitorKeywords,jdbcType=VARCHAR},
+      </if>
+      <if test="record.monitorTopicId != null" >
+        monitor_topic_id = #{record.monitorTopicId,jdbcType=BIGINT},
+      </if>
+      <if test="record.from != null" >
+        record_from = #{record.from,jdbcType=VARCHAR},
+      </if>
+      <if test="record.url != null" >
+        url = #{record.url,jdbcType=VARCHAR},
+      </if>
+      <if test="record.filterStatus != null" >
+        filter_status = #{record.filterStatus,jdbcType=INTEGER},
+      </if>
+      <if test="record.createdAt != null" >
+        created_at = #{record.createdAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.pubTime != null" >
+        pub_time = #{record.pubTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.wbId != null" >
+        wb_id = #{record.wbId,jdbcType=BIGINT},
+      </if>
+      <if test="record.wbUserId != null" >
+        wb_user_id = #{record.wbUserId,jdbcType=BIGINT},
+      </if>
+      <if test="record.wbFansCount != null" >
+        wb_fans_count = #{record.wbFansCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.wbRepostCount != null" >
+        wb_repost_count = #{record.wbRepostCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.wbCommentCount != null" >
+        wb_comment_count = #{record.wbCommentCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.wbLikeCount != null" >
+        wb_like_count = #{record.wbLikeCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.wbVerifiedType != null" >
+        wb_verified_type = #{record.wbVerifiedType,jdbcType=INTEGER},
+      </if>
+      <if test="record.wbType != null" >
+        wb_type = #{record.wbType,jdbcType=INTEGER},
+      </if>
+      <if test="record.emotionTendency != null" >
+        emotion_tendency = #{record.emotionTendency,jdbcType=INTEGER},
+      </if>
+      <if test="record.emotionScore != null" >
+        emotion_score = #{record.emotionScore,jdbcType=INTEGER},
+      </if>
+      <if test="record.urlMD5 != null" >
+        url_m_d5 = #{record.urlMD5,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tags != null" >
+        tags = #{record.tags,jdbcType=VARCHAR},
+      </if>
+      <if test="record.langType != null" >
+        lang_type = #{record.langType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.subject != null" >
+        record_subject = #{record.subject,jdbcType=VARCHAR},
+      </if>
+      <if test="record.description != null" >
+        description = #{record.description,jdbcType=VARCHAR},
+      </if>
+      <if test="record.translateSubject != null" >
+        translate_subject = #{record.translateSubject,jdbcType=VARCHAR},
+      </if>
+      <if test="record.translateDescription != null" >
+        translate_description = #{record.translateDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="record.clusterId != null" >
+        cluster_id = #{record.clusterId,jdbcType=INTEGER},
+      </if>
+      <if test="record.priority != null" >
+        priority = #{record.priority,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tbl_search_record
+    set id = #{record.id,jdbcType=BIGINT},
+      product_id = #{record.productId,jdbcType=BIGINT},
+      spider_topic_id = #{record.spiderTopicId,jdbcType=BIGINT},
+      monitor_keyword_id = #{record.monitorKeywordId,jdbcType=BIGINT},
+      monitor_keywords = #{record.monitorKeywords,jdbcType=VARCHAR},
+      monitor_topic_id = #{record.monitorTopicId,jdbcType=BIGINT},
+    record_from = #{record.from,jdbcType=VARCHAR},
+      url = #{record.url,jdbcType=VARCHAR},
+      filter_status = #{record.filterStatus,jdbcType=INTEGER},
+      created_at = #{record.createdAt,jdbcType=TIMESTAMP},
+      pub_time = #{record.pubTime,jdbcType=TIMESTAMP},
+      wb_id = #{record.wbId,jdbcType=BIGINT},
+      wb_user_id = #{record.wbUserId,jdbcType=BIGINT},
+      wb_fans_count = #{record.wbFansCount,jdbcType=INTEGER},
+      wb_repost_count = #{record.wbRepostCount,jdbcType=INTEGER},
+      wb_comment_count = #{record.wbCommentCount,jdbcType=INTEGER},
+      wb_like_count = #{record.wbLikeCount,jdbcType=INTEGER},
+      wb_verified_type = #{record.wbVerifiedType,jdbcType=INTEGER},
+      wb_type = #{record.wbType,jdbcType=INTEGER},
+      emotion_tendency = #{record.emotionTendency,jdbcType=INTEGER},
+      emotion_score = #{record.emotionScore,jdbcType=INTEGER},
+      url_m_d5 = #{record.urlMD5,jdbcType=VARCHAR},
+      tags = #{record.tags,jdbcType=VARCHAR},
+      lang_type = #{record.langType,jdbcType=VARCHAR},
+    record_subject = #{record.subject,jdbcType=VARCHAR},
+      description = #{record.description,jdbcType=VARCHAR},
+      translate_subject = #{record.translateSubject,jdbcType=VARCHAR},
+      translate_description = #{record.translateDescription,jdbcType=VARCHAR},
+      cluster_id = #{record.clusterId,jdbcType=INTEGER},
+      priority = #{record.priority,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.eshutech.biz.entity.TblSearchRecord" >
+    update tbl_search_record
+    <set >
+      <if test="productId != null" >
+        product_id = #{productId,jdbcType=BIGINT},
+      </if>
+      <if test="spiderTopicId != null" >
+        spider_topic_id = #{spiderTopicId,jdbcType=BIGINT},
+      </if>
+      <if test="monitorKeywordId != null" >
+        monitor_keyword_id = #{monitorKeywordId,jdbcType=BIGINT},
+      </if>
+      <if test="monitorKeywords != null" >
+        monitor_keywords = #{monitorKeywords,jdbcType=VARCHAR},
+      </if>
+      <if test="monitorTopicId != null" >
+        monitor_topic_id = #{monitorTopicId,jdbcType=BIGINT},
+      </if>
+      <if test="from != null" >
+        record_from = #{from,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="filterStatus != null" >
+        filter_status = #{filterStatus,jdbcType=INTEGER},
+      </if>
+      <if test="createdAt != null" >
+        created_at = #{createdAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pubTime != null" >
+        pub_time = #{pubTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="wbId != null" >
+        wb_id = #{wbId,jdbcType=BIGINT},
+      </if>
+      <if test="wbUserId != null" >
+        wb_user_id = #{wbUserId,jdbcType=BIGINT},
+      </if>
+      <if test="wbFansCount != null" >
+        wb_fans_count = #{wbFansCount,jdbcType=INTEGER},
+      </if>
+      <if test="wbRepostCount != null" >
+        wb_repost_count = #{wbRepostCount,jdbcType=INTEGER},
+      </if>
+      <if test="wbCommentCount != null" >
+        wb_comment_count = #{wbCommentCount,jdbcType=INTEGER},
+      </if>
+      <if test="wbLikeCount != null" >
+        wb_like_count = #{wbLikeCount,jdbcType=INTEGER},
+      </if>
+      <if test="wbVerifiedType != null" >
+        wb_verified_type = #{wbVerifiedType,jdbcType=INTEGER},
+      </if>
+      <if test="wbType != null" >
+        wb_type = #{wbType,jdbcType=INTEGER},
+      </if>
+      <if test="emotionTendency != null" >
+        emotion_tendency = #{emotionTendency,jdbcType=INTEGER},
+      </if>
+      <if test="emotionScore != null" >
+        emotion_score = #{emotionScore,jdbcType=INTEGER},
+      </if>
+      <if test="urlMD5 != null" >
+        url_m_d5 = #{urlMD5,jdbcType=VARCHAR},
+      </if>
+      <if test="tags != null" >
+        tags = #{tags,jdbcType=VARCHAR},
+      </if>
+      <if test="langType != null" >
+        lang_type = #{langType,jdbcType=VARCHAR},
+      </if>
+      <if test="subject != null" >
+        record_subject = #{subject,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="translateSubject != null" >
+        translate_subject = #{translateSubject,jdbcType=VARCHAR},
+      </if>
+      <if test="translateDescription != null" >
+        translate_description = #{translateDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="clusterId != null" >
+        cluster_id = #{clusterId,jdbcType=INTEGER},
+      </if>
+      <if test="priority != null" >
+        priority = #{priority,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.eshutech.biz.entity.TblSearchRecord" >
+    update tbl_search_record
+    set product_id = #{productId,jdbcType=BIGINT},
+      spider_topic_id = #{spiderTopicId,jdbcType=BIGINT},
+      monitor_keyword_id = #{monitorKeywordId,jdbcType=BIGINT},
+      monitor_keywords = #{monitorKeywords,jdbcType=VARCHAR},
+      monitor_topic_id = #{monitorTopicId,jdbcType=BIGINT},
+      record_from = #{from,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      filter_status = #{filterStatus,jdbcType=INTEGER},
+      created_at = #{createdAt,jdbcType=TIMESTAMP},
+      pub_time = #{pubTime,jdbcType=TIMESTAMP},
+      wb_id = #{wbId,jdbcType=BIGINT},
+      wb_user_id = #{wbUserId,jdbcType=BIGINT},
+      wb_fans_count = #{wbFansCount,jdbcType=INTEGER},
+      wb_repost_count = #{wbRepostCount,jdbcType=INTEGER},
+      wb_comment_count = #{wbCommentCount,jdbcType=INTEGER},
+      wb_like_count = #{wbLikeCount,jdbcType=INTEGER},
+      wb_verified_type = #{wbVerifiedType,jdbcType=INTEGER},
+      wb_type = #{wbType,jdbcType=INTEGER},
+      emotion_tendency = #{emotionTendency,jdbcType=INTEGER},
+      emotion_score = #{emotionScore,jdbcType=INTEGER},
+      url_m_d5 = #{urlMD5,jdbcType=VARCHAR},
+      tags = #{tags,jdbcType=VARCHAR},
+      lang_type = #{langType,jdbcType=VARCHAR},
+      record_subject = #{subject,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      translate_subject = #{translateSubject,jdbcType=VARCHAR},
+      translate_description = #{translateDescription,jdbcType=VARCHAR},
+      cluster_id = #{clusterId,jdbcType=INTEGER},
+      priority = #{priority,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

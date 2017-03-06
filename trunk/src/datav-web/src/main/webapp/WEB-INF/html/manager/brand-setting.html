@@ -1,0 +1,247 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>品牌舆情控制台</title>
+<link rel="icon" type="image/ico" href="assets/images/favicon.ico" />
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/vendor/animate.css">
+<link rel="stylesheet" href="assets/css/vendor/font-awesome.min.css">
+<link rel="stylesheet" href="assets/js/vendor/animsition/css/animsition.min.css">
+<link rel="stylesheet" href="assets/js/vendor/colorpicker/css/bootstrap-colorpicker.min.css">
+<link rel="stylesheet" href="assets/js/vendor/touchspin/jquery.bootstrap-touchspin.min.css">
+<link rel="stylesheet" href="assets/js/vendor/datetimepicker/css/bootstrap-datetimepicker.min.css">
+<link rel="stylesheet" href="assets/js/vendor/chosen/chosen.css">
+<link rel="stylesheet" href="assets/js/vendor/summernote/summernote.css">
+<link rel="stylesheet" href="assets/css/main.css">
+<script src="assets/js/vendor/modernizr/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+<body id="pixel" class="appWrapper">
+<!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]--> 
+
+<!-- Application Content -->
+<div id="wrap" class="animsition"> 
+  
+  <!--  HEADER Content -->
+  <section id="header">
+    <header class="clearfix"> 
+      <!-- Branding -->
+      <div class="branding"> <a class="brand" href="index.html"><span><strong>品牌舆情</strong></span></a> <a role="button" tabindex="0" class="offcanvas-toggle visible-xs-inline"><i class="fa fa-bars"></i></a> </div>
+      <!-- Branding end --> 
+      <!-- Left-side navigation -->
+      <ul class="nav-left pull-left list-unstyled list-inline">
+        <li class="sidebar-collapse"><a role="button" tabindex="0" class="collapse-sidebar"><i class="fa fa-outdent"></i></a></li>
+        <li class="dropdown settings"> <a role="button" tabindex="0" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cog"></i></a>
+          <ul class="dropdown-menu with-arrow animated littleFadeInUp br-5 w-280" role="menu">
+            <li>
+              <ul class="color-schemes list-inline br-5">
+                <li class="title w-100">Header Color :</li>
+                <li><a role="button" tabindex="0" class="scheme-drank header-scheme" data-scheme="scheme-default"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-black header-scheme" data-scheme="scheme-black"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-dutch header-scheme" data-scheme="scheme-dutch"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-cyan header-scheme" data-scheme="scheme-cyan"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-amethyst header-scheme" data-scheme="scheme-amethyst"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-light header-scheme" data-scheme="scheme-light"></a></li>
+              </ul>
+              <ul class="color-schemes list-inline">
+                <li class="title w-100">Branding Color :</li>
+                <li><a role="button" tabindex="0" class="scheme-drank branding-scheme" data-scheme="scheme-default"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-black branding-scheme" data-scheme="scheme-black"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-dutch branding-scheme" data-scheme="scheme-dutch"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-cyan branding-scheme" data-scheme="scheme-cyan"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-amethyst branding-scheme" data-scheme="scheme-amethyst"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-light branding-scheme" data-scheme="scheme-light"></a></li>
+              </ul>
+              <ul class="color-schemes list-inline">
+                <li class="title w-100">Sidebar Color :</li>
+                <li><a role="button" tabindex="0" class="scheme-drank sidebar-scheme" data-scheme="scheme-default"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-black sidebar-scheme" data-scheme="scheme-black"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-dutch sidebar-scheme" data-scheme="scheme-dutch"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-cyan sidebar-scheme" data-scheme="scheme-cyan"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-amethyst sidebar-scheme" data-scheme="scheme-amethyst"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-light sidebar-scheme" data-scheme="scheme-light"></a></li>
+              </ul>
+              <ul class="color-schemes list-inline">
+                <li class="title w-100">Active Color :</li>
+                <li><a role="button" tabindex="0" class="scheme-drank color-scheme" data-scheme="drank-scheme-color"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-black color-scheme" data-scheme="black-scheme-color"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-dutch color-scheme" data-scheme="dutch-scheme-color"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-cyan color-scheme" data-scheme="cyan-scheme-color"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-amethyst color-scheme" data-scheme="amethyst-scheme-color"></a></li>
+                <li><a role="button" tabindex="0" class="scheme-light color-scheme" data-scheme="light-scheme-color"></a></li>
+              </ul>
+            </li>
+            <li>
+              <div class="form-group p-20">
+                <div class="row">
+                  <div class="col-md-6">
+                    <label class="control-label">Fixed header</label>
+                    <div class="control-label">
+                      <div class="onoffswitch lightred larg">
+                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="fixed-header" checked="">
+                        <label class="onoffswitch-label" for="fixed-header"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="control-label">Fixed aside</label>
+                    <div class="control-label">
+                      <div class="onoffswitch lightred larg">
+                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="fixed-aside" checked="">
+                        <label class="onoffswitch-label" for="fixed-aside"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <!-- Left-side navigation end --> 
+      
+      <!-- Search -->
+      <!-- <div class="search" id="main-search">
+        <input type="text" class="form-control underline-input" placeholder="Search...">
+      </div> -->
+      <!-- Search end --> 
+      
+      <!-- Right-side navigation -->
+      <ul class="nav-right pull-right list-inline">
+        <li class="dropdown nav-profile"> <a "href" class="dropdown-toggle" data-toggle="dropdown"> <img src="assets/images/profile-photo.jpg" alt="" class="br-5 size-30x30"> <span>用户名 <i class="fa fa-angle-down"></i></span> </a>
+          <ul class="dropdown-menu animated littleFadeInDown br-5" role="menu">
+
+
+            <li><a role="button" tabindex="0"><i class="fa fa-sign-out"></i>退出</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- Right-side navigation end --> 
+    </header>
+  </section>
+  <!--/ HEADER Content  --> 
+  
+  <!-- CONTROLS Content  -->
+  <div id="controls"> 
+    <!--SIDEBAR Content -->
+    <aside id="sidebar">
+      <div id="sidebar-wrap">
+        <div class="panel-group slim-scroll" role="tablist">
+          <div class="panel panel-default">
+            <!-- <div class="panel-heading" role="tab">
+              <h4 class="panel-title"><a data-toggle="collapse" href="index.html#sidebarNav">导航菜单 <i class="fa fa-angle-up"></i></a></h4>
+            </div> -->
+            <div id="sidebarNav" class="panel-collapse collapse in" role="tabpanel">
+              <div class="panel-body"> 
+                <!--  NAVIGATION Content -->
+                <ul id="navigation">
+                  <li><a href="index.html"><i class="fa fa-dashboard"></i> <span>主控制台</span></a></li>
+                  <li > <a role="button" tabindex="0"><i class="fa fa-envelope"></i> <span>舆情盒子</span> <span class="badge bg-lightred">6</span></a>
+                    <ul>
+                      <li><a href="inbox.html"><i class="fa fa-angle-right"></i> 新舆情 <span class="label br-10 label-success">new</span></a></li>
+                      <!-- <li><a href="mail-compose.html"><i class="fa fa-angle-right"></i> Compose Mail</a></li>
+                      <li><a href="mail-single.html"><i class="fa fa-angle-right"></i> Single Mail</a></li> -->
+                    </ul>
+                  </li>
+                  <li  class="active open"> <a role="button" tabindex="0"><i class="fa fa-list"></i> <span>品牌管理</span></a>
+                    <ul>
+                      <li class="active"><a href="brand-setting.html"><i class="fa fa-angle-right"></i> 自身品牌设置</a></li>
+                      <li><a href="attention-setting.html"><i class="fa fa-angle-right"></i> 关注品牌设置</a></li>
+                    
+                    </ul>
+                  </li>
+                  <li> <a role="button" tabindex="0"><i class="fa fa-pencil"></i> <span>传播分析</span></a>
+                    <ul>
+                      <li><a href="weibo-analysis.html"><i class="fa fa-angle-right"></i> 微博传播分析</a></li>
+                    </ul>
+                  </li>
+                  <li> <a role="button" tabindex="0"><i class="fa fa-desktop"></i> <span>舆情大屏</span> <span class="label br-10 label-success">new</span></a>
+                    <ul>
+                      <li><a href="led-brand.html"><i class="fa fa-angle-right"></i> 品牌舆情大屏</a></li>
+                      <li><a href="led-analysis.html"><i class="fa fa-angle-right"></i> 微博传播大屏</a></li>
+                      <li><a href="led-attention.html"><i class="fa fa-angle-right"></i> 关注品牌大屏</a></li>
+                    </ul>
+                  </li>
+                  
+                </ul>
+                <!--/ NAVIGATION Content --> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!--/ SIDEBAR Content --> 
+  </div>
+  <!--/ CONTROLS Content --> 
+  
+  <!--  CONTENT  -->
+  <section id="content">
+    
+  </section>
+  <!--/ CONTENT --> 
+  
+</div>
+<!--/ Application Content --> 
+
+<!--Vendor JavaScripts  --> 
+<script type="text/javascript">window.jQuery || document.write('<script src="assets/js/vendor/jquery/jquery-1.11.2.min.js"><\/script>')</script> 
+<script src="assets/js/vendor/bootstrap/bootstrap.min.js"></script> 
+<script src="assets/js/vendor/jRespond/jRespond.min.js"></script> 
+<script src="assets/js/vendor/sparkline/jquery.sparkline.min.js"></script> 
+<script src="assets/js/vendor/slimscroll/jquery.slimscroll.min.js"></script> 
+<script src="assets/js/vendor/animsition/js/jquery.animsition.min.js"></script> 
+<script src="assets/js/vendor/screenfull/screenfull.min.js"></script> 
+<script src="assets/js/vendor/slider/bootstrap-slider.min.js"></script> 
+<script src="assets/js/vendor/colorpicker/js/bootstrap-colorpicker.min.js"></script> 
+<script src="assets/js/vendor/touchspin/jquery.bootstrap-touchspin.min.js"></script> 
+<script src="assets/js/vendor/daterangepicker/moment.min.js"></script> 
+<script src="assets/js/vendor/datetimepicker/js/bootstrap-datetimepicker.min.js"></script> 
+<script src="assets/js/vendor/chosen/chosen.jquery.min.js"></script> 
+<script src="assets/js/vendor/filestyle/bootstrap-filestyle.min.js"></script> 
+<script src="assets/js/vendor/summernote/summernote.min.js"></script> 
+<!--/ vendor javascripts --> 
+
+<!--  Custom JavaScripts --> 
+<script src="assets/js/main.js"></script> 
+<!--/ custom javascripts --> 
+
+<!--  Page Specific Scripts  --> 
+<script type="text/javascript">
+        $(window).load(function(){
+            $('#ex1').slider({
+                formatter: function(value) {
+                    return 'Current value: ' + value;
+                }
+            });
+            $("#ex1").on("slide", function(slideEvt) {
+                $("#ex1SliderVal").text(slideEvt.value);
+            });
+
+            $("#ex2, #ex3, #ex4, #ex5").slider();
+
+            //load wysiwyg editor
+            $('#summernote').summernote({
+                height: 200   //set editable area's height
+            });
+            //*load wysiwyg editor
+        });
+    </script> 
+<!--/ Page Specific Scripts -->
+</body>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260654542'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260654542' type='text/javascript'%3E%3C/script%3E"));</script>
+<script type="text/javascript">
+  document.getElementById('cnzz_stat_icon_1260654542').style.display = 'none';
+</script>
+</html>

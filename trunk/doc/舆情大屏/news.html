@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>品牌舆情控制台</title>
+    <!--<link href="css/styles.css" rel="stylesheet" />-->
+    <link href="css/ctrlcss/inserthtml.com.radios.css" rel="stylesheet" />
+    <link href="css/ctrlcss/default.css" rel="stylesheet" />
+    <link href="css/ctrlcss/news.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="header">
+        <div class="container clearfix">
+            <div class="logo-wrap clearfix">
+                <div class="logo"></div>
+                <div class="title">品牌舆情控制台</div>
+            </div>
+            <ul class="nav clearfix">
+                <li><a href="keyword-set.html">关键词设置</a></li>
+                <li><a href="#" class="active">新闻过滤设置</a></li>
+                <li><a href="propagation-analysis-set.html">传播分析设置</a></li>
+                <li><a href="product-set.html">竞品设置</a></li>
+                <li><a href="./alarmSet.html">告警设置</a></li>
+                <li class="da"><a href="#">可视化大屏</a>
+                    <ul class="da-drop-down">
+                        <li><a href="competitor.html" target="_blank">竞品影响分析</a></li>
+                        <li class="da-active"><a href="focusNews.html" target="_blank">媒体传播分析</a></li>
+                        <li><a href="tiantai.html" target="_blank">自身品牌舆情</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="user-inf">欢迎您，<span>admin</span> | <span>退出</span></div>
+        </div>
+    </div>
+    <div id="main">
+        <div class="container">
+            <div class="help clearfix">
+                <div class="helpText">
+                    <i class="iconfont">&#xe600</i>查看规则帮助
+                </div>
+            </div>
+            <div class="Dustbin clearfix">
+                <div class="DustbinText">
+                    是否跳过垃圾箱<i class="iconfont">&#xe600</i>
+                </div>
+                <span>关闭<input type="checkbox" id="checkbox-8-3" /><label for="checkbox-8-3"></label>开启</span>
+            </div>
+            <!--列表部分-->
+            <div class="l-wrap">
+                <div class="list-title"><span class="keyword">规则</span><span class="website">源站类型</span><span class="filtering-rules">过滤规则</span><span class="creat-time">创建时间</span><span class="control">操作</span></div>
+                <ul class="list">
+                    <li class="item clearfix">
+                        <div class="item-checkbox"><input type="checkbox" name="subcheck2" class="checkboxs-in2"></div>
+                        <div class="item-name">贵州茅台1</div>
+                        <div class="item-source">新闻，论坛，贴吧，微博，微信，政府，视频</div>
+                        <div class="item-rule">反馈名/源站名称</div>
+                        <div class="item-twrap"><span class="item-data">2016-10-12&nbsp;11:32:05</span></div>
+                        <div class="item-ctrl clearfix"><div class="change" @click="methodEditKeyWord">编辑</div> <div class="del" @click="methodDelKeyword">删除</div></div>
+                    </li>
+                    <li class="item clearfix">
+                        <div class="item-checkbox"><input type="checkbox" name="subcheck2" class="checkboxs-in2"></div>
+                        <div class="item-name">贵州茅台2</div>
+                        <div class="item-source">新闻，论坛，贴吧，微博，微信，政府，视频</div>
+                        <div class="item-rule">反馈名/源站名称</div>
+                        <div class="item-twrap"><span class="item-data">2016-10-12&nbsp;11:32:05</span></div>
+                        <div class="item-ctrl clearfix"><div class="change" @click="methodEditKeyWord">编辑</div> <div class="del" @click="methodDelKeyword">删除</div></div>
+                    </li>
+                    <li class="item clearfix">
+                        <div class="item-checkbox"><input type="checkbox" name="subcheck2" class="checkboxs-in2"></div>
+                        <div class="item-name">贵州茅台3</div>
+                        <div class="item-source">新闻，论坛，贴吧，微博，微信，政府，视频</div>
+                        <div class="item-rule">反馈名/源站名称</div>
+                        <div class="item-twrap"><span class="item-data">2016-10-12&nbsp;11:32:05</span></div>
+                        <div class="item-ctrl clearfix"><div class="change" @click="methodEditKeyWord">编辑</div> <div class="del" @click="methodDelKeyword">删除</div></div>
+                    </li>
+                    <li class="item clearfix">
+                        <div class="item-checkbox"><input type="checkbox" name="subcheck2" class="checkboxs-in2"></div>
+                        <div class="item-name">贵州茅台4</div>
+                        <div class="item-source">新闻，论坛，贴吧，微博，微信，政府，视频</div>
+                        <div class="item-rule">反馈名/源站名称</div>
+                        <div class="item-twrap"><span class="item-data">2016-10-12&nbsp;11:32:05</span></div>
+                        <div class="item-ctrl clearfix"><div class="change" @click="methodEditKeyWord">编辑</div> <div class="del" @click="methodDelKeyword">删除</div></div>
+                    </li>
+                    <li class="item clearfix">
+                        <div class="item-checkbox"><input type="checkbox" name="subcheck2" class="checkboxs-in2"></div>
+                        <div class="item-name">贵州茅台5</div>
+                        <div class="item-source">新闻，论坛，贴吧，微博，微信，政府，视频</div>
+                        <div class="item-rule">反馈名/源站名称</div>
+                        <div class="item-twrap"><span class="item-data">2016-10-12&nbsp;11:32:05</span></div>
+                        <div class="item-ctrl clearfix"><div class="change" @click="methodEditKeyWord">编辑</div> <div class="del" @click="methodDelKeyword">删除</div></div>
+                    </li>
+                    <li class="item clearfix">
+                        <div class="item-checkbox"><input type="checkbox" name="subcheck2" class="checkboxs-in2"></div>
+                        <div class="item-name">贵州茅台6</div>
+                        <div class="item-source">新闻，论坛，贴吧，微博，微信，政府，视频</div>
+                        <div class="item-rule">反馈名/源站名称</div>
+                        <div class="item-twrap"><span class="item-data">2016-10-12&nbsp;11:32:05</span></div>
+                        <div class="item-ctrl clearfix"><div class="change" @click="methodEditKeyWord">编辑</div> <div class="del" @click="methodDelKeyword">删除</div></div>
+                    </li>
+                    <li class="item clearfix">
+                        <div class="item-checkbox"><input type="checkbox" name="subcheck2" class="checkboxs-in2"></div>
+                        <div class="item-name">贵州茅台7</div>
+                        <div class="item-source">新闻，论坛，贴吧，微博，微信，政府，视频</div>
+                        <div class="item-rule">反馈名/源站名称</div>
+                        <div class="item-twrap"><span class="item-data">2016-10-12&nbsp;11:32:05</span></div>
+                        <div class="item-ctrl clearfix"><div class="change" @click="methodEditKeyWord">编辑</div> <div class="del" @click="methodDelKeyword">删除</div></div>
+                    </li>
+                    <li class="item clearfix">
+                        <div class="item-checkbox"><input type="checkbox" name="subcheck2" class="checkboxs-in2"></div>
+                        <div class="item-name">贵州茅台8</div>
+                        <div class="item-source">新闻，论坛，贴吧，微博，微信，政府，视频</div>
+                        <div class="item-rule">反馈名/源站名称</div>
+                        <div class="item-twrap"><span class="item-data">2016-10-12&nbsp;11:32:05</span></div>
+                        <div class="item-ctrl clearfix"><div class="change" @click="methodEditKeyWord">编辑</div> <div class="del" @click="methodDelKeyword">删除</div></div>
+                    </li>
+                    <li class="item clearfix">
+                        <div class="item-checkbox"><input type="checkbox" name="subcheck2" class="checkboxs-in2"></div>
+                        <div class="item-name">贵州茅台9</div>
+                        <div class="item-source">新闻，论坛，贴吧，微博，微信，政府，视频</div>
+                        <div class="item-rule">反馈名/源站名称</div>
+                        <div class="item-twrap"><span class="item-data">2016-10-12&nbsp;11:32:05</span></div>
+                        <div class="item-ctrl clearfix"><div class="change" @click="methodEditKeyWord">编辑</div> <div class="del" @click="methodDelKeyword">删除</div></div>
+                    </li>
+                    <li class="item clearfix">
+                        <div class="item-checkbox"><input type="checkbox" name="subcheck2" class="checkboxs-in2"></div>
+                        <div class="item-name">贵州茅台10</div>
+                        <div class="item-source">新闻，论坛，贴吧，微博，微信，政府，视频</div>
+                        <div class="item-rule">反馈名/源站名称</div>
+                        <div class="item-twrap"><span class="item-data">2016-10-12&nbsp;11:32:05</span></div>
+                        <div class="item-ctrl clearfix"><div class="change" @click="methodEditKeyWord">编辑</div> <div class="del" @click="methodDelKeyword">删除</div></div>
+                    </li>
+                    <li class="item clearfix">
+                        <div class="item-checkbox"><input type="checkbox" name="subcheck2" class="checkboxs-in2"></div>
+                        <div class="item-name">贵州茅台11</div>
+                        <div class="item-source">新闻，论坛，贴吧，微博，微信，政府，视频</div>
+                        <div class="item-rule">反馈名/源站名称</div>
+                        <div class="item-twrap"><span class="item-data">2016-10-12&nbsp;11:32:05</span></div>
+                        <div class="item-ctrl clearfix"><div class="change" @click="methodEditKeyWord">编辑</div> <div class="del" @click="methodDelKeyword">删除</div></div>
+                    </li>
+                    <li class="item clearfix">
+                        <div class="item-checkbox"><input type="checkbox" name="subcheck2" class="checkboxs-in2"></div>
+                        <div class="item-name">贵州茅台12</div>
+                        <div class="item-source">新闻，论坛，贴吧，微博，微信，政府，视频</div>
+                        <div class="item-rule">反馈名/源站名称</div>
+                        <div class="item-twrap"><span class="item-data">2016-10-12&nbsp;11:32:05</span></div>
+                        <div class="item-ctrl clearfix"><div class="change" @click="methodEditKeyWord">编辑</div> <div class="del" @click="methodDelKeyword">删除</div></div>
+                    </li>
+                </ul>
+                <div class="list-end clearfix">
+                    <div class="item-checkbox"><input type="checkbox" id="checkboxAll2"></div>
+                    <div class="end-ctrl clearfix">
+                        <div class="del-all" @click="methodDelKeywordAll">批量删除</div>
+                        <div class="add-keyword" @click="methodAddKeyword">添加规则</div>
+                    </div>
+                    <!--分页-->
+                    <ul class="page-wrap clearfix">
+                        <li><</li>
+                        <li class="active">1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="popup help-popup">
+                <div class="mask"></div>
+                <div class="dialog help-dialog">
+                    <div class="dialog-title clearfix">
+                        <div class="dialog-title-word">规则帮助</div>
+                        <i class="iconfont">&#xe601</i>
+                    </div>
+                    <div class="dialog-center">
+                        <ul>
+                            <li>1、规则可以直接写关键字进行匹配。示例：搜索，会把包含“搜索”的内容进行匹配；</li>
+                            <li>2、多个关键字同时匹配请用 AND （注意前后有空格）来连接，表示且的逻辑：同时包含多个关键词才进行匹配。示例：搜索 AND 店铺，会把同时包含“搜索”、“店铺”的内容进行匹配；</li>
+                            <li>3、匹配任意一个关键字用 , （英文的逗号）或者 OR （注意前后有空格）来连接。示例：搜索 , 找不到，表示匹配到“搜索”或者“找不到”的内容；</li>
+                            <li>4、支持括号。示例：（搜索 OR 找不到） AND 店铺，会匹配包含“店铺”并且“搜索”的内容或者包含“店铺”并且“找不到”的内容；</li>
+                            <li>5、支持不包含，只需要在不包含词加英文感叹号。示例：!淘宝 AND 阿里，会匹配包含“阿里”并且不包含“淘宝”的内容；</li>
+                            <li>6、规则支持正则表达式，只需要在规则前加RE （空格）。示例1：RE ^\w+$，表示对纯数字/英文的内容进行匹配。示例2：RE ^[\s\S]{0,5}$，表示对小于5个字符的内容进行匹配；</li>
+                            <li>7、正则表达式 <a href="">测试</a>、<a href="">教程</a>。</li>
+                        </ul>
+                    </div>
+                    <div class="dialog-bottom clearfix">
+                        <button class="blue-button close-button">了解</button>
+                    </div>
+                </div>
+            </div>
+            <div class="popup setup-popup">
+                <div class="mask"></div>
+                <div class="dialog setup-dialog">
+                    <div class="dialog-title clearfix">
+                        <div class="dialog-title-word">过滤规则</div>
+                        <i class="iconfont">&#xe601</i>
+                    </div>
+                    <div class="dialog-center">
+                        <div class="dialog-center-top clearfix">
+                            <div class="dialog-center-left dialog-center-left1">规则</div>
+                            <div class="dialog-center-right zhengze">
+                                <input class="zhengzeinput" type="text" placeholder="茅台 OR 虚假 OR  ! 淘宝">
+                                <div class="zhengzetishi">关键字规则详见右上角说明</div>
+                            </div>
+                        </div>
+                        <div class="dialog-center-middle clearfix">
+                            <div class="dialog-center-left dialog-center-left2">过滤类型</div>
+                            <div class="dialog-center-right radios">
+                                <label for="rule1"><input id="rule1" type="radio" name="rule" checked><span>关键字</span></label>
+                                <label for="rule2"><input id="rule2" type="radio" name="rule"><span>反馈名/源站名称</span></label>
+                                <label for="rule3"><input id="rule3" type="radio" name="rule"><span>网站URL</span></label>
+                            </div>
+                        </div>
+                        <div class="dialog-center-bottom clearfix">
+                            <div class="dialog-center-left dialog-center-left2">源站类型</div>
+                            <div class="dialog-center-right checkboxs clearfix">
+                                <div class="checkboxSel checkboxs-in">
+                                    <label for="checkbox-1"><input type="checkbox" id="checkbox-1" name="subcheck1" class="checkboxs-in1"><span>新闻</span></label>
+                                    <label for="checkbox-2"><input type="checkbox" id="checkbox-2" name="subcheck1" class="checkboxs-in1"><span>论坛</span></label>
+                                    <label for="checkbox-3"><input type="checkbox" id="checkbox-3" name="subcheck1" class="checkboxs-in1"><span>贴吧</span></label>
+                                    <label for="checkbox-4"><input type="checkbox" id="checkbox-4" name="subcheck1" class="checkboxs-in1"><span>微博</span></label>
+                                    <label for="checkbox-5"><input type="checkbox" id="checkbox-5" name="subcheck1" class="checkboxs-in1"><span>微信</span></label>
+                                    <label for="checkbox-6"><input type="checkbox" id="checkbox-6" name="subcheck1" class="checkboxs-in1"><span>政府</span></label>
+                                    <label for="checkbox-7"><input type="checkbox" id="checkbox-7" name="subcheck1" class="checkboxs-in1"><span>视频</span></label>
+                                </div>
+                                <label for="checkboxAll1"><input type="checkbox" id="checkboxAll1"><span>全部</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dialog-bottom clearfix">
+                        <button class="button blue-button sure-button">保存</button>
+                        <button class="button white-button close-button">取消</button>
+                    </div>
+                </div>
+            </div>
+            <div class="popup del-rule-popup">
+                <div class="mask"></div>
+                <div class="dialog del-rule-dialog">
+                    <div class="dialog-title clearfix">
+                        <div class="dialog-title-word">请确认操作</div>
+                        <i class="iconfont">&#xe601</i>
+                    </div>
+                    <div class="dialog-center">
+                        <div class="del-word">确定删除此规则吗？</div>
+                    </div>
+                    <div class="dialog-bottom clearfix">
+                        <button class="button blue-button sure-button">确定</button>
+                        <button class="button white-button close-button">取消</button>
+                    </div>
+                </div>
+            </div>
+            <div class="popup del-allrule-popup">
+                <div class="mask"></div>
+                <div class="dialog del-allrule-dialog">
+                    <div class="dialog-title clearfix">
+                        <div class="dialog-title-word">请确认操作</div>
+                        <i class="iconfont">&#xe601</i>
+                    </div>
+                    <div class="dialog-center">
+                        <div class="del-word">确定删除这些规则吗？</div>
+                    </div>
+                    <div class="dialog-bottom clearfix">
+                        <button class="button blue-button sure-button">确定</button>
+                        <button class="button white-button close-button">取消</button>
+                    </div>
+                </div>
+            </div>
+            <div class="popup add-popup">
+                <div class="mask"></div>
+                <div class="dialog add-dialog">
+                    <div class="dialog-title clearfix">
+                        <div class="dialog-title-word">过滤规则</div>
+                        <i class="iconfont">&#xe601</i>
+                    </div>
+                    <div class="dialog-center">
+                        <div class="dialog-center-top clearfix">
+                            <div class="dialog-center-left dialog-center-left1">规则</div>
+                            <div class="dialog-center-right zhengze">
+                                <input class="zhengzeinput" type="text" placeholder="茅台 OR 虚假 OR  ! 淘宝">
+                                <div class="zhengzetishi">关键字规则详见右上角说明</div>
+                            </div>
+                        </div>
+                        <div class="dialog-center-middle clearfix">
+                            <div class="dialog-center-left dialog-center-left2">过滤类型</div>
+                            <div class="dialog-center-right radios">
+                                <label for="rule20"><input id="rule20" type="radio" name="rule" checked><span>关键字</span></label>
+                                <label for="rule21"><input id="rule21" type="radio" name="rule"><span>反馈名/源站名称</span></label>
+                                <label for="rule22"><input id="rule22" type="radio" name="rule"><span>网站URL</span></label>
+                            </div>
+                        </div>
+                        <div class="dialog-center-bottom clearfix">
+                            <div class="dialog-center-left dialog-center-left2">源站类型</div>
+                            <div class="dialog-center-right checkboxs clearfix">
+                                <div class="checkboxSel checkboxs-in">
+                                    <label for="checkbox-20"><input type="checkbox" id="checkbox-20" name="subcheck3" class="checkboxs-in3" checked><span>新闻</span></label>
+                                    <label for="checkbox-21"><input type="checkbox" id="checkbox-21" name="subcheck3" class="checkboxs-in3"><span>论坛</span></label>
+                                    <label for="checkbox-22"><input type="checkbox" id="checkbox-22" name="subcheck3" class="checkboxs-in3"><span>贴吧</span></label>
+                                    <label for="checkbox-23"><input type="checkbox" id="checkbox-23" name="subcheck3" class="checkboxs-in3"><span>微博</span></label>
+                                    <label for="checkbox-24"><input type="checkbox" id="checkbox-24" name="subcheck3" class="checkboxs-in3"><span>微信</span></label>
+                                    <label for="checkbox-25"><input type="checkbox" id="checkbox-25" name="subcheck3" class="checkboxs-in3"><span>政府</span></label>
+                                    <label for="checkbox-26"><input type="checkbox" id="checkbox-26" name="subcheck3" class="checkboxs-in3"><span>视频</span></label>
+                                </div>
+                                <label for="checkboxAll3"><input type="checkbox" id="checkboxAll3"><span>全部</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dialog-bottom clearfix">
+                        <button class="button blue-button sure-button">保存</button>
+                        <button class="button white-button close-button">取消</button>
+                    </div>
+                </div>
+            </div>
+            <div class="popup dustbin-popup">
+                <div class="mask"></div>
+                <div class="dialog dustbin-dialog">
+                    <div class="dialog-title clearfix">
+                        <div class="dialog-title-word">是否跳过垃圾箱</div>
+                        <i class="iconfont">&#xe601</i>
+                    </div>
+                    <div class="dialog-center">
+                        <div class="del-word">建议“开启”，即过滤的内容是否进去垃圾箱，如果开启，则过滤内容不进去垃圾箱，则不消耗推送舆情配额。</div>
+                    </div>
+                    <div class="dialog-bottom clearfix">
+                        <button class="button blue-button close-button">了解</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/lib/jquery-1.8.3.min.js"></script>
+    <script src="js/ctrljs/newsIndex.js"></script>
+    <script src="js/lib/modernizr.js"></script>
+
+</body>
+</html>

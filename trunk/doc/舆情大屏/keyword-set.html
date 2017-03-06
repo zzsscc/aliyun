@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>品牌舆情控制台</title>
+    <link rel="stylesheet" href="css/ctrlcss/keyWord-set.css">
+</head>
+<body>
+<div id="header">
+    <div class="container clearfix">
+        <div class="logo-wrap clearfix">
+            <div class="logo"></div>
+            <div class="title">品牌舆情控制台</div>
+        </div>
+        <ul class="nav clearfix">
+            <li><a href="#">可视化大屏</a></li>
+            <li><a href="#">舆情盒子</a></li>
+            <li><a href="#" class="active">设置</a></li>
+        </ul>
+        <div class="user-inf">欢迎您，<span>admin</span> | <span>退出</span></div>
+    </div>
+</div>
+<div id="main">
+    <div class="container">
+        <div class="sec-nav clearfix">
+            <ul class="sec-ul clearfix">
+                <li><a href="#" class="active">品牌设置</a></li>
+                <li><a href="propagation-analysis-set.html">传播分析设置</a></li>
+                <li><a href="product-set.html">关注品牌设置</a></li>
+            </ul>
+            <span>当前位置：设置 > 品牌设置</span>
+        </div>
+        <!--专题-->
+        <div class="st-wrap clearfix">
+            <ul class="zt clearfix">
+                <li></li>
+            </ul>
+            <div class="drop">
+                操作<i class="iconfont">&#xe602;</i>
+                <ul class="drop-down">
+                    <li class="new-jp">添加其他品牌</li>
+                    <li class="new-zt">添加专题</li>
+                    <li class="change-jp">编辑此品牌</li>
+                    <li class="change-zt">编辑此专题</li>
+                    <li class="remove-jp">删除此品牌</li>
+                    <li class="remove-zt">删除此专题</li>
+                </ul>
+            </div>
+        </div>
+        <div class="normal">
+            <!--列表部分-->
+            <div class="l-wrap">
+                <div class="list-title"><span class="keyword">关键字</span><span class="website">源站类型</span><span class="creat-time">创建时间</span><span class="control">操作</span></div>
+                <ul class="list">
+                    <!--<li class="item clearfix">-->
+                    <!--<div class="item-checkbox"><input type="checkbox" name="subcheck2" class="checkboxs-in2"></div>-->
+                    <!--<div class="item-name">贵州茅台1</div>-->
+                    <!--<div class="item-source">新闻，论坛，贴吧，微博，微信，政府，视频</div>-->
+                    <!--<div class="item-twrap"><span class="item-data">2016-10-12&nbsp;11:32:05</span></div>-->
+                    <!--<div class="item-ctrl clearfix"><div class="change">编辑</div> <div class="del">删除</div></div>-->
+                    <!--</li>-->
+                </ul>
+                <div class="list-end clearfix">
+                    <div class="item-checkbox"><input type="checkbox" id="checkboxAll2"></div>
+                    <div class="end-ctrl clearfix">
+                        <div class="del-all">批量删除</div>
+                        <div class="add-keyword">添加关键字</div>
+                    </div>
+                    <!--分页-->
+                    <ul class="page-wrap clearfix">
+                        <li><</li>
+                        <li class="active">1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="no-zt">
+            <div class="no-first-title">品牌设置</div>
+            <div class="no-second-title">还没有设置自身品牌，点击添加开始设置吧！</div>
+            <button class="no-button">添加自身品牌</button>
+        </div>
+        <div class="no-jp">
+            <div class="no-first-title">关注品牌设置</div>
+            <div class="no-second-title">还没有设置其他关注品牌，点击添加开始设置吧！</div>
+            <button class="no-button">添加其他关注品牌</button>
+        </div>
+        <div class="no-gjz">
+            <div class="no-first-title">关键词管理</div>
+            <div class="no-second-title">当前品牌下还没有任何关键词，点击添加一个吧！</div>
+            <button class="no-button">添加关键词</button>
+        </div>
+        <div class="popup setup-popup">
+            <div class="mask"></div>
+            <div class="dialog setup-dialog">
+                <div class="dialog-title clearfix">
+                    <div class="dialog-title-word">编辑关键词</div>
+                    <i class="iconfont">&#xe601</i>
+                </div>
+                <div class="dialog-center">
+                    <div class="dialog-center-top clearfix">
+                        <div class="dialog-center-left dialog-center-left1">关键词</div>
+                        <div class="dialog-center-right zhengze">
+                            <input class="zhengzeinput" type="text">
+                        </div>
+                    </div>
+                    <div class="dialog-center-middle clearfix">
+                        <div class="dialog-center-left dialog-center-left1">专题</div>
+                        <div class="dialog-center-right select">
+                            <select name="zt" class="ztselect"></select>
+                        </div>
+                    </div>
+                    <div class="dialog-center-middle clearfix">
+                        <div class="dialog-center-left dialog-center-left2">语种</div>
+                        <div class="dialog-center-right lan">
+                            中文
+                        </div>
+                    </div>
+                    <div class="dialog-center-bottom clearfix">
+                        <div class="dialog-center-left dialog-center-left2">源站类型</div>
+                        <div class="dialog-center-right checkboxs clearfix">
+                            <div class="checkboxSel checkboxs-in">
+                                <label for="checkbox-1"><input type="checkbox" id="checkbox-1" name="subcheck1" class="checkboxs-in1"><span>新闻</span></label>
+                                <label for="checkbox-2"><input type="checkbox" id="checkbox-2" name="subcheck1" class="checkboxs-in1"><span>论坛</span></label>
+                                <label for="checkbox-3"><input type="checkbox" id="checkbox-3" name="subcheck1" class="checkboxs-in1"><span>贴吧</span></label>
+                                <label for="checkbox-4"><input type="checkbox" id="checkbox-4" name="subcheck1" class="checkboxs-in1"><span>微博</span></label>
+                                <label for="checkbox-5"><input type="checkbox" id="checkbox-5" name="subcheck1" class="checkboxs-in1"><span>微信</span></label>
+                                <label for="checkbox-6"><input type="checkbox" id="checkbox-6" name="subcheck1" class="checkboxs-in1"><span>政府</span></label>
+                                <label for="checkbox-7"><input type="checkbox" id="checkbox-7" name="subcheck1" class="checkboxs-in1"><span>视频</span></label>
+                            </div>
+                            <label for="checkboxAll1"><input type="checkbox" id="checkboxAll1"><span>全部</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="dialog-bottom clearfix">
+                    <button class="button blue-button sure-button">保存</button>
+                    <button class="button white-button close-button">取消</button>
+                </div>
+            </div>
+        </div>
+        <div class="popup del-rule-popup">
+            <div class="mask"></div>
+            <div class="dialog del-rule-dialog">
+                <div class="dialog-title clearfix">
+                    <div class="dialog-title-word">请确认操作</div>
+                    <i class="iconfont">&#xe601</i>
+                </div>
+                <div class="dialog-center">
+                    <div class="del-word">确定删除此关键词吗？</div>
+                </div>
+                <div class="dialog-bottom clearfix">
+                    <button class="button blue-button sure-button">确定</button>
+                    <button class="button white-button close-button">取消</button>
+                </div>
+            </div>
+        </div>
+        <div class="popup del-allrule-popup">
+            <div class="mask"></div>
+            <div class="dialog del-allrule-dialog">
+                <div class="dialog-title clearfix">
+                    <div class="dialog-title-word">请确认操作</div>
+                    <i class="iconfont">&#xe601</i>
+                </div>
+                <div class="dialog-center">
+                    <div class="del-word">确定删除这些关键词吗？</div>
+                </div>
+                <div class="dialog-bottom clearfix">
+                    <button class="button blue-button sure-button">确定</button>
+                    <button class="button white-button close-button">取消</button>
+                </div>
+            </div>
+        </div>
+        <div class="popup add-popup">
+            <div class="mask"></div>
+            <div class="dialog add-dialog">
+                <div class="dialog-title clearfix">
+                    <div class="dialog-title-word">添加关键词</div>
+                    <i class="iconfont">&#xe601</i>
+                </div>
+                <div class="dialog-center">
+                    <div class="dialog-center-top clearfix">
+                        <div class="dialog-center-left dialog-center-left1">关键词</div>
+                        <div class="dialog-center-right zhengze">
+                            <textarea placeholder="多个关键词间请换行。"></textarea>
+                            <div class="zhengzetishi">同一行的关键词表示“与”关系，用空格分割</div>
+                            <div class="zhengzetishi">不同行的关键词表示“或”关系。</div>
+                        </div>
+                    </div>
+                    <div class="dialog-center-middle clearfix">
+                        <div class="dialog-center-left dialog-center-left1">语种</div>
+                        <div class="dialog-center-right select">
+                            <select name="language" disabled>
+                                <option value ="volvo">中文</option>
+                                <option value ="saab">英文</option>
+                                <option value="opel">德语</option>
+                                <option value="audi">法语</option>
+                            </select>
+                            <div class="zhengzetishi">使用阶段仅支持中文，其他语言试用阶段后将全部开放购买。</div>
+                        </div>
+                    </div>
+                    <div class="dialog-center-bottom clearfix">
+                        <div class="dialog-center-left dialog-center-left2">源站类型</div>
+                        <div class="dialog-center-right checkboxs clearfix">
+                            <div class="checkboxSel checkboxs-in">
+                                <label for="checkbox-20"><input type="checkbox" id="checkbox-20" name="subcheck3" class="checkboxs-in3" checked><span>新闻</span></label>
+                                <label for="checkbox-21"><input type="checkbox" id="checkbox-21" name="subcheck3" class="checkboxs-in3"><span>论坛</span></label>
+                                <label for="checkbox-22"><input type="checkbox" id="checkbox-22" name="subcheck3" class="checkboxs-in3"><span>贴吧</span></label>
+                                <label for="checkbox-23"><input type="checkbox" id="checkbox-23" name="subcheck3" class="checkboxs-in3"><span>微博</span></label>
+                                <label for="checkbox-24"><input type="checkbox" id="checkbox-24" name="subcheck3" class="checkboxs-in3"><span>微信</span></label>
+                                <label for="checkbox-25"><input type="checkbox" id="checkbox-25" name="subcheck3" class="checkboxs-in3"><span>政府</span></label>
+                                <label for="checkbox-26"><input type="checkbox" id="checkbox-26" name="subcheck3" class="checkboxs-in3"><span>视频</span></label>
+                            </div>
+                            <label for="checkboxAll3"><input type="checkbox" id="checkboxAll3"><span>全部</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="dialog-bottom clearfix">
+                    <button class="button blue-button sure-button">保存</button>
+                    <button class="button white-button close-button">取消</button>
+                </div>
+            </div>
+        </div>
+        <div class="popup addzt-popup">
+            <div class="mask"></div>
+            <div class="dialog addzt-dialog">
+                <div class="dialog-title clearfix">
+                    <div class="dialog-title-word">添加自身品牌</div>
+                    <i class="iconfont">&#xe601</i>
+                </div>
+                <div class="dialog-center">
+                    <div class="dialog-center-top clearfix">
+                        <div class="dialog-center-left dialog-center-left1">名称</div>
+                        <div class="dialog-center-right zhengze">
+                            <input class="zhengzeinput" type="text">
+                        </div>
+                    </div>
+                    <div class="dialog-center-bottom clearfix">
+                        <div class="dialog-center-left dialog-center-left2">是否启用</div>
+                        <div class="dialog-center-right radios">
+                            <label for="rule1"><input id="rule1" type="radio" name="rule" checked class="addzt-radios"><span>是</span></label>
+                            <label for="rule2"><input id="rule2" type="radio" name="rule" class="addzt-radios"><span>否</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="dialog-bottom clearfix">
+                    <button class="button blue-button sure-button">保存</button>
+                    <button class="button white-button close-button">取消</button>
+                </div>
+            </div>
+        </div>
+        <div class="popup editzt-popup">
+            <div class="mask"></div>
+            <div class="dialog editzt-dialog">
+                <div class="dialog-title clearfix">
+                    <div class="dialog-title-word">编辑自身品牌</div>
+                    <i class="iconfont">&#xe601</i>
+                </div>
+                <div class="dialog-center">
+                    <div class="dialog-center-top clearfix">
+                        <div class="dialog-center-left dialog-center-left1">名称</div>
+                        <div class="dialog-center-right zhengze">
+                            <input class="zhengzeinput" type="text">
+                        </div>
+                    </div>
+                    <div class="dialog-center-bottom clearfix">
+                        <div class="dialog-center-left dialog-center-left2">是否启用</div>
+                        <div class="dialog-center-right radios">
+                            <label for="rule3"><input id="rule3" type="radio" name="rule" class="editzt-radios"><span>是</span></label>
+                            <label for="rule4"><input id="rule4" type="radio" name="rule" class="editzt-radios"><span>否</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="dialog-bottom clearfix">
+                    <button class="button blue-button sure-button">保存</button>
+                    <button class="button white-button close-button">取消</button>
+                </div>
+            </div>
+        </div>
+        <div class="popup delzt-popup">
+            <div class="mask"></div>
+            <div class="dialog delzt-dialog">
+                <div class="dialog-title clearfix">
+                    <div class="dialog-title-word">请确认操作</div>
+                    <i class="iconfont">&#xe601</i>
+                </div>
+                <div class="dialog-center">
+                    <div class="del-word">确认删除自身品牌吗？删除后其中的关键词将一并删除。</div>
+                </div>
+                <div class="dialog-bottom clearfix">
+                    <button class="button blue-button sure-button">确定</button>
+                    <button class="button white-button close-button">取消</button>
+                </div>
+            </div>
+        </div>
+        <div class="popup addjp-popup">
+            <div class="mask"></div>
+            <div class="dialog addjp-dialog">
+                <div class="dialog-title clearfix">
+                    <div class="dialog-title-word">添加其他关注品牌</div>
+                    <i class="iconfont">&#xe601</i>
+                </div>
+                <div class="dialog-center">
+                    <div class="dialog-center-top clearfix">
+                        <div class="dialog-center-left dialog-center-left1">名称</div>
+                        <div class="dialog-center-right zhengze">
+                            <input class="zhengzeinput" type="text">
+                        </div>
+                    </div>
+                    <div class="dialog-center-bottom clearfix">
+                        <div class="dialog-center-left dialog-center-left2">是否启用</div>
+                        <div class="dialog-center-right radios">
+                            <label for="rule5"><input id="rule5" type="radio" name="rule" checked class="addjp-radios"><span>是</span></label>
+                            <label for="rule6"><input id="rule6" type="radio" name="rule" class="addjp-radios"><span>否</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="dialog-bottom clearfix">
+                    <button class="button blue-button sure-button">保存</button>
+                    <button class="button white-button close-button">取消</button>
+                </div>
+            </div>
+        </div>
+        <div class="popup editjp-popup">
+            <div class="mask"></div>
+            <div class="dialog editjp-dialog">
+                <div class="dialog-title clearfix">
+                    <div class="dialog-title-word">编辑其他关注品牌</div>
+                    <i class="iconfont">&#xe601</i>
+                </div>
+                <div class="dialog-center">
+                    <div class="dialog-center-top clearfix">
+                        <div class="dialog-center-left dialog-center-left1">名称</div>
+                        <div class="dialog-center-right zhengze">
+                            <input class="zhengzeinput" type="text">
+                        </div>
+                    </div>
+                    <div class="dialog-center-bottom clearfix">
+                        <div class="dialog-center-left dialog-center-left2">是否启用</div>
+                        <div class="dialog-center-right radios">
+                            <label for="rule7"><input id="rule7" type="radio" name="rule" class="editjp-radios"><span>是</span></label>
+                            <label for="rule8"><input id="rule8" type="radio" name="rule" class="editjp-radios"><span>否</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="dialog-bottom clearfix">
+                    <button class="button blue-button sure-button">保存</button>
+                    <button class="button white-button close-button">取消</button>
+                </div>
+            </div>
+        </div>
+        <div class="popup deljp-popup">
+            <div class="mask"></div>
+            <div class="dialog deljp-dialog">
+                <div class="dialog-title clearfix">
+                    <div class="dialog-title-word">请确认操作</div>
+                    <i class="iconfont">&#xe601</i>
+                </div>
+                <div class="dialog-center">
+                    <div class="del-word">确认删除此品牌吗？删除后品牌内的关键词将一并删除。</div>
+                </div>
+                <div class="dialog-bottom clearfix">
+                    <button class="button blue-button sure-button">确定</button>
+                    <button class="button white-button close-button">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="js/lib/jquery-1.8.3.min.js"></script>
+<script src="js/ctrljs/keyWord-ajax2.js"></script>
+<script src="js/ctrljs/keyWordIndex.js"></script>
+</body>
+</html>

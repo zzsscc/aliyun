@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <props name="localConfig" desc="系统配置">
+        <prop key="cookie_domain">eshudata.com</prop>
+        <prop key="system_code">datav</prop>
+        <prop key="system_name">接口服务系统</prop>
+    </props>
+    <props name="cacheConfig" desc="缓存配置">
+        <prop key="local_mem">true</prop>
+        <prop key="remote_mem">true</prop>
+    </props>
+    <props name="emailConfig" desc="邮件引擎">
+        <prop key="mail_host">smtp.mxhichina.com</prop>
+        <prop key="mail_username">wg@eshudata.com</prop>
+        <prop key="mail_password">!qaz2wsx</prop>
+        <prop key="mail_default_from">wg@eshudata.com</prop>
+    </props>
+    <props name="fileConfig" desc="文件配置">
+        <prop key="excel_file_path">/Users/Kim/dumps</prop>
+        <prop key="key_file_path">/Users/Kim/dumps/key</prop>
+        <prop key="pic_file_path">/Users/Kim/opt/web-8080/webapps/ROOT/</prop>
+        <prop key="pic_http_path">http://127.0.0.1:8080/</prop>
+    </props>
+    <props name="taskConfig" desc="任务执行配置">
+        <prop key="HostHeartTask">1</prop>
+        <!--<prop key="Keyword">1</prop>-->
+        <!--<prop key="SearchTask">1</prop>-->
+        <!--<prop key="SentimentTask">1</prop>-->
+        <prop key="TopicTask">1</prop>
+    </props>
+</configuration>
